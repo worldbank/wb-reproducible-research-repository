@@ -1,3 +1,5 @@
+# List of Economics Journals with Strict Reproducibility Requirements
+
 American Economic Journal: Applied Economics
 American Economic Journal: Economic Policy
 American Economic Journal: Macroeconomics
