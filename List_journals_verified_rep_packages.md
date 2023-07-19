@@ -1,12 +1,11 @@
 # List of Economics Journals with Strict Reproducibility Requirements
 
-American Economic Journal: Applied Economics
-American Economic Journal: Economic Policy
-American Economic Journal: Macroeconomics
-American Economic Review
-American Economic Review: Insights
-Economic Journal
-Journal of Development Economics
-Journal of Political Economy
-Review of Economic Studies
-Quarterly Journal of Economics
+1. American Economic Journal: Applied Economics
+2. American Economic Journal: Economic Policy
+3. American Economic Journal: Macroeconomics
+4. American Economic Review
+5. American Economic Review: Insights
+6. Economic Journal
+7. Journal of Political Economy
+8. Review of Economic Studies
+9. Quarterly Journal of Economics
