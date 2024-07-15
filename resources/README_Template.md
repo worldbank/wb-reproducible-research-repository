@@ -14,13 +14,13 @@ output:
 
 1. [Overview](#overview)
 2. [Data Availability](#data-availability)
-3. [Instructions to Run this Package](#instructions-to-run-this-package)
+3. [Instructions for Replicators](#instructions-for-replicators)
 4. [List of Exhibits](#list-of-exhibits)
+5. [Requirements](#requirements)
 
 The rest of the contents of this README file is highly desirable, but not strictly needed for reproducibility. The points above are needed.
 
-5. [Requirements](#requirements)
-6. [Code Description](#code-description-optional)
+6. [Code Description](#code-description)
 7. [Folder Structure](#folder-structure)
 
 
@@ -44,14 +44,17 @@ Provide detailed information about the data sources, whether obtained from publi
 
 You can use the following as a template. Make sure to fill out this information for each of the data files used:
 
-**Filename 1:** Exact file name as shown on the source website
-**Source:** Name of the source website
-**URL:** Exact downloadable URL of the data used
-**Access year:**  Date when the data was accessed. This is especially important as data can be updated, and replicators should know the exact time when the data was downloaded.
-**Variable names (optional):** This is useful when only data for certain variables is downloaded, such as when using the World Bank’s World Development Indicators data.
-**License (optional):** While this is not mandatory, it is great to know under which license the data is available to understand if it is public or private, or publication limitations.
+- **Filename 1:** Exact file name as shown on the source website
 
+- **Source:** Name of the source website
 
+- **URL:** Exact downloadable URL of the data used
+
+- **Access year:**  Date when the data was accessed. This is especially important as data can be updated, and replicators should know the exact time when the data was downloaded.
+
+- **Variable names (optional):** This is useful when only data for certain variables is downloaded, such as when using the World Bank’s World Development Indicators data.
+
+- **License (optional):** While this is not mandatory, it is great to know under which license the data is available to understand if it is public or private, or publication limitations.
 
 ## Instructions for Replicators
 
@@ -83,8 +86,6 @@ The provided code reproduces:
 | Table 1      | Balancetable.xls | 02_analysis.do (line 23) | Found in Outputs/tables/main |
 | Figure 1     | Regresults.png   | 02_analysis.do (line 40) | Found in Outputs/figures/annex, Image Format: Portable Network Graphic (PNG), Bits Per Pixel: 32, Color: Truecolour with alpha, Dimensions: 970 x 544, Interlaced: Yes, XResolution: 144, YResolution: 144 |
 
-
-
 ## Requirements
 
 ### Computational Requirements
@@ -111,11 +112,11 @@ Example:
 
 ### Memory and Runtime and Storage Requirements
 
-Provide consistent information about memory resources for reliable computation. Include runtime information for replicators to assess processing times and detect potential issues with the code. You should also describe how much storage is required in addition to the space visible in the typical repository, for instance, because data will be unzipped, data downloaded, or temporary files written.
+Provide consistent information about memory resources for reliable computation. Include runtime information for replicators to assess processing times and detect potential issues with the code. It would be best to describe how much storage is required in addition to the space visible in the typical repository, for instance, because data will be unzipped, data downloaded, or temporary files written.
 
 ## Code Description 
 
-Give an overview of the program files and their purposes. Remove redundant or obsolete files from the replication archive. For example, main.do sets file paths, installs necessary ADO packages, and executes all other dofiles. Meanwhile, cleaning.do loads data, handles missing values, and analysis.do performs basic statistical analysis and generates visualizations. 
+Give an overview of the program files and their purposes. Remove redundant or obsolete files from the replication archive. For example, main.do sets file paths, installs necessary ADO packages, and executes all other dofiles. Meanwhile, cleaning.do loads data, handles missing values, and analysis.do performs basic statistical analysis and generate visualizations. 
 
 Make sure to also include any crucial information that replicators should be aware of to facilitate a one-click run of the code.
 
