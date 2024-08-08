@@ -27,75 +27,13 @@
 
 - [ ] Project coordinator will start the metadata, to verify that we have everything we need for the publication of the package, mostly in terms of clarity in the data sources.
 
-## 3. Start clean environment
+### 3. Start Clean Environment
 
-### Stata
+- [ ] To assure we don't introduce any noise from personal environments, we want to start from clean environments. Follow these instructions to start in a clean environment:
+  - R: [Link to instructions for starting R in a clean environment]
+  - Stata: [Link to instructions for starting Stata in a clean environment]
+  - Python: [Link to instructions for starting Python in a clean environment]
 
-1. Create an ado folder in your project directory for user-written packages.
-2. **Set the ado path in Stata**: Use the command `sysdir set PLUS "path/to/adofolder"` in your main do-file to change the ado path to the ado folder you just created.
-3. Install any dependencies used, preferably from SSC. If adding late in the review, re-install all needed ado files here or copy them from your regular ado folder (check it with `adopath`).
-4. If the main do-file doesn't have it, add the version in which to run the package with `version XX`. Use the same that the authors specify in the README. If no version is mentioned, use your current Stata installation version.
-5. If the package does not have a main do-file, create one using the main do-file [template](https://github.com/dime-worldbank/prwp-reproducibility-int/blob/main/resources/main.do) and follow steps 1-4 above. 
-
-### R
-
-1. **Restart Session**: Close and reopen your R project, or session if you don't have a project.
-2. **Create Project**: If the package does not have a project, create one if the top directory, this will help to 1. manage paths, and 2. link the `renv` in step 3.
-3. **Initialize `renv`**:
-
-   ```r
-   renv::init()
-   ```
-4. **Take snapshot**: Save the packages used in the project.  
-
-   ```{r}
-   renv::snapshot()
-   ```
-
-### Python
-
-1. **Create a virtual environment with conda**: This keeps the project's dependencies and Python version isolated from other projects. Run this in the Anaconda Powershell Prompt using the same version as the authors. If they didn't specify the version of Python they used, ask them.
-   ```{bash}
-   conda create --name project_env python=your.version
-   ```
-
-   - If the team provided a **conda** environment file, use this command instead (notice that it's `conda env create`, not `conda create`)
-  
-   ```{bash}
-   conda env create --name project_env --file environment.yml
-   ```
-   - If the team provided a **pip** environment file, use this command instead (notice that it's `conda create`)
-  
-   ```{bash}
-   conda create --name project_env --file requirements.txt
-   ```
-   
-2. **Activate the virtual environment**:
-   ```{bash}
-   conda activate project_env
-   ```
-
-3. **Install any additional packages**: Use `conda` or `pip` to install the necessary packages to run the package. Installation via `conda` is preferred as its channels are more stable than `pip`. Install with `pip` only once all possible installations with `conda` have been executed. Remember to do it inside this virtual environment, packages won't affect your base Python installation.
-
-   - Installing in conda
-   ```{bash}
-   conda install package_name
-   ```
-
-   - Installing in pip
-   ```{bash}
-   pip install package_name
-   ```
-
-4. **Generate a requirements file**: This captures all the packages and their exact versions used in your project, which is useful for reproducibility.
-   ```{bash}
-   conda env export > environment.yml
-   ```
-
-5. **To deactivate and leave the virtual environment**: 
-   ```{bash}
-   conda deactivate
-   ```
    
 ## 4. Version control with Git
 
