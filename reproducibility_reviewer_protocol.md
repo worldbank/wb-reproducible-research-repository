@@ -29,12 +29,11 @@
 
 ### 3. Start Clean Environment
 
-- [ ] To assure we don't introduce any noise from personal environments, we want to start from clean environments. Follow these instructions to start in a clean environment:
-  - R: [Link to instructions for starting R in a clean environment]
-  - Stata: [Link to instructions for starting Stata in a clean environment]
-  - Python: [Link to instructions for starting Python in a clean environment]
-
-   
+- [ ] To ensure we don't introduce any errors from personal environments/dependencies, we want to start from clean environments. Follow these instructions to start in a clean environment:
+  - Stata: [Link to instructions for starting Stata in a clean environment](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/environment-instructions/stata.md)
+  - R: [Link to instructions for starting R in a clean environment](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/environment-instructions/R.md)
+  - Python: [Link to instructions for starting Python in a clean environment](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/environment-instructions/python.md)
+    
 ## 4. Version control with Git
 
 - [ ] To see the differences between the author's package and our packages across multiple runs, it is useful to create a Git repository.
