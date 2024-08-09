@@ -25,7 +25,7 @@ The package should be organized in a file structure that facilitates re-running 
 The package for review should include the input data directly unless there are access restrictions that limit sharing with World Bank staff.
 Authors must specify in the submission form whether the data can be included in the published reproducibility package.
 We encourage you to include data files directly in the public reproducibility package where possible, as this facilitates re-use of the package.
-Original data generated for the publication that is owned by the World Bank must additionally be deposited in either the [Development Data Hub](https://datacatalog.worldbank.org/int/data/add) (DDH) or the [Microdata Library](https://microdatalib.worldbank.org/index.php/data-deposit), depending on the type of data.
+Original data generated for the publication that is owned by the World Bank must additionally be deposited in either the [Development Data Hub](https://datacatalog.worldbank.org/int/data/add) (DDH) or the [Microdata Library](https://microdatalib.worldbank.org/index.php/data-deposit), depending on the type of data. Access to the data submission portals is limited to World Bank staff. 
 Doing this satisfies the requirement of the [Bank Procedure for Development Dataset Acquisition, Archiving and Dissemination](https://worldbankgroup.sharepoint.com/sites/ppfonline/PPFDocuments/ef8d76aeb7b541509672704768ee0c24.pdf) (this link requires WB intranet connection).
 
 In the case of confidential and/or restricted-access data, the authors have the following options which may be used as appropriate, these are listed in order of preference:
