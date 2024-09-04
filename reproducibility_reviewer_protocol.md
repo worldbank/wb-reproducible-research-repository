@@ -27,7 +27,7 @@
 
 - [ ] Project coordinator will start the metadata, to verify that we have everything we need for the publication of the package, mostly in terms of clarity in the data sources.
 
-### 3. Start Clean Environment
+## 3. Start Clean Environment
 
 - [ ] To ensure we don't introduce any errors from personal environments/dependencies, we want to start from clean environments. Follow these instructions to start in a clean environment:
   - Stata: [Link to instructions for starting Stata in a clean environment](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/environment-instructions/stata.md)
@@ -76,10 +76,11 @@ This will help you see if the outputs are changing after you run the code.
 
 ## 7. Verify stability
 
-- [ ] Run the package multiple times based on runtime to ensure stability:
+- [ ] Run the package a second time to ensure stability:
   - Packages with a runtime under a day: run twice.
   - Packages with a runtime over a day: run once.
-- [ ] Use Git locally to track and ensure output stability across runs. 
+- [ ] Commit the results of your second run as `second-run`
+- [ ] Use GitHub Desktop locally to track and ensure output stability across runs. You can use the slider for graphs, and the changes window for .txt, .csv. 
 - [ ] Confirm that outputs are consistent across runs:
   - [ ] If discrepancies occur between runs, document them and update the Git repo. If the reproducibility package is in Stata, run `reprun` on it to detect where they start appearing. Project coordinator may return the package to the authors for corrections, detailing the issues found.
 
