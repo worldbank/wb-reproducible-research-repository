@@ -66,8 +66,7 @@ This includes checking that the visualized data, x and y-titles, x and y-ticks, 
 -	The code produces *only* the outputs included in the manuscript.
 -	The code produces *all* statistical tables, data visualization, and any in-text numeric references not directly drawn from tables.
 
-When the reproducibility verification is successfully completed, the reviewer will issue a report indicating the scope and completion of the verification.
-Sections of papers that are theoretical or involve model-based simulations will be excluded from the verification process; the reproducibility certificate will note whether any results were excluded from the verification.
+When the reproducibility verification is successfully completed, the reviewer will issue a report indicating the scope and completion of the verification. If the appendix contains more than 10 exhibits, the reviewer will randomly select 10 for review using a randomization code, which will be made available upon request. Sections of papers that are theoretical or involve model-based simulations will be excluded from the verification process; the reproducibility certificate will note whether any results were excluded from the verification.
 
 ## Reproducibility package publication
 
