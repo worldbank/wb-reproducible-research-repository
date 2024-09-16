@@ -85,7 +85,7 @@ This will help you see if the outputs are changing after you run the code.
   - [ ] If discrepancies occur between runs, document them and update the Git repo. If the reproducibility package is in Stata, run `reprun` on it to detect where they start appearing. Project coordinator may return the package to the authors for corrections, detailing the issues found.
 
 ## 8. Verify consistency with the manuscript
-
+- [ ] If the paper includes an appendix section with more than 10 exhibits, use the randomization code to select 10 exhibits for review.
 - [ ] Compare the raw outputs generated when running the package to the exhibits in the paper:
   - **Tables**: Check for consistent observation numbers, identical coefficients and standard errors, and matching signs and significance indicators.
   - **Graphs**: Ensure axes, legends, and visual values are consistent.
