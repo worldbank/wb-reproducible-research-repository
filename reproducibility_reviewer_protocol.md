@@ -27,14 +27,13 @@
 
 - [ ] Project coordinator will start the metadata, to verify that we have everything we need for the publication of the package, mostly in terms of clarity in the data sources.
 
-### 3. Start Clean Environment
+## 3. Start Clean Environment
 
-- [ ] To assure we don't introduce any noise from personal environments, we want to start from clean environments. Follow these instructions to start in a clean environment:
-  - R: [Link to instructions for starting R in a clean environment]
-  - Stata: [Link to instructions for starting Stata in a clean environment]
-  - Python: [Link to instructions for starting Python in a clean environment]
-
-   
+- [ ] To ensure we don't introduce any errors from personal environments/dependencies, we want to start from clean environments. Follow these instructions to start in a clean environment:
+  - Stata: [Link to instructions for starting Stata in a clean environment](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/environment-instructions/stata.md)
+  - R: [Link to instructions for starting R in a clean environment](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/environment-instructions/R.md)
+  - Python: [Link to instructions for starting Python in a clean environment](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/environment-instructions/python.md)
+    
 ## 4. Version control with Git
 
 - [ ] To see the differences between the author's package and our packages across multiple runs, it is useful to create a Git repository.
@@ -77,15 +76,16 @@ This will help you see if the outputs are changing after you run the code.
 
 ## 7. Verify stability
 
-- [ ] Run the package multiple times based on runtime to ensure stability:
+- [ ] Run the package a second time to ensure stability:
   - Packages with a runtime under a day: run twice.
   - Packages with a runtime over a day: run once.
-- [ ] Use Git locally to track and ensure output stability across runs. 
+- [ ] Commit the results of your second run as `second-run`
+- [ ] Use GitHub Desktop locally to track and ensure output stability across runs. You can use the slider for graphs, and the changes window for .txt, .csv. 
 - [ ] Confirm that outputs are consistent across runs:
   - [ ] If discrepancies occur between runs, document them and update the Git repo. If the reproducibility package is in Stata, run `reprun` on it to detect where they start appearing. Project coordinator may return the package to the authors for corrections, detailing the issues found.
 
 ## 8. Verify consistency with the manuscript
-
+- [ ] If the paper includes an appendix section with more than 10 exhibits, use the randomization code to select 10 exhibits for review.
 - [ ] Compare the raw outputs generated when running the package to the exhibits in the paper:
   - **Tables**: Check for consistent observation numbers, identical coefficients and standard errors, and matching signs and significance indicators.
   - **Graphs**: Ensure axes, legends, and visual values are consistent.

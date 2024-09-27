@@ -16,7 +16,7 @@ The reproducibility package will include:
     - Code should create all figures and in-text numerical citations not drawn directly from tables.
 - [ ] The outputs used for the paper (e.g. tables and figures) in raw form
 - [ ] The final manuscript. The manuscript should be included directly if the paper is not yet published. If the paper is already published, please provide the DOI for the paper.
-- [ ] A ReadMe file that guides future readers through the package and how to proceed with replication. A recommended template  is available at: https://social-science-data-editors.github.io/template_README/
+- [ ] A ReadMe file that guides future readers through the package and how to proceed with replication. A recommended template  is available at: https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources
 
 
 The reproducibility package should not include:
