@@ -50,4 +50,4 @@ Exact content will be agreed in advance with the requesting team. Possible conte
 
 ## Peer code review
 This is a facilitated, structured code exchange which improves the quality and reproducibility of code in real time, open to all World Bank staff and consultants. Peer review is appropriate for any stage of a research project that has a concrete code output. The diagnostic shared at the end of the process provides staff with specific and actionable feedback and a multi-faceted assessment of their research assistant’s coding. Participants also learn from each other about how to write high-quality, reproducible code, and see firsthand how to implement different coding practices.
-- In FY24, peer code reviews will be held in November, February, and May. To participate please email dimeanalytics@worldbank.org.
+- In FY25, peer code reviews will be held in November, February, and May. To participate please email dimeanalytics@worldbank.org.
