@@ -12,7 +12,7 @@ By the end of the course, participants will have the tools and knowledge to impl
 - In person: September 30 - October 3, 2024
 - A virtual edition is planned for March 2025
   
-### Using GitHub for Reproducible and Transparent Research
+## Using GitHub for Reproducible and Transparent Research
 A virtual, hands-on training for research teams interested in transitioning their work to GitHub.
 An introductory session explains how GitHub increases transparency and reproducibility and introduces GitHub workflows.
 Targeted follow-up sessions discuss in detail the ways different team members will interact with the platform,
