@@ -1,0 +1,20 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Reproducible Research Resources
+message: >-
+  If you use materials from this repository, please cite them using the
+  metadata from this file.
+type: generic
+authors:
+  - name: DIME Analytics
+    website: >-
+      https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation/dime-analytics
+repository-code: >-
+  https://github.com/worldbank/wb-reproducible-research-repository
+abstract: >-
+  This repository contains tools and resources produced by
+  DIME Analytics under the World Bank's Reproducible
+  Research initiative. 
+license: BSD-3-Clause-Modification

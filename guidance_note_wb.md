@@ -1,7 +1,6 @@
-# REPRODUCIBLE PUBLICATIONS
-# Guidance Note for World Bank Staff and Consultants
+# Guidance Note for World Bank Staff and Consultants on Reproducible Publications
 
-To enhance the credibility, transparency, and impact of the World Bank’s analytical products, DEC launched a new [Reproducible Research Repository](https://reproducibility.worldbank.org/) that documents the data and code on which analytics are based.
+To enhance the credibility, transparency, and impact of the World Bank’s analytical products, the World Bank's Development Economics Vice Presidency (DEC) launched a new [Reproducible Research Repository](https://reproducibility.worldbank.org/) that documents the data and code on which analytics are based.
 Sharing data and code allow all consumers of research to fully scrutinize the data and methodological choices underlying analytical results.
 It also democratizes development research by allowing others to replicate, build on, and extend research findings.
 Together, scrutiny and sharing improve the credibility, transparency and ultimately the impact of World Bank research.
@@ -13,7 +12,7 @@ Reproducibility verification consists of ensuring that the reviewer can reproduc
 The reviewer will verify that the package is _complete_, producing every output in the manuscript; _stable_, producing the exact same outputs every time it is run; and _consistent with the paper_, meaning that the tables and figures reproduced match exactly those included in the paper.
 This is not a review of the accuracy or quality of the code, the data or the methods applied, or the validity of the research itself.
 
-Detailed guidelines on the process for submission, verification, and publication of reproducibility packages are included below. Any questions can be addressed to the WB Reproducibility team at [reproducibility@worldbank.org](mailto:reproducibility@worldbank.org).
+Detailed guidelines on the process for submission, verification, and publication of reproducibility packages are included below. World Bank staff and consultants can address any questions to the WB Reproducibility team at [reproducibility@worldbank.org](mailto:reproducibility@worldbank.org).
 
 ## Reproducibility package submission
 
@@ -52,7 +51,7 @@ In this case the reviewer focuses on whether the code runs but cannot verify tha
 When the review team receives a package, they will attempt to run the code following the instructions provided.
 Ideally, this will require changing only the topmost directory global specified in the main script and running the main script to reproduce the results – this is what is called a one-button run.
 If the script breaks, the reviewer will identify the point where it is breaking, document it, and make changes required to continue with the review.
-If the changes required cannot be identified after 1 hour of review, the package will be returned to the authors with as much detail as possible on the revisions that are required to proceed with the reproducibility verification.
+If the changes required cannot be implemented by the reviewer, the package will be returned to the authors with as much detail as possible on the revisions that are required to proceed with the reproducibility verification.
 
 If the code runs from beginning to end, the reviewer will proceed to evaluate whether the outputs are complete, stable, and consistent with the manuscript.
 Specifically, the reviewer will check the following:
@@ -66,7 +65,7 @@ This includes checking that the visualized data, x and y-titles, x and y-ticks, 
 -	The code produces *only* the outputs included in the manuscript.
 -	The code produces *all* statistical tables, data visualization, and any in-text numeric references not directly drawn from tables.
 
-When the reproducibility verification is successfully completed, the reviewer will issue a report indicating the scope and completion of the verification. If the appendix section contains more than 10 exhibits, the reviewer will randomly select 10 for review using a randomization code, which will be made available upon request. Sections of papers that are theoretical or involve model-based simulations will be excluded from the verification process; the reproducibility certificate will note whether any results were excluded from the verification.
+For more details on the review process, see the complete [Reproducibility Verification Protocol](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/reproducibility_reviewer_protocol.md). When the reproducibility verification is successfully completed, the reviewer will issue a report indicating the scope and completion of the verification. If the appendix section contains more than 10 exhibits, the reviewer will randomly select 10 for review using a randomization code, which will be made available upon request. Sections of papers that are theoretical or involve model-based simulations will be excluded from the verification process; the reproducibility certificate will note whether any results were excluded from the verification.
 
 ## Reproducibility package publication
 
