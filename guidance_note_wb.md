@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Guidance Note for World Bank Staff and Consultants on Reproducible Publications
 
 To enhance the credibility, transparency, and impact of the World Bank’s analytical products, the World Bank's Development Economics Vice Presidency (DEC) launched a new [Reproducible Research Repository](https://reproducibility.worldbank.org/) that documents the data and code on which analytics are based.
@@ -8,7 +13,7 @@ Together, scrutiny and sharing improve the credibility, transparency and ultimat
 The Reproducible Research Repository contains the instructions and materials, known as “reproducibility packages”, which are required to generate the results in a specific publication.
 To ensure the credibility of the repository, reproducibility packages are verified to ensure that they are complete and fully functional before they are posted in the repository.
 
-Reproducibility verification consists of ensuring that the reviewer can reproduce exactly the outputs (statistical tables and data visualizations) in the publication by running the reproducibility package provide by the authors.
+Reproducibility verification consists of ensuring that the reviewer can reproduce exactly the outputs (statistical tables and data visualizations) in the publication by running the reproducibility package provided by the authors.
 The reviewer will verify that the package is _complete_, producing every output in the manuscript; _stable_, producing the exact same outputs every time it is run; and _consistent with the paper_, meaning that the tables and figures reproduced match exactly those included in the paper.
 This is not a review of the accuracy or quality of the code, the data or the methods applied, or the validity of the research itself.
 
@@ -19,7 +24,7 @@ Detailed guidelines on the process for submission, verification, and publication
 To initiate the process, the authors complete a short reproducibility verification request form available [here](https://forms.microsoft.com/r/pNgUaJUNBJ).
 Authors provide the reproducibility package through a GitHub repository, a OneDrive folder or other cloud-based sharing service, or, for small datasets, a compressed folder sent directly by email to [reproducibility@worldbank.org](mailto:reproducibility@worldbank.org).
 The reproducibility package must contain all elements in the [Reproducibility Package Checklist](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/reproducibility_package_checklist.md).
-The package should be organized in a file structure that facilitates re-running the code (e.g., data, code, and outputs are in separate folders and the package includes [readme](https://github.com/worldbank/wb-reproducible-research-repository/raw/main/resources/README_Template.docx) and/or a [main script](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/main.do) that clearly specifies the order in which code files should be run).
+The package should be organized in a file structure that facilitates re-running the code (e.g., data, code, and outputs are in separate folders and the package includes [readme](https://github.com/worldbank/wb-reproducible-research-repository/raw/main/resources/README_Template.docx) and ideally a [main script](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/main.do) that clearly specifies the order in which code files should be run).
 
 The package for review should include the input data directly unless there are access restrictions that limit sharing with World Bank staff.
 Authors must specify in the submission form whether the data can be included in the published reproducibility package.
