@@ -1,6 +1,6 @@
 # Guidance Note for World Bank Staff and Consultants on Reproducible Publications
 
-To enhance the credibility, transparency, and impact of the World Bank’s analytical products, DEC launched a new [Reproducible Research Repository](https://reproducibility.worldbank.org/) that documents the data and code on which analytics are based.
+To enhance the credibility, transparency, and impact of the World Bank’s analytical products, the World Bank's Development Economics Vice Presidency (DEC) launched a new [Reproducible Research Repository](https://reproducibility.worldbank.org/) that documents the data and code on which analytics are based.
 Sharing data and code allow all consumers of research to fully scrutinize the data and methodological choices underlying analytical results.
 It also democratizes development research by allowing others to replicate, build on, and extend research findings.
 Together, scrutiny and sharing improve the credibility, transparency and ultimately the impact of World Bank research.
@@ -65,7 +65,7 @@ This includes checking that the visualized data, x and y-titles, x and y-ticks, 
 -	The code produces *only* the outputs included in the manuscript.
 -	The code produces *all* statistical tables, data visualization, and any in-text numeric references not directly drawn from tables.
 
-When the reproducibility verification is successfully completed, the reviewer will issue a report indicating the scope and completion of the verification. If the appendix section contains more than 10 exhibits, the reviewer will randomly select 10 for review using a randomization code, which will be made available upon request. Sections of papers that are theoretical or involve model-based simulations will be excluded from the verification process; the reproducibility certificate will note whether any results were excluded from the verification.
+For more details on the review process, see the complete [Reproducibility Verification Protocol](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/reproducibility_reviewer_protocol.md). When the reproducibility verification is successfully completed, the reviewer will issue a report indicating the scope and completion of the verification. If the appendix section contains more than 10 exhibits, the reviewer will randomly select 10 for review using a randomization code, which will be made available upon request. Sections of papers that are theoretical or involve model-based simulations will be excluded from the verification process; the reproducibility certificate will note whether any results were excluded from the verification.
 
 ## Reproducibility package publication
 
