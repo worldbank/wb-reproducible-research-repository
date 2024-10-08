@@ -1,4 +1,10 @@
+---
+layout: single
+title: "Checklist"
+---
+
 # Checklist for World Bank Reproducibility Packages
+
 The reproducibility package for World Bank research should include all components in the checklist below.
 Authors of Policy Research Working Papers (PRWPs) may request a reproducibility verification at https://prwp.
 The authors will provide a link to the complete reproducibility package (OneDrive or GitHub),

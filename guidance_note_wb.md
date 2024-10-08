@@ -1,8 +1,8 @@
 ---
-output:
-  pdf_document: default
-  html_document: default
+layout: single
+title: "Guidance to Authors"
 ---
+
 # Guidance Note for World Bank Staff and Consultants on Reproducible Publications
 
 To enhance the credibility, transparency, and impact of the World Bank’s analytical products, the World Bank's Development Economics Vice Presidency (DEC) launched a new [Reproducible Research Repository](https://reproducibility.worldbank.org/) that documents the data and code on which analytics are based.

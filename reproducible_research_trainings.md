@@ -1,4 +1,10 @@
+---
+layout: single
+title: "Trainings"
+---
+
 # Reproducible Research Training Schedule - FY25
+
 The following training courses are planned for FY25. Courses are open to all Bank staff and consultants.
 Please contact reproducibility@worldbank.org for further information or to request a registration link.
 

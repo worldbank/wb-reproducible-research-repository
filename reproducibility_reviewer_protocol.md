@@ -1,3 +1,7 @@
+---
+layout: single
+title: "Reviewer Protocol"
+---
 
 # PRWP Reproducibility Protocol
 
