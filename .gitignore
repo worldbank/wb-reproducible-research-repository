@@ -36,6 +36,7 @@
 # top folder (but not their content), so that anything matching
 # the rules below will still not be ignored.
 !*/
+!*.yml
 
 #######################
 # The following file types are code that should always be
