@@ -1,6 +1,6 @@
 title: "World Bank Reproducible Research Repository"
 description: "Guidance to Authors, Checklist, Reviewer Protocol, and Tools for reproducibility."
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: pages-themes/cayman
 baseurl: ""  # Keep this empty
 url: "https://worldbank.github.io/wb-reproducible-research-repository"  # Replace with your GitHub username and repository name
 
