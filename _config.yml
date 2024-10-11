@@ -1,16 +1,20 @@
 title: "World Bank Reproducible Research Repository"
 description: "Guidance to Authors, Checklist, Reviewer Protocol, and Tools for reproducibility."
-remote_theme: pages-themes/cayman@v0.2.0  # Apply the Cayman theme
+remote_theme: pages-themes/cayman@v0.2.0
+
+# URL settings
+url: "https://worldbank.github.io/wb-reproducible-research-repository"
+baseurl: ""  # Keep this empty unless you are using a subdirectory
+
+# Enable plugins for remote themes
 plugins:
-  - jekyll-remote-theme  # Required for using remote themes
+  - jekyll-remote-theme
 
-baseurl: ""  # Keep this empty
-url: "https://worldbank.github.io/wb-reproducible-research-repository"  
-
-# Navigation settings for the menu
+# Optional: Define your header pages for navigation
 header_pages:
   - index.md
   - guidance_note_wb.md
   - reproducibility_package_checklist.md
   - reproducibility_reviewer_protocol.md
   - reproducible_research_trainings.md
+
