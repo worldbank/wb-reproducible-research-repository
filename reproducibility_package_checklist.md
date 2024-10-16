@@ -12,7 +12,7 @@ information on programming language(s), and approximate run time.
 Questions should be directed to reproducibility@worldbank.org.
 
 The reproducibility package will include:
-- [ ]	A link to the complete reproducibility package on either OneDrive or GitHub. The directory should include all the below components:
+- [ ] A link to the complete reproducibility package on either OneDrive or GitHub. The directory should include all the below components:
 - [ ] A Data Availability Statement with a link to the dataset(s) (if public) or a description of how/where/when a third party could access the data (if confidential or embargoed). It should describe any restrictions to data access, publication or storage/ retention period based on data terms of use.
 - [ ] All data files required for the analysis (for purpose of reproducibility verification only, see here for publication guidelines and embargo options for reproducibility packages).
     - Data should be shared via WB OneDrive with 'DEC Reproducibility Verification - WB Group' when possible.

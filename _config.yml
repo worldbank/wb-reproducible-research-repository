@@ -17,5 +17,6 @@ header_pages:
   - guidance_note_wb.md
   - reproducibility_package_checklist.md
   - reproducibility_reviewer_protocol.md
+  - resources.md
   - reproducible_research_trainings.md
 
