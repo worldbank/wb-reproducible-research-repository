@@ -3,7 +3,7 @@ description: "Guidance to Authors, Checklist, Reviewer Protocol, and Tools for r
 remote_theme: pages-themes/cayman@v0.2.0
 
 # URL settings
-url: "https://worldbank.github.io/wb-reproducible-research-repository"
+url: "https://worldbank.github.io"
 baseurl: "/wb-reproducible-research-repository"  # Keep this empty unless you are using a subdirectory
 
 # Enable plugins for remote themes
