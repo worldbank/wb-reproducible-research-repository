@@ -1,4 +1,4 @@
-----
+---
 layout: default
 title: "Resources"
 ---
@@ -8,7 +8,7 @@ title: "Resources"
 This section provides useful templates, main files, and environment setup instructions to help you build reproducibility packages efficiently.
 
 ## README Templates
-- [README Template (Markdown)](./resources/README_Template.md)  
+- [README Template (Markdown)](https://raw.githubusercontent.com/worldbank/wb-reproducible-research-repository/refs/heads/main/resources/README_Template.md)  
   *Use this as a guide if you're working on a reproducibility package to include all required elements.*
 
 - [README Template (Word)](./resources/README_Template.docx)  
