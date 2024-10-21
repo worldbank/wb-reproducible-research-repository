@@ -1,10 +1,4 @@
-
----
-title: "README Template for Reproducibility Packages"
-output:
-  word_document: default
-  html_document: default
----
+# Template README and Guidance
 
 - This README template is designed to be included in reproducibility packages to provide directions for replicating the results in the research paper. The sections mentioned below should be included to guide users through the replication process. This template is meant to offer guidance, and authors should feel free to adapt and expand upon it. 
 
