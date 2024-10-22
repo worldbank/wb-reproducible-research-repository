@@ -14,12 +14,14 @@ than 10 tables in appendix
 	- Set Min as 100000
 	- Set Max as 999999
 	
-3. Copy the generated seed on line 34 as well as the GH issue (VERY IMPORTANT) 
+3. Copy the generated seed on line 37 as well as the GH issue (VERY IMPORTANT) 
 for the package so the code can be reprodced.
 
-4. Set number of tables in appendix in line 37
+4. Set the Stata version on line 34
 
-5. Line 50 will give a list of tables that need to be verified
+5. Set number of exhibits in appendix in line 40
+
+6. Line 53 will give a list of tables that need to be verified
 
 ***NOTE: 	
 
@@ -29,6 +31,7 @@ select the same tables if n_exhibit remains the same.
 
 // Clear environment
 clear
+version XX
 
 // Set seed for randomization 
 set seed XXXXXX
