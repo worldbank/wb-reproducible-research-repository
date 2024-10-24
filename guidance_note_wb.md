@@ -24,7 +24,7 @@ Detailed guidelines on the process for submission, verification, and publication
 To initiate the process, the authors complete a short reproducibility verification request form available [here](https://forms.microsoft.com/r/pNgUaJUNBJ).
 Authors provide the reproducibility package through a GitHub repository, a OneDrive folder or other cloud-based sharing service, or, for small datasets, a compressed folder sent directly by email to [reproducibility@worldbank.org](mailto:reproducibility@worldbank.org).
 The reproducibility package must contain all elements in the [Reproducibility Package Checklist](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/reproducibility_package_checklist.md).
-The package should be organized in a file structure that facilitates re-running the code (e.g., data, code, and outputs are in separate folders and the package includes [readme](https://github.com/worldbank/wb-reproducible-research-repository/raw/main/resources/README_Template.docx) and ideally a [main script](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/main.do) that clearly specifies the order in which code files should be run).
+The package should be organized in a file structure that facilitates re-running the code (e.g., data, code, and outputs are in separate folders and the package includes [README](https://github.com/worldbank/wb-reproducible-research-repository/raw/main/resources/README_Template.docx) and ideally a [main script](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/main.do) that clearly specifies the order in which code files should be run).
 
 The package for review should include the input data directly unless there are access restrictions that limit sharing with World Bank staff.
 Authors must specify in the submission form whether the data can be included in the published reproducibility package.
@@ -76,7 +76,7 @@ For more details on the review process, see the complete [Reproducibility Verifi
 
 Once the reproducibility package is verified, the reviewer will prepare it for publication in the Reproducible Research Repository at [reproducibility.worldbank.org](https://reproducibility.worldbank.org).
 The reviewer will prepare the metadata for the package and draft the catalogue entry, then share the draft entry with the authors for confirmation prior to publication.
-The published reproducibility package will include the following components: a readme with instructions for running the package and a clear data availability statement, all code files, data files (if data publication is permissible), a license file, and the reproducibility report with details on the reproducibility verification.
+The published reproducibility package will include the following components: a README with instructions for running the package and a clear data availability statement, all code files, data files (if data publication is permissible), a license file, and the reproducibility report with details on the reproducibility verification.
 Each published reproducibility package will have a DOI to facilitate discovery, cross-linking and citation.
 
 Depending on access restrictions, data in the reproducibility package will take one of the following forms:

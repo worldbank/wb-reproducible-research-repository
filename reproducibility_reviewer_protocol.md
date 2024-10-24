@@ -14,6 +14,10 @@ This protocol outlines the step-by-step process for verifying the reproducibilit
 - **Project coordinator**:
   - Log new submissions in the GitHub project.
   - Open an issue with the format **ID: TYPE_ISO_YEAR_NUMBER** (e.g., RR_NGA_2024_213).
+  - Types options are the following. 
+    - **PP**: published paper.
+    - **RR**: Policy Research Working Paper.
+    - **FR**: Flagships and reports (this category includes databases so far).
   - Assign the reviewer, download the files, and store them in the designated folder (onedrive named after ID)
 
 ## 2.a Verify completeness
@@ -43,9 +47,9 @@ This protocol outlines the step-by-step process for verifying the reproducibilit
     
 ## 4. Version control with Git
 
+- [ ] Locate the folder of the reproducibility package and add a ` .gitignore` file. You can use [this template](https://github.com/worldbank/DIME-LaTeX-Templates/blob/master/.gitignore). Adjust it as needed, as this is ignoring a lot of things.
 - [ ] Create a Git repository to track changes.
 - [ ] Use **GitHub Desktop** to create the repository in the package’s location.
-- [ ] Add a `.gitignore` file using [this template](https://github.com/worldbank/DIME-LaTeX-Templates/blob/master/.gitignore). Adjust it as needed.
 - [ ] Commit the initial package received from the authors.
 - **Important:** We only use **GitHub Desktop** locally and do not publish the repository on GitHub.com.
 
@@ -53,9 +57,12 @@ This will help you see if the outputs are changing after you run the code.
 
 ## 5. Run the package
 
+- [ ] Before starting the run of the package delete the author's outputs and the intermediate data. To make sure the code goes from raw data to analysis results, and all outputs are created by the code. Sometimes there are xlsx files the authors used to create figures, make sure this is explained in the README, in which case you wouldn't delete this file.  
+- [ ] Make sure you followed step 3 and are starting from a clean slate, and this is included in the code if needed (for instance ` sysdir set PLUS` in Stata and set `version` in the main script)
 - [ ] Check if it runs from start to finish by only changing the top-level directory.
 - [ ] Document any modifications required to run the package (this will be done automatically in git).
 - [ ] Troubleshoot if the package does not run, often due to missing dependencies.
+- [ ] Use the GitHUB issue to document any meaningful changes you had to do for the code to run.
 - [ ] Commit to the git repo as `first-run`
 
 **Document these critical aspects as you prepare and run the package:**
@@ -92,7 +99,7 @@ This will help you see if the outputs are changing after you run the code.
 
 ## 8. Verify consistency with the manuscript
 
-- [ ] For papers with more than 10 exhibits in the appendix, randomly select 10 exhibits for review using [this randomization code](https://github.com/dime-worldbank/prwp-reproducibility-int/blob/main/resources/select_appendix_exhibits.do).
+- [ ] For papers with more than 10 exhibits in the appendix, randomly select 10 exhibits for review using [this randomization code](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/select_appendix_exhibits.do).
 - [ ] Compare raw outputs to paper exhibits:
   - **Tables:** Ensure consistent observation counts, coefficients, standard errors, signs, and significance indicators.
   - **Graphs:** Verify axes, legends, and visual values match.
