@@ -102,6 +102,6 @@ The reproducibility package will be published concurrently with the publication.
 The cover page of the publication will include the Reproducible Research Seal to indicate that a verified reproducibility package is available, and provide the permanent URL for the package.
 The publication, the reproducibility package in the Reproducible Research Repository, and any data sources in the MicroData Library or Development Data Hub will all be cross-linked to maximize discoverability.
 
-<a href="./index.html" style="display: inline-block; padding: 10px 15px; font-size: 16px; font-weight: bold; color: white; background-color: #0366d6; border-radius: 5px; text-decoration: none;">Back to Home</a>
+[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](/index.html)
 
 
