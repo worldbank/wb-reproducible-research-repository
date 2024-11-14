@@ -39,3 +39,8 @@ title: "World Bank Reproducible Research Repository Resources"
   </li>
 </ul>
 
+<h2>DIME Analytics</h2>
+ <div style="text-align: center; padding: 20px; border-top: 1px solid #ddd; margin-top: 20px;">
+    <p><strong>Tools developed and maintained by <a href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation/dime-analytics" target="_blank">DIME Analytics</a></strong></p>
+    <p>DIME Analytics, part of the Development Impact Group, creates tools that improve the quality of impact evaluation research. We provide open-source and open-access resources, virtual courses, and solutions to ensure high-quality, reproducible research for the global development research community.</p>
+  </div>
