@@ -3,6 +3,8 @@ layout: default
 title: "Checklist"
 ---
 
+[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](./index.html)
+
 # Checklist for World Bank Reproducibility Packages
 
 The reproducibility package for World Bank research should include all components in the checklist below.
@@ -29,3 +31,5 @@ The reproducibility package will include:
 The reproducibility package should not include:
 - Any code or datasets that are not necessary for the set of results included in the paper (or appendices)
 - Any extraneous documentation (such as project notes or internal communication)
+
+[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](./index.html)

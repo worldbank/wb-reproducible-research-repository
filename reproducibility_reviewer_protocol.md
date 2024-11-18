@@ -3,6 +3,8 @@ layout: default
 title: "Reviewer Protocol"
 ---
 
+[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](./index.html)
+
 # PRWP Reproducibility Protocol
 
 This protocol outlines the step-by-step process for verifying the reproducibility of research packages submitted to the World Bank’s PRWP verification team. It ensures that research findings can be independently replicated using the provided code, data, and instructions. The protocol covers the entire workflow—from receiving submissions, verifying completeness and data access, running the package in a clean environment, tracking changes with version control, and checking consistency with the original manuscript, to publishing the final reproducibility package. 
@@ -145,3 +147,6 @@ This will help you see if the outputs are changing after you run the code.
 
 - [ ] The **Project coordinator** sends the final report and package to the authors, including any unresolved issues.
 - [ ] Discuss optional suggestions with the authors before publication. If changes are made, they need to resubmit and a revised report must be prepared.
+
+
+[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](./index.html)

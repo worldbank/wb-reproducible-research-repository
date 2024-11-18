@@ -3,6 +3,8 @@ layout: default
 title: "Resources"
 ---
 
+[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](./index.html)
+
 # Resources for Reproducibility
 
 This section provides useful templates, main files, and environment setup instructions to help you build reproducibility packages efficiently.
@@ -35,4 +37,5 @@ It’s important to isolate your environment to ensure reproducibility. Follow t
 
 ---
 
+[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](./index.html)
 
