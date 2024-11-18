@@ -19,14 +19,16 @@ The reproducibility package will include:
     - Data should be shared via WB OneDrive with 'DEC Reproducibility Verification - WB Group' when possible.
     - If the data cannot be shared via OneDrive (e.g., large datasets), please email reproducibility@worldbank.org to discuss alternatives.
 - [ ] All code files required to go from the original data to the results in the paper.
-    - We strongly recommend a main script that runs all code files. The main script should be in the root directory and should set directory path(s) in one location only. If the package does not include a main script, it must have a readme that specifies the order of execution of code files.
+    - We strongly recommend a main script that runs all code files. The main script should be in the root directory and should set directory path(s) in one location only.
+    - If the package does not include a main script, it must have a readme that specifies the order of execution of code files.
     - Code should create all figures and in-text numerical citations not drawn directly from tables.
 - [ ] The final manuscript. The manuscript should be included directly if the paper is not yet published. If the paper is already published, please provide the DOI for the paper.
 - [ ] A README file that guides future readers through the package and how to proceed with replication. A recommended template  is available [here](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/README_Template.md) 
 - [ ] A Data Availability Statement with (this can be part of the README file): 
      -  A link to the dataset(s) (if public) or a description of how/where/when a third party could access the data (if confidential or embargoed). 
      -  It should describe any restrictions to data access, publication or storage/ retention period based on data terms of use.
-- [ ] The outputs used for the paper (e.g. tables and figures) in raw form
+- [ ] The outputs used for the paper (e.g. tables and figures) in raw form.
+     - **Optional**: If the manuscript was written in LaTeX and includes .tex generated outputs, include the .tex file(s) used to compile the manuscript (e.g., an Overleaf export or equivalent). This allows for easier verification of the alignment between code-generated outputs and the manuscript.    
 
 The reproducibility package should not include:
 - Any code or datasets that are not necessary for the set of results included in the paper (or appendices)
