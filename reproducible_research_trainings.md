@@ -19,7 +19,7 @@ The following training courses are open to all World Bank staff and consultants.
 
 This week-long course covers:  
 ✅ Best practices for reproducible workflows.  
-✅ Make your research more reproducible using GitHub. 
+✅ Make your research more reproducible using GitHub.  
 ✅ Secure handling of personal data.  
 
 💡 *Hands-on labs with GitHub, Stata, and R.*  
