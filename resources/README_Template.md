@@ -50,6 +50,11 @@ You can use the following as a template. Make sure to fill out this information 
 
 - **License (optional):** While this is not mandatory, it is great to know under which license the data is available to understand if it is public or private, or publication limitations.
 
+### Statement about Rights
+
+- [ ] I certify that the author(s) of the manuscript have legitimate access to and permission to use the data used in this manuscript.
+- [ ] I certify that the author(s) of the manuscript have documented permission to redistribute/publish the data contained within this replication package. Appropriate permission are documented in the LICENSE.txt file.
+
 ## Instructions for Replicators
 
 New users should follow these steps to run the package successfully:
