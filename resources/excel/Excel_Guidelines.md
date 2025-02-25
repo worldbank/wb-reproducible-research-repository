@@ -9,7 +9,7 @@ In our experience, we’ve encountered **three** common cases when it comes to p
 ![](../../img/excel_cases.png)
 
 -   If your package falls under **Case 1**, we recommend reviewing the entire document thoroughly.
--   If your package falls under Case 2 or Case 3, focus on Point 4 in [Setting up Excel: Best Practices to Follow](## Setting up Excel: Best Practices to Follow) as well as [Using Excel as a Secondary Software](## Using Excel as a Secondary Software).
+-   If your package falls under Case 2 or Case 3, focus on Point 4 in [Setting up Excel: Best Practices to Follow](#setting-up-excel-best-practices-to-follow) as well as [Using Excel as a Secondary Software](#using-excel-as-a-secondary-software).
 
 ## Setup
 
