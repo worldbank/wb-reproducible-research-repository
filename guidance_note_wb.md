@@ -23,7 +23,7 @@ Detailed guidelines on the process for submission, verification, and publication
 
 ## Reproducibility package submission
 
-To initiate the process, the authors complete a short reproducibility verification request form available [here](https://forms.microsoft.com/r/pNgUaJUNBJ).
+To initiate the process, the authors complete a short reproducibility verification request form available [here](https://survey.wb.surveycto.com/collect/prwp_reproducibility?caseid=).
 Authors provide the reproducibility package through a GitHub repository, a OneDrive folder or other cloud-based sharing service, or, for small datasets, a compressed folder sent directly by email to [reproducibility@worldbank.org](mailto:reproducibility@worldbank.org).
 The reproducibility package must contain all elements in the [Reproducibility Package Checklist](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/reproducibility_package_checklist.md).
 The package should be organized in a file structure that facilitates re-running the code (e.g., data, code, and outputs are in separate folders and the package includes [README](https://github.com/worldbank/wb-reproducible-research-repository/raw/main/resources/README_Template.docx) and ideally a [main script](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/main.do) that clearly specifies the order in which code files should be run).
