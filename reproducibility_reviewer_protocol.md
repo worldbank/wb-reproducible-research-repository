@@ -7,70 +7,74 @@ title: "Reviewer Protocol"
 
 # PRWP Reproducibility Protocol
 
-This protocol outlines the step-by-step process for verifying the reproducibility of research packages submitted to the World Bank’s PRWP verification team. It ensures that research findings can be independently replicated using the provided code, data, and instructions. The protocol covers the entire workflow—from receiving submissions, verifying completeness and data access, running the package in a clean environment, tracking changes with version control, and checking consistency with the original manuscript, to publishing the final reproducibility package. 
+This protocol outlines the step-by-step process for verifying the reproducibility of research packages submitted to the World Bank’s PRWP verification team. It ensures that research findings can be independently reproduced using the provided code, data, and instructions. The protocol covers the entire workflow—from receiving submissions, verifying completeness including data access and documentation, running the package in a clean environment, tracking changes with version control, and checking consistency with the original manuscript, to publishing the final reproducibility package.
 
 ## 1. Receive submission
 
-- Submissions come in through MS Form.
-- **Power Automate** sends an automatic reply to the authors, indicating feedback will be provided within two days.
+- Submissions come in through the [submission form](https://survey.wb.surveycto.com/collect/prwp_reproducibility?caseid=).
+- **Power Automate** sends an automatic reply to the authors, indicating a confirmation will be provided within two days.
 - **Project coordinator**:
   - Log new submissions in the GitHub project.
-  - Open an issue with the format **ID: TYPE_ISO_YEAR_NUMBER** (e.g., RR_NGA_2024_213).
-  - Types options are the following. 
+  - Open an issue with the format **ID: TYPE_LOCATION_YEAR_NUMBER** (e.g., RR_NGA_2024_213).
+  - Types options are the following.
     - **PP**: published paper.
     - **RR**: Policy Research Working Paper.
     - **FR**: Flagships and reports (this category includes databases so far).
-  - Assign the reviewer, download the files, and store them in the designated folder (onedrive named after ID)
+  - Assign the reviewer, download the files, and store them in the designated folder (internal SharePoint named after the review ID)
 
 ## 2.a Verify completeness
 
-- Reviewer verifies the package includes all components as per the checklist [here](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/reproducibility_package_checklist.md): 
+- Reviewer verifies the package includes all components as per the checklist [here](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/reproducibility_package_checklist.md):
   - [ ] Code files going from original data to the results in the paper (and ideally nothing else).
-  - [ ] The data files required for analysis.
+  - [ ] The raw data files required for analysis.
   - [ ] The raw outputs.
   - [ ] A README file that explains how to run the package and explains data sources and any access restrictions. It's also okay if data details are provided in a separate data availability statement.
   - [ ] A link to the manuscript (if already published) or the manuscript itself.
   - [ ] Make note of any missing components (even if they do not affect the running of the package).
-  - [ ] If the package has no README and no information on the data, it gets returned to the author. If there is no main script, but the README is clear, we can work with that, but ideally, it would contain a main script.
+  - [ ] If the package has no README and no information on the data, it gets returned to the author. If there is no main script, but the README is clear, we can work with that; but ideally, it would contain a main script.
 
 ## 2.b Verify data access
 
-- [ ] Verify the status of the data: is it public, is it private, is it public but can't be reshared?
+- [ ] Verify the status of the data: is it public, is it private, or is it public but can't be redistributed?
   - If the data cannot be directly included in the package (private, confidential, or public but not allowed to be republished), verify that the data is accessible by following instructions in the README or data availability statement.
-- [ ] Verify that the instructions for data access are sufficiently clear.
-- [ ] Verify that any datasets published directly to the repository do not contain any identifying information.
+- [ ] Verify that data provenance information is complete. This should include:
+  - Dataset name
+  - Date it was accessed. Month, year is enough.
+  - If the data is accessible in a website, it should have a data URL where it can be downloaded.
+  - If the data is restricted, the data information should include how it was accessed and how other users could access the data.
+- [ ] Verify that any datasets that will be published directly to the repository do not contain any identifying information.
+- [ ] Initiate the entry in the metadata editor and verify that we have everything we need for the publication of the package, especially in terms of clarity in the data sources.
+- [ ] If the package has not enough information on the data, ask the authors for all missing information.
 
-- [ ] Mer / Luise will start the metadata, to verify that we have everything we need for the publication of the package, mostly in terms of clarity in the data sources.
-
-## 3. Start Clean Environment
+## 3. Start a clean programming environment
 
 - [ ] Start with clean environments to avoid dependency conflicts. Follow these instructions:
   - **Stata:** [Link to instructions](https://worldbank.github.io/wb-reproducible-research-repository/resources/environment-instructions/stata.html)
   - **R:** [Link to instructions](https://worldbank.github.io/wb-reproducible-research-repository/resources/environment-instructions/R.html)
   - **Python:** [Link to instructions](https://worldbank.github.io/wb-reproducible-research-repository/resources/environment-instructions/python.html)
-    
+
 ## 4. Version control with Git
 
-- [ ] To see the differences between the author's package and our packages across multiple runs, it is useful to create a Git repository.
+- To see the differences between the author's package and our packages across multiple runs, create a Git repository.
 - [ ] Open GitHub Desktop and create a new repository in the location of the package.
 - [ ] Add the `.gitignore` file to avoid tracking all the files. You can use [this template](https://github.com/worldbank/DIME-LaTeX-Templates/blob/master/.gitignore), but you might need to adapt it.
 - [ ] Commit the initial package sent by the authors.
-- [ ] Important: We only use GitHub Desktop for this process; we won't publish this EVER on GitHub.com.
+- [ ] Important: We only a local repository for this process, we won't publish this **ever** on GitHub.com.
 
 This will help you see if the outputs are changing after you run the code.
 
 ## 5. Run the package
 
-- [ ] Before starting the run of the package delete the author's outputs and the intermediate data. To make sure the code goes from raw data to analysis results, and all outputs are created by the code. Sometimes there are xlsx files the authors used to create figures, make sure this is explained in the README, in which case you wouldn't delete this file.  
+- [ ] Before starting the run of the package, delete the author's outputs and the intermediate data. This makes sure the code goes from raw data to analysis results, and all outputs are created by the code. If there are files the authors used to create figures (for example: Excel files where code results are manually transformed into figures), make sure this is explained in the README, in which case you wouldn't delete this file.  
 - [ ] Check if it runs from start to finish by only changing the top-level directory.
 - [ ] Document any lines that needed modifications to run the package.
-- [ ] Troubleshoot if the package does not run, often due to missing dependencies.
+- [ ] Troubleshoot if the package does not run. Keep in mind this is often due to missing dependencies.
 - [ ] Commit to the Git repo as `first-run`
 
 **Document these critical aspects as you prepare and run the package:**
 
 #### 1. Dependencies
-- [ ] **List all Dependencies**: Record all libraries, packages, and other dependencies necessary for the package. This will be saved in the ado folder (Stata), requirements.txt (Python) or renv.lock (R).
+- [ ] **List all Dependencies**: Record all libraries, packages, and other dependencies necessary for the package. This will be saved in the ado folder (Stata), `environment.yml` (Python) or `renv.lock` (R).
 
 #### 2. Changes Made
 - [ ] **Detail all Changes Made**: Note any changes made to get the package to run properly, including installation of packages, path modifications, or minor code adjustments. These changes should be documented on the GitHub issue.
@@ -79,25 +83,22 @@ This will help you see if the outputs are changing after you run the code.
 - [ ] **Record System Information**: Detail the system specifics where the package is run, including Operating System, Processor, Memory Available, and Software Version (including edition for Stata).
 
 #### 4. Time Spent
-- [ ] **Record Time Spent**: Document the time spent, noted in a comment on the GitHub issue, tagging Luise or Mer.
+- [ ] **Record Time Spent**: Document the time spent since the beginning of the review until the reproducibility package is published (see below).
 
 
 ## 6. Confirm initial run
 
 - [ ] If the package runs successfully from start to finish:
   - [ ] Note the run time.
-  - [ ] Contact Mer/Luise with your findings.
-  - [ ] Mer/Luise will send confirmation to the authors with an estimated date for the return of the report.
-  - [ ] Request any missing information for the package or publication from Mer/Luise.
+  - [ ] Send the confirmation to the authors with an estimated date for the return of the report (2 weeks).
+  - [ ] Notify the authors of any missing information for the publication.
 
 ## 7. Verify stability
 
-- [ ] Run the package multiple times based on runtime to ensure stability:
-  - Packages with a runtime under a day: run twice.
-  - Packages with a runtime over a day: run once.
-- [ ] Use Git locally to track and ensure output stability across runs. 
+- [ ] Run the package one more time based to ensure stability. If the package takes more than 3 days to run, though, feel free to omit this step.
+- [ ] Use Git locally to track and ensure output stability across runs.
 - [ ] Confirm that outputs are consistent across runs:
-  - [ ] If discrepancies occur between runs, document them and update the Git repo. If the reproducibility package is in Stata, run `reprun` on it to detect where they start appearing. Mer/Luise may return the package to the authors for corrections, detailing the issues found.
+  - [ ] If discrepancies occur between runs, document them and update the Git repo. If the reproducibility package is in Stata, run `reprun` on it to detect where they start appearing. If it's in R or Python, or if `reprun` didn't work, discuss with the coordinator or the rest of the team to try to find where the issue is. Return the package to the authors for corrections, detailing the issues found.
 
 ## 8. Verify consistency with the manuscript
 
@@ -110,15 +111,15 @@ This will help you see if the outputs are changing after you run the code.
 
 ## 9. Draft Reproducibility Report
 
-- [ ] Reviewers are tasked with producing a first draft of the reproducibility report using an Overleaf template [here](https://www.overleaf.com/2996348989fbgvwfqrxgtj#6ccc49).
+- [ ] Use the Overleaf template [here](https://www.overleaf.com/2996348989fbgvwfqrxgtj#6ccc49) or the template generator (internal only) [here](https://github.com/dime-worldbank/prwp-reproducibility-int/tree/main/verification_report_template/template_generator) to produce a first draft of the reproducibility report.
   - [ ] **Successful Reproduction**:
-    - Compile any code suggestions separately; these will be communicated to the authors via email by Mer and Luise.
-    - In the "Main Findings" section of the report, do not include procedural steps already incorporated into the final package. For example, omit details like the execution of `set varabbrev on` or the installation of libraries that are already included in the provided code.
+    - List any code suggestions separately and communicate then to the authos via email when sending the results.
+    - In the "Main Findings" section of the report, do not include procedural steps already incorporated into the final package. For example, omit details like the execution of `set varabbrev on` or the installation of libraries that are already included in the provided code. Only include what external users will need to modify to run the code on their computers.
   - [ ] **Unsuccessful Reproduction**:
-    - Include code suggestions directly in the report, detailing the normal steps followed during the package run.
-- [ ] If you ran the code include the computer specifications at the end of the report, if someone else did this step, then include that person's computer specifications.
-- [ ] Once the draft is complete, send it to Mer and Luise for review.
-- [ ] Document the time spent drafting the report in the GitHub issue for the package.
+    - In the "List of exhibits" section of the report include a screenshot of your code results and the paper exhibit. Highlight all the differences so they're noticeable by the authors. For each exhibit, mention any pattern in the discrepancies you might have noticed.
+    - Send the report by email. In your email, include a summary of the exhibits that didn't reproduce and actionable information with your suggestions on how to address the reproducibilty issue. Discuss this with the coordinator or rest of the team if needed.
+- [ ] If you ran the code, include the computer specifications at the end of the report. If someone else did this step, then include that person's computer specifications.
+- [ ] Once the draft is complete, send the report to the coordinator for review. When the coordinator approves it, send it to the authors.
 
 ## 10. Prepare Metadata and Publication
 
@@ -126,35 +127,31 @@ This will help you see if the outputs are changing after you run the code.
 - [ ] Zip the entire reproducibility package folder, preparing it for final archiving and sharing.
 - [ ] Determine the public accessibility of the data:
   - [ ] If all data can be shared publicly, include the data files in the zip package.
-  - [ ] If there are restrictions on data sharing, clearly describe these restrictions according to the protocols listed [here](https://worldbankgroup.sharepoint.com/sites/WBPRWP/SitePages/PublishingPages/Reproducibility-1688128680253.aspx#1.-reproducibility-package-submission).
   - [ ] If the data source specifies it, include a link to the data license description in the field License URL.
-- [ ] Ensure the readme file is in PDF format; if it is not, convert it to PDF and include only this version in the package.
+- [ ] Ensure the readme file is in PDF format; if it is not, convert it to PDF and include only this version in the package. Name it: `README.pdf`.
 - [ ] Check if the package includes a license:
   - [ ] If not present, add a Modified BSD3 license, available [here](https://opensource.org/license/bsd-3-clause/).
   - [ ] Start the license with: "Copyright (year), Author1, Author2, Author3, ..." followed by the complete license text.
 
-For full instructions on preparing metadata and the publication process, refer to the document [here](./Metadata_Instruction/markdown_schema_v7.pdf).
+For full instructions on preparing metadata and the publication process, refer to the document [here](https://github.com/dime-worldbank/prwp-reproducibility-int/blob/main/Metadata_Instruction/markdown_schema_v7.pdf) (internal link).
 
 ## 11. Publish package to reproducibility.worldbank.org
 
-- [ ] Draft the catalog entry on QA and have it reviewed by Maria.
-- [ ] If approved, send it to Matthew.
-- [ ] After Matthew's approval, publish the package to production and request a DOI from Thijs.
-- [ ] Update the GitHub repo status and note any pending issues.
+- [ ] Draft the catalog entry on QA and have it reviewed by the reproducibility initiative TTL.
 
 ## 12. Send reproducibility report and package in RRR
 
-- [ ] Mer/Luise send the finalized report and package back to the author, including any pending issues.
-- [ ] Clarify with authors about implementing optional suggestions before publication. If changes are to be made, a revised report must be prepared after resubmission.
+- [ ] Send the finalized report and package back to the authors, including any pending issues.
+- [ ] Clarify with authors about implementing optional suggestions before the publication of their paper in PRWP. If changes are to be made, a revised report must be prepared after resubmission.
 
 ## 13. Update the status of the review and add additional information in the GH dashboard
 
 - [ ] After a package is published and sent to the authors, update its status to `Published with missings` or `Done`
-    - `Published with missings`: in case it's still pending to update the thumbnail and include the paper DOI and URL. This will be applicable for most cases. If the thumbnail is pending to be updated, add the label `Pending in RRR: thumbnail`. If the data is pending publication, add the label `Pending in RRR: data`.
+    - `Published with missings`: in case it's still pending to update the thumbnail and include the paper DOI, URL, and PRWP number. This will be applicable for most cases. If the thumbnail is pending to be updated, add the label `Pending in RRR: thumbnail`. If the data is pending publication, add the label `Pending in RRR: data`.
     - `Done`: in case the package is finalized and there is no missing information in the entry.
 - [ ] Add the total time spent on the review. This should include everyone's time, including the coordinators, interns, and all team members.
 - [ ] If missing, add the total number of submissions the review took.
-- [ ] Add any other missing information such as the run and reproducibility status and any any labels.
+- [ ] Add any other missing information such as the run and reproducibility status and any labels.
 
 # Special cases
 
