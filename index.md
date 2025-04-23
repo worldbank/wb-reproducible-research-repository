@@ -63,7 +63,12 @@ title: "World Bank Reproducible Research Repository Resources"
 <h2>Sections Overview</h2>
 <ul>
   <li>
-    <a href="./guidance_note_wb.html">Guidance to Authors</a> – Detailed instructions for preparing a reproducible publication, including background information types of verification.
+    <a href="./guidance_note_wb.html">Guidance to Authors</a> – Detailed instructions for preparing a reproducible publication, including types of verification and required components.
+    <ul>
+      <li>
+        <a href="./guidance/step_by_step_flagships.html"> Step-by-Step Guide – For Flagships</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="./reproducibility_package_checklist.html">Checklist</a> – A step-by-step guide to ensure all essential components are included in the reproducibility package.
@@ -72,12 +77,13 @@ title: "World Bank Reproducible Research Repository Resources"
     <a href="./reproducibility_reviewer_protocol.html">Reviewer Protocol</a> – Evaluation guidelines to assist reviewers in assessing the reproducibility of submitted research.
   </li>
   <li>
-    <a href="./resources.html">Resources for Reproducibility</a> – A collection of tools, templates, and instructions to support the creation of reproducible research packages.
+    <a href="./resources.html">Resources for Reproducibility</a> – A collection of tools, templates, and instructions to support reproducible research packages.
   </li>
   <li>
-    <a href="./reproducible_research_trainings.html">Our Trainings</a> – Information about upcoming workshops and training sessions on reproducible research practices.
+    <a href="./reproducible_research_trainings.html">Our Trainings</a> – Information about workshops and training sessions on reproducible research practices.
   </li>
 </ul>
+
 
  <div style="text-align: center; padding: 20px; border-top: 1px solid #ddd; margin-top: 20px;">
     <p><strong>Tools developed and maintained by <a href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation/dime-analytics" target="_blank">DIME Analytics</a></strong></p>
