@@ -81,4 +81,3 @@ A reproducibility package includes everything needed to replicate the findings i
 🔗 [Reproducible Research Resources](https://worldbank.github.io/wb-reproducible-research-repository/resources.html)
 
 [![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](./index.html)
-
