@@ -77,7 +77,7 @@ A reproducibility package includes everything needed to replicate the findings i
 
 ---
 
-📨 **Questions or support?**  
+**Questions or support?**  
 📧 reproducibility@worldbank.org  
 🔗 [Reproducible Research Resources](https://worldbank.github.io/wb-reproducible-research-repository/resources.html)
 
