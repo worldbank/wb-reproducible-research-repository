@@ -73,7 +73,7 @@ A reproducibility package includes everything needed to replicate the findings i
 | **Before submission**  | - Run the entire pipeline using your `main` script<br>- Clean the repository: only include necessary data, code, and outputs<br>- Ensure exhibits match the report exactly <br>- Review our [checklist](https://worldbank.github.io/wb-reproducible-research-repository/reproducibility_package_checklist.html) to make sure everything is ready |
 | **To submit**          | Fill out the [Reproducibility Verification Request Form](https://survey.wb.surveycto.com/collect/prwp_reproducibility) and share your package |
 
-💡 Start documenting from day 1—it will save time and confusion at submission.
+💡 Start documenting from day 1—it will save time at submission.
 
 ---
 
