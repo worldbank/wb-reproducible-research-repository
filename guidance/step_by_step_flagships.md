@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "guidance-flagships"
+title: "Step-by-Step Guide – For Flagships"
 ---
 
 [![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](../index.html)
