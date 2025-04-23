@@ -3,7 +3,7 @@ layout: default
 title: "guidance-flagships"
 ---
 
-[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](/wb-reproducible-research-repository/index.html)
+[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](../index.html)
 
 # 🧭 Building a Reproducibility Package (Flagship Edition)
 
@@ -30,11 +30,12 @@ A reproducibility package includes everything needed to replicate the findings i
 
 ## 🔁 Reproducibility Workflow
 
-| Step | What Happens |
-|------|---------------|
-| 📨 **Submission** | Authors prepare the package and [submit it for verification](https://survey.wb.surveycto.com/collect/prwp_reproducibility)|
-| 🔍 **Verification** | The reproducibility team tests whether the results can be reproduced and issues a report |
-| 🌐 **Publication** | If reproducible, the package is published with a DOI, metadata, and seal in [RRR](https://reproducibility.worldbank.org/)|
+| Step               | What Happens                                                                                           |
+|--------------------|--------------------------------------------------------------------------------------------------------|
+| 📨 **Submission**   | Authors prepare the reproducibility package and [submit it for verification](https://survey.wb.surveycto.com/collect/prwp_reproducibility). |
+| 🔍 **Verification** | The reproducibility team tests whether the results can be fully reproduced using the submitted code and data. A detailed verification report is issued. |
+| 🌐 **Publication**  | If reproducible, the package is published on the [Reproducible Research Repository (RRR)](https://reproducibility.worldbank.org) with a DOI, metadata, and verification seal. |
+
 
 ---
 
@@ -81,4 +82,5 @@ A reproducibility package includes everything needed to replicate the findings i
 📧 reproducibility@worldbank.org  
 🔗 [Reproducible Research Resources](https://worldbank.github.io/wb-reproducible-research-repository/resources.html)
 
-[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](/wb-reproducible-research-repository/index.html)
+[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](../index.html)
+
