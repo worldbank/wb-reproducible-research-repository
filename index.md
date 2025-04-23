@@ -9,12 +9,23 @@ title: "World Bank Reproducible Research Repository Resources"
 </header>
 
 <nav style="text-align: center; margin: 20px 0;">
-  <a href="./guidance_note_wb.html" style="margin: 0 15px;">Guidance to Authors</a> |
+  <style>
+    span:hover > div {
+      display: block;
+    }
+  </style>
+  <span style="margin: 0 15px; position: relative; display: inline-block;">
+    <a href="./guidance_note_wb.html">Guidance to Authors ▾</a>
+    <div style="display: none; position: absolute; background-color: white; border: 1px solid #ccc; min-width: 200px; text-align: left; z-index: 100; padding: 10px;">
+      <a href="./guidance_note_wb.html" style="display: block; margin-bottom: 5px;">📘 Full Guidance Note</a>
+      <a href="./guidance/step_by_step_flagships.html" style="display: block;"📋 Step-by-Step – For Flagships</a>
+    </div>
+  </span>
+  |
   <a href="./reproducibility_package_checklist.html" style="margin: 0 15px;">Checklist</a> |
   <a href="./reproducibility_reviewer_protocol.html" style="margin: 0 15px;">Reviewer Protocol</a> |
   <a href="./resources.html" style="margin: 0 15px;">Resources for Reproducibility</a> |
-  <a href="./reproducible_research_trainings.html" style="margin: 0 15px;">Our Trainings</a>
-</nav>
+  <a hre
 
 <section style="max-width: 800px; margin: auto; padding: 20px;">
   <h2>About This Repository</h2>
