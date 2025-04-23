@@ -3,7 +3,7 @@ layout: default
 title: "guidance-flagships"
 ---
 
-[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](./index.html)
+[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](/wb-reproducible-research-repository/index.html)
 
 # 🧭 Building a Reproducibility Package (Flagship Edition)
 
@@ -32,9 +32,10 @@ A reproducibility package includes everything needed to replicate the findings i
 
 | Step | What Happens |
 |------|---------------|
-| 📨 **Submission** | Authors prepare the package and [submit it for verification](https://survey.wb.surveycto.com/collect/prwp_reproducibility)| 
+| 📨 **Submission** | Authors prepare the package and [submit it for verification](https://survey.wb.surveycto.com/collect/prwp_reproducibility)|
 | 🔍 **Verification** | The reproducibility team tests whether the results can be reproduced and issues a report |
 | 🌐 **Publication** | If reproducible, the package is published with a DOI, metadata, and seal in [RRR](https://reproducibility.worldbank.org/)|
+
 ---
 
 ## 📦 Components of a Good Reproducibility Package — *With Flagships in Mind*
@@ -80,4 +81,4 @@ A reproducibility package includes everything needed to replicate the findings i
 📧 reproducibility@worldbank.org  
 🔗 [Reproducible Research Resources](https://worldbank.github.io/wb-reproducible-research-repository/resources.html)
 
-[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](./index.html)
+[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](/wb-reproducible-research-repository/index.html)
