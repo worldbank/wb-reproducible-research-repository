@@ -116,6 +116,7 @@ If Excel is used alongside statistical software like Stata or R  (e.g., for crea
 -   For questions or support on automation, contact [**reproducibility@worldbank.org**](mailto:reproducibility@worldbank.org).
 
 2\.  **Use formulas for any required calculations**—avoid manual calculations to minimize errors and ensure transparency.
+
 3\.  **Document any additional steps clearly** so that replicators can easily follow the process.
 
 ## Published packages that use Excel
