@@ -37,5 +37,12 @@ It’s important to isolate your environment to ensure reproducibility. Follow t
 
 ---
 
+## Excel Guidelines
+
+If your package is in Excel, or has some component that is in Excel you can review our Excel guidelines here. 
+- [Excel Guidelines](./resources/excel/Excel_Guidelines.md)
+
+
+
 [![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](./index.html)
 
