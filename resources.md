@@ -39,7 +39,7 @@ It’s important to isolate your environment to ensure reproducibility. Follow t
 
 ## Excel Guidelines
 
-If your package is in Excel, or has some component that is in Excel you can review our Excel guidelines here. 
+If your package is in Excel, or includes any component that uses Excel, please review our Excel guidelines:  
 - [Excel Guidelines](./resources/excel/Excel_Guidelines.md)
 
 
