@@ -1,4 +1,9 @@
-# Excel Packages: Guidelines
+---
+layout: default
+title: "Excel Packages: Guidelines"
+---
+
+[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](.../index.html)
 
 ## Overview
 
@@ -135,3 +140,5 @@ If Excel is used alongside statistical software like Stata or R  (e.g., for crea
 
 -   **Software:** Excel only
 -   This example features a **clearly documented README** along with a **well-structured set of Excel files** for easy navigation and understanding.
+
+[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](.../index.html)
