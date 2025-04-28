@@ -3,8 +3,6 @@ layout: default
 title: "Excel Packages: Guidelines"
 ---
 
-[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](../index.md)
-
 ## Overview
 
 In our commitment to enhancing reproducibility, it is essential to address the inherent challenges posed by manual steps in **Excel-based packages**. We aim to bridge this gap through automation and comprehensive documentation. The following guidelines are designed to structure Excel files to improve transparency, minimize manual intervention, and streamline the verification process for replicators.
@@ -134,11 +132,10 @@ If Excel is used alongside statistical software like Stata or R  (e.g., for crea
 -   **Software:** Excel only
 -   This example provided clear organization for input data, data wrangling, and exhibits.
 
-  
+
 
 3.  [Reproducibility package for Estimating Value Added Tax](https://reproducibility.worldbank.org/index.php/catalog/212)  [(VAT)](https://reproducibility.worldbank.org/index.php/catalog/212) [and Corporate Income Tax](https://reproducibility.worldbank.org/index.php/catalog/212)  [(CIT)](https://reproducibility.worldbank.org/index.php/catalog/212) [Gaps in Indonesia](https://reproducibility.worldbank.org/index.php/catalog/212)
 
 -   **Software:** Excel only
 -   This example features a **clearly documented README** along with a **well-structured set of Excel files** for easy navigation and understanding.
 
-[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](../index.md)
