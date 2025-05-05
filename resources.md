@@ -16,6 +16,9 @@ This section provides useful templates, main files, and environment setup instru
 - [README Template (Word)](./resources/README_Template.docx)  
   *Same content as the Markdown template but in Word format.*
 
+- [README Generator](https://dime-worldbank.github.io/wb-reproducible-research-repository-automation/)  
+  *Use this tool to create your own README.* The app includes all the essential components of a high-quality README and will generate a Word document based on your responses.
+
 ---
 
 ## Main Files for Reproducibility
