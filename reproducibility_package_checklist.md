@@ -15,8 +15,6 @@ Questions should be directed to reproducibility@worldbank.org.
 
 ### The reproducibility package includes:
 
-* [ ] A link to the complete reproducibility package on either OneDrive or GitHub. The directory should include all the below components:
-
   * [ ] **Data**
 
     * All data files required for reproducibility verification should be included (for verification purposes only; see [here](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/guidance_note_wb.md) for publication guidelines and embargo options for reproducibility packages). The data should be provided in its original form.
@@ -25,7 +23,7 @@ Questions should be directed to reproducibility@worldbank.org.
   * [ ] **Code**
 
     * All code files required to go from the original data to the results in the paper.
-    * A main script that allows the reviewer to run all code after changing only the top-level directory. The main script should be in the root directory and should set directory path(s) in one location only. A recommended template is available here: [Stata](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/main.do), [R](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/main.R).
+    * A main script that allows the reviewer to run all code after changing only the top-level directory. A recommended template is available here: [Stata](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/main.do), [R](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/main.R).
     * If the package does not include a main script, it must have a README that specifies the order of execution of code files.
     * Code should create all exhibits and in-text numerical citations not drawn directly from tables.
     * If the package does not use code and is an Excel package, please review [these guidelines](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/excel/Excel_Guidelines.md).
@@ -35,8 +33,6 @@ Questions should be directed to reproducibility@worldbank.org.
     * A README file that guides future readers through the package and how to proceed with replication. A recommended template is available [here](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/README_Template.md).
     * Software and version used
     * Line(s) in the main script that should be changed to run the code on a different machine
-    * Approximate run time of the code
-    * A map of folder structure
     * Mapping of outputs to scripts responsible for generating them
     * Any specific requests or guidance for the reviewer
 
@@ -48,8 +44,6 @@ Questions should be directed to reproducibility@worldbank.org.
     * Rights statement confirming that the authors had legitimate access to all data used in the manuscript
 
   * [ ] **Outputs used in the paper** (e.g., tables and figures) in raw form
-
-    * *Optional:* If the manuscript was written in LaTeX and includes `.tex`-generated outputs, include the `.tex` file(s) used to compile the manuscript (e.g., an Overleaf export or equivalent). This allows for easier verification of the alignment between code-generated outputs and the manuscript.
 
 ---
 
