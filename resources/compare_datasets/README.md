@@ -105,16 +105,11 @@ It lists every differing value **row by row**, including:
 
 ---
 
-Sure! Here's a clearer and more polished version of that section:
-
----
-
 ## 👩🏽‍💻 Intended Audience
 
 This tool is primarily intended for **reproducibility reviewers** working with the PRWP Reproducibility Initiative. It helps verify that the datasets shared by authors match those that are publicly available or externally accessible.
 
 Researchers and authors can also use this tool to confirm that the dataset used in their analysis aligns with the version currently published or publicly available. This is especially useful when datasets may have been updated or revised over time. The tool highlights both exact matches and meaningful differences, making it a valuable resource for quality control and transparency.
-
 
 ---
 
