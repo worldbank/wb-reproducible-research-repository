@@ -11,7 +11,8 @@ This protocol outlines the step-by-step process for verifying the reproducibilit
 
 In brief, the process looks like:
 
-![image](https://github.com/user-attachments/assets/0a7f3eb3-9882-4b50-b7e7-ba60342b57b4)
+![image](https://github.com/user-attachments/assets/3b5270fc-1da0-4f3a-9031-650b8d3f392f)
+
 
 Find more details below:
 
