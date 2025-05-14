@@ -7,21 +7,18 @@ title: "Reviewer Protocol"
  
 # PRWP Reproducibility Protocol
 
-This protocol outlines the step-by-step process for verifying the reproducibility of research packages submitted to the World Bank’s PRWP verification team. It ensures that research findings can be independently reproduced using the provided code, data, and instructions. The protocol covers the entire workflow—from receiving submissions, verifying completeness including data access and documentation, running the package in a clean environment, tracking changes with version control, and checking consistency with the original manuscript, to publishing the final reproducibility package.
+This protocol outlines the step-by-step process for verifying the reproducibility of research packages submitted to the World Bank’s PRWP verification team. It ensures that findings can be independently reproduced using the submitted code, data, and instructions. The protocol covers the full workflow—from submission and completeness checks (including data access and documentation), to running the package in a clean environment, tracking changes via version control, verifying consistency with the manuscript, and ultimately publishing the final reproducibility package.
 
 In brief, the process looks like:
 
 ![image](https://github.com/user-attachments/assets/3b5270fc-1da0-4f3a-9031-650b8d3f392f)
 
-
 Find more details below:
-
-
 
 ## 1. Receive submission
 
 - Submissions come in through the [submission form](https://survey.wb.surveycto.com/collect/prwp_reproducibility?caseid=).
-- **Power Automate** sends an automatic reply to the authors, indicating a confirmation will be provided within two days.
+- **SurveyCTO** sends an automatic reply to the authors, indicating a confirmation will be provided within two days.
 - **Project coordinator**:
   - Log new submissions in the GitHub project.
   - Open an issue with the format **ID: TYPE_LOCATION_YEAR_NUMBER** (e.g., RR_NGA_2024_213).
@@ -31,7 +28,9 @@ Find more details below:
     - **FR**: Flagships and reports (this category includes databases so far).
   - Assign the reviewer, download the files, and store them in the designated folder (internal SharePoint named after the review ID)
     - If there are multiple submissions, zip each version and place them in a subfolder titled "files submitted" for organized tracking.
-- _Special Case_: If an author submits the reproducibility package via email without completing the submission form, please reply with the submission link and request that they complete the form. Be sure to also include the link to our reproducibility resources for their reference.
+- _Special Case_: If a package is submitted via email instead of the form, respond with a request to complete [the submission form](https://survey.wb.surveycto.com/collect/prwp_reproducibility?caseid=), and share the [reproducibility guidance resources](https://worldbank.github.io/wb-reproducible-research-repository/) in your reply.
+
+**General notes**:
 - **Record Time Spent**: Track and document the total time spent on the review, starting from the initial receipt of the reproducibility package through to its publication.
 - **Document Author Communications**: All communications with the authors must be documented in the GitHub issue for the package. Each message should be reviewed and approved by the coordinator before being sent.
 
@@ -69,7 +68,6 @@ Find more details below:
     - If the differences are due to **periodic updates**, note this in the verification report.  
     - If the differences are due to **manual changes**, ask the authors to ensure that the correct version is used and included in the package.
 
-
 ## 3. Start a clean programming environment
 
 - [ ] Start with clean environments to avoid dependency conflicts. Follow these instructions:
@@ -79,7 +77,7 @@ Find more details below:
 
 ## 4. Version control with Git
 
-- To see the differences between the author's package and our packages across multiple runs, create a Git repository.
+- To see the differences between the author's package and our package across multiple runs, create a Git repository.
 - [ ] Open GitHub Desktop and create a new repository in the location of the package.
 - [ ] Add the `.gitignore` file to avoid tracking all the files. You can use [this template](https://github.com/worldbank/DIME-LaTeX-Templates/blob/master/.gitignore), but you might need to adapt it.
 - [ ] Commit the initial package sent by the authors.
@@ -106,21 +104,17 @@ This will help you see if the outputs are changing after you run the code.
 #### 3. System Information
 - [ ] **Record System Information**: Detail the system specifics where the package is run, including Operating System, Processor, Memory Available, and Software Version (including edition for Stata).
 
-
-
 ## 6. Confirm initial run
 
 - [ ] If the package runs successfully from start to finish:
   - [ ] Note the run time.
 - [ ] **Verify Stability**:
-    - [ ] Run the package one more time based to ensure stability. If the package takes more than 3 days to run, though, feel free to omit this step.
+    - [ ] Run the package one more time based to ensure stability. If the package takes more than 3 days to run, a second full run is not required.
     - [ ] Use Git locally to track and ensure output stability across runs.
-    - [ ] Confirm that outputs are consistent across runs:
+    - [ ] Confirm that outputs are consistent across runs.
     - [ ] If discrepancies occur between runs, document them and update the Git repo. If the reproducibility package is in Stata, run `reprun` on it to detect where they start appearing. If it's in R or Python, or if `reprun` didn't work, discuss with the coordinator or the rest of the team to try to find where the issue is. Return the package to the authors for corrections, detailing the issues found. 
 - [ ] Send the confirmation to the authors with an estimated date for the return of the report (2 weeks).
 - [ ] Notify the authors of any missing information for the publication.
-
-
 
 ## 7. Verify consistency with the manuscript
 
@@ -152,7 +146,7 @@ This will help you see if the outputs are changing after you run the code.
 - [ ] Determine the public accessibility of the data:
   - [ ] If all data can be shared publicly, include the data files in the zip package.
   - [ ] If the data source specifies it, include a link to the data license description in the field License URL.
-- [ ] Ensure the readme file is in PDF format; if it is not, convert it to PDF and include only this version in the package. Name it: `README.pdf`.
+- [ ] Ensure the README file is in PDF format; if it is not, convert it to PDF and include only this version in the package. Name it: `README.pdf`.
 - [ ] Check if the package includes a license:
   - [ ] If not present, add a Modified BSD3 license, available [here](https://opensource.org/license/bsd-3-clause/).
   - [ ] Start the license with: "Copyright (year), Author1, Author2, Author3, ..." followed by the complete license text.
@@ -176,10 +170,6 @@ For full instructions on preparing metadata and the publication process, refer t
 - [ ] Add the total time spent on the review. This should include everyone's time, including the coordinators, interns, and all team members.
 - [ ] If missing, add the total number of submissions the review took.
 - [ ] Fill any missing information on the dashboard.
-
-
-
-
 
 # Special cases
 
