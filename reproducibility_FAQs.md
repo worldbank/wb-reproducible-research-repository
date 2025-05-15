@@ -69,6 +69,7 @@ Even well-documented research packages can fail reproducibility checks. Below ar
 
 - **Unstable Code (Results change with every run):**  
   Reproducibility requires that the same inputs always produce the same outputs. If tables or figures change between runs, the code is unstable. This often happens due to unsorted merges, random processes without a set seed, or non-unique identifiers used for sorting. Instability makes it impossible to confidently verify findings.
+  Most reproducibility issues are solved after setting a random seed in the beginning of the code. Some other issues can occur in Stata, which are explained in [this presentation](https://osf.io/2bxn7).
 
 - **Starts from Intermediate Data:**  
   The package should begin with the original/raw data (i.e. documented). If it starts from partially processed or undocumented intermediate datasets, it becomes unclear how those datasets were constructed, preventing full reproducibility. 
