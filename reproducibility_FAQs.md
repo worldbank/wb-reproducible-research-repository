@@ -118,7 +118,7 @@ Reproducibility verification is still possible when data access is restricted. W
     -   The reproducibility team may request temporary access directly from the data provider.
     -   If needed, we can sign a non-disclosure agreement (NDA) to access the data solely for verification purposes.        
 -   **Virtual verification**
-    -   The author runs the full package in a prepared environment (e.g., via screen sharing or secure remote session).
+    -   The author runs the full package in a prepared environment in their computer (e.g., via screen sharing or secure remote session).
     -   The reviewer observes the process and receives the resulting outputs for comparison.
 -   **Synthetic data approach**
     -   Authors share synthetic datasets that mimic the structure of the real data.
