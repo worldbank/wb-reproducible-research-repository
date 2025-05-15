@@ -38,7 +38,7 @@ Authors can request a reproducibility verification through [this submission form
 
 ### How long does the reproducibility verification process take?
 
-Most packages are reviewed within 2 weeks, depending on the complexity of the analysis and the completeness of the submission. Packages requiring substantial clarification or additional information from authors may take longer.
+Most packages are reviewed within 2 weeks when only minor or no corrections are needed. The total time depends on the complexity of the analysis and the completeness of the submission. Packages requiring substantial clarification or additional information from authors may take longer.
 
 
 ### How should I organize my package?
