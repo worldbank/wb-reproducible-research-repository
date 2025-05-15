@@ -206,7 +206,7 @@ To set this up, follow the environment setup guides for each language:
 Using a clean, well-defined environment is critical to computational reproducibility.
 
 ### Do you check if the code is correct?
-No. We only verify **computational reproducibility**: whether running the same code and data produces the same outputs.  We do not assess whether the code correctly implements the intended methods.
+No. We only verify complete documentation and **computational reproducibility**: whether running the same code and data produces the same outputs.  We do not assess whether the code correctly implements the intended methods.
 
 ## Documentation-Related Questions
 
