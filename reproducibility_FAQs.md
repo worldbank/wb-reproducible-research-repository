@@ -100,7 +100,7 @@ If your package includes Excel files:
     
 
 
- [See our Excel guidelines](https://worldbank.github.io/wb-reproducible-research-repository/resources/excel/Excel_Guidelines.html)  for recommended practices.
+ [See our Excel guidelines](https://worldbank.github.io/wb-reproducible-research-repository/resources/excel/Excel_Guidelines.html)  for recommended practices and our [presentation on how to produce tables and plots in Stata and R](https://osf.io/ezmsb) for quick instructions on how to build reproducible outputs.
 
 ## Data-Related Questions
 
