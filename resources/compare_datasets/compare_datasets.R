@@ -4,27 +4,23 @@ library(haven)
 library(dplyr)
 library(purrr)
 library(janitor)
-library(waldo)
 library(digest)
 library(tools)
+library(tibble)
 
-# Define file paths
+# === CONFIG ===
 pkg_path <- "package"
 pub_path <- "public"
 output_summary <- "comparison_report.csv"
 output_detailed <- "detailed_value_diffs.csv"
+detailed_diff <- TRUE # <--- SET THIS TO TRUE if you want detailed diffs
 dir.create("detailed_diffs", showWarnings = FALSE)
 
-# SHA256 function
+# === FUNCTIONS ===
 calculate_sha256 <- function(filepath) {
-    tryCatch({
-        digest::digest(file = filepath, algo = "sha256")
-    }, error = function(e) {
-        NA_character_
-    })
+    tryCatch(digest::digest(file = filepath, algo = "sha256"), error = function(e) NA_character_)
 }
 
-# Read dataset based on extension
 read_dataset <- function(file) {
     ext <- file_ext(file)
     switch(ext,
@@ -35,7 +31,7 @@ read_dataset <- function(file) {
     )
 }
 
-# Get list of files by base name
+# === LOAD FILES ===
 pkg_files <- list.files(pkg_path, full.names = TRUE)
 pub_files <- list.files(pub_path, full.names = TRUE)
 
@@ -44,36 +40,26 @@ matched_files <- intersect(
     file_path_sans_ext(basename(pub_files))
 )
 
-# Initialize reports
 summary_report <- list()
 all_value_diffs <- list()
 
-# Loop through matched files
+# === LOOP THROUGH MATCHED FILES ===
 for (name in matched_files) {
     pkg_file <- pkg_files[basename(file_path_sans_ext(pkg_files)) == name][1]
     pub_file <- pub_files[basename(file_path_sans_ext(pub_files)) == name][1]
     
-    # Calculate hashs
-    hash_pkg <- calculate_sha256(pkg_file)
-    hash_pub <- calculate_sha256(pub_file)
-    hash_status <- if (identical(hash_pkg, hash_pub)) {
-        "hashs match"
-    } else {
-        "hashs differ"
-    }
-    
-    # Read data
     pkg_data <- tryCatch(read_dataset(pkg_file), error = function(e) NULL)
     pub_data <- tryCatch(read_dataset(pub_file), error = function(e) NULL)
     if (is.null(pkg_data) || is.null(pub_data)) next
     
-    # Clean column names
     pkg_data <- clean_names(pkg_data)
     pub_data <- clean_names(pub_data)
     
-    # Compare structure
     vars_pkg <- names(pkg_data)
     vars_pub <- names(pub_data)
+    common_vars <- intersect(vars_pkg, vars_pub)
+    if (length(common_vars) == 0) next
+    
     missing_in_pub <- setdiff(vars_pkg, vars_pub)
     missing_in_pkg <- setdiff(vars_pub, vars_pkg)
     
@@ -92,61 +78,96 @@ for (name in matched_files) {
     row_match_status <- if (nrow(pkg_data) == nrow(pub_data)) {
         "Same number of rows"
     } else {
-        paste0("Different number of rows: package = ", nrow(pkg_data),
-               ", public = ", nrow(pub_data))
+        paste0("Different number of rows: package = ", nrow(pkg_data), ", public = ", nrow(pub_data))
     }
     
-    # Compare values
-    common_vars <- intersect(vars_pkg, vars_pub)
-    value_diffs <- sapply(common_vars, function(v) {
-        !identical(pkg_data[[v]], pub_data[[v]])
-    })
-    value_diff_summary <- if (any(value_diffs)) {
-        paste("Different values in:", paste(common_vars[value_diffs], collapse = "; "))
+    hash_pkg <- calculate_sha256(pkg_file)
+    hash_pub <- calculate_sha256(pub_file)
+    hash_status <- if (identical(hash_pkg, hash_pub)) "hashes match" else "hashes differ"
+    
+    value_diff_vars <- c()
+    type_mismatch_vars <- c()
+    
+    for (var in common_vars) {
+        pkg_col <- pkg_data[[var]]
+        pub_col <- pub_data[[var]]
+        
+        type_pkg <- typeof(pkg_col)
+        type_pub <- typeof(pub_col)
+        type_mismatch <- !identical(type_pkg, type_pub)
+        
+        # Trim to equal length
+        n <- min(length(pkg_col), length(pub_col))
+        pkg_trimmed <- format(pkg_col[1:n])
+        pub_trimmed <- format(pub_col[1:n])
+        
+        diffs <- tibble(
+            row = 1:n,
+            package_value = pkg_trimmed,
+            public_value = pub_trimmed
+        ) %>%
+            filter(package_value != public_value & !(is.na(package_value) & is.na(public_value))) %>%
+            mutate(
+                file = name,
+                variable = var,
+                type_package = type_pkg,
+                type_public = type_pub,
+                type_mismatch = ifelse(type_mismatch, "yes", "no"),
+                .before = 1
+            )
+        
+        if (nrow(diffs) > 0) {
+            value_diff_vars <- c(value_diff_vars, var)
+            if (detailed_diff) {
+                all_value_diffs[[paste(name, var, sep = "_")]] <- diffs
+            }
+        }
+        
+        if (type_mismatch) {
+            type_mismatch_vars <- c(type_mismatch_vars, paste0(var, " [", type_pkg, " vs ", type_pub, "]"))
+        }
+    }
+    
+    value_diff_summary <- if (length(value_diff_vars) > 0) {
+        paste("Different values in:", paste(value_diff_vars, collapse = "; "))
     } else {
         "All common variable values match"
     }
     
-    # Save to summary report
-    summary_report[[name]] <- list(
+    type_diff_summary <- if (length(type_mismatch_vars) > 0) {
+        paste("Type mismatches in:", paste(type_mismatch_vars, collapse = "; "))
+    } else {
+        "All data types match"
+    }
+    
+    summary_report[[name]] <- tibble(
         file = name,
         package_ext = file_ext(pkg_file),
         public_ext = file_ext(pub_file),
-        hash_pkg = hash_pkg, 
+        hash_pkg = hash_pkg,
         hash_pub = hash_pub,
         hash_status = hash_status,
         row_match_status = row_match_status,
         vars_in_public_status = vars_in_public_status,
         vars_in_package_status = vars_in_package_status,
-        value_diff_summary = value_diff_summary
+        value_diff_summary = value_diff_summary,
+        type_diff_summary = type_diff_summary
     )
-    
-    # Collect value-level differences
-    for (var in common_vars[value_diffs]) {
-        if (length(pkg_data[[var]]) == length(pub_data[[var]])) {
-            diffs <- tibble(
-                row = seq_along(pkg_data[[var]]),
-                package_value = pkg_data[[var]],
-                public_value = pub_data[[var]]
-            ) %>%
-                filter(package_value != public_value) %>%
-                mutate(file = name, variable = var, .before = 1)
-            
-            all_value_diffs[[paste(name, var, sep = "_")]] <- diffs
-        }
-    }
 }
 
-# Save summary report
+# === EXPORT REPORTS ===
 summary_df <- bind_rows(summary_report)
 write_csv(summary_df, output_summary)
 message("Summary report saved to: ", output_summary)
 
-# Save detailed differences
-if (length(all_value_diffs) > 0) {
+if (detailed_diff && length(all_value_diffs) > 0) {
     detailed_diffs_df <- bind_rows(all_value_diffs)
     write_csv(detailed_diffs_df, file.path("detailed_diffs", output_detailed))
-    message("Detailed value-level differences saved to: ", output_detailed)
-} else {
+    message("Detailed value-level differences saved to: ", file.path("detailed_diffs", output_detailed))
+} else if (detailed_diff) {
     message("No value-level differences found.")
+} else {
+    message("Detailed diff disabled — summary only.")
 }
+
+
