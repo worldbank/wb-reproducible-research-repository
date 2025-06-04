@@ -16,7 +16,7 @@ Before diving into the FAQs, we recommend reviewing the [Guidance Note](https://
 
 - [Data-Related Questions](#data-related-questions)
   - [What is original data?](#what-is-original-data)
-  - [How do you verify reproducibility when the data is restricted?](#how-do-you-verify-reproducibility-when-the-data-is-restricted)
+  - [Can you do a reproducibility verification if the research relies on confidential data?](#can-you-do-a-reproducibility-verification-if-the-research-relies-on-confidential-data)
   - [How do I document the datasets used in the reproducibility package?](#how-do-i-document-the-datasets-used-in-the-reproducibility-package)
 
 - [Code-Related Questions](#code-related-questions)
@@ -111,7 +111,7 @@ Original data refers to a citable dataset—one that is documented, publicly acc
 -   Official statistics & indicators: Data from sources like the World Development Indicators, national statistics portals, or IMF/WEO
 -   Data as it was received from another WB team or an external counterpart, except for the removal of personally identifiable information (see the question below on documenting the data sources for more information).
 
-### How do you verify reproducibility when the data is restricted?
+### Can you do a reproducibility verification if the research relies on confidential data?
 
 Reproducibility verification is still possible when data access is restricted. We use several strategies depending on the nature of the restriction:
 
@@ -210,7 +210,7 @@ To set this up, follow the environment setup guides for each language:
 Using a clean, well-defined environment is critical to computational reproducibility.
 
 ### Do you check if the code is correct?
-No. We only verify complete documentation and **computational reproducibility**: whether running the same code and data produces the same outputs.  We do not assess whether the code correctly implements the intended methods.
+No. We only verify complete documentation and **computational reproducibility**: whether running the same code and data produces the same outputs.  We do not assess whether the code correctly implements the intended methods, nor the quality of the code.
 
 ## Documentation-Related Questions
 
