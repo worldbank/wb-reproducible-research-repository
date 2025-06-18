@@ -79,7 +79,7 @@ Even well-documented research packages can fail reproducibility checks. Below ar
   The package should begin with the original/raw data (see the question below on what is original data for more information). If it starts from partially processed or undocumented intermediate datasets, it becomes unclear how those datasets were constructed, preventing full reproducibility. 
 
 - **Manual Steps Not Documented:**  
-  If figures or tables are modified manually (e.g., in Excel) without clear instructions or supporting code, the process becomes opaque. All steps used to generate results—even if manual—must be documented clearly in the README or equivalent instructions.
+  If figures or tables are modified manually (e.g., in Excel) without clear instructions or supporting code, the process is difficult for third parties to follow. All steps used to generate results—even if manual—must be documented clearly in the README or equivalent instructions.
 
 - **Coding Errors:**  
   Broken scripts, incorrect file paths, missing dependencies, or syntax errors can prevent the code from running altogether. Ensure to run the code once before submitting the package.
