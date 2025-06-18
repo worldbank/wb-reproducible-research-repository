@@ -82,7 +82,7 @@ Even well-documented research packages can fail reproducibility checks. Below ar
   If figures or tables are modified manually (e.g., in Excel) without clear instructions or supporting code, the process is difficult for third parties to follow. All steps used to generate results—even if manual—must be documented clearly in the README or equivalent instructions.
 
 - **Coding Errors:**  
-  Broken scripts, incorrect file paths, missing dependencies, or syntax errors can prevent the code from running altogether. Ensure to run the code once before submitting the package.
+  Broken scripts, incorrect file paths, missing dependencies, or syntax errors can prevent the code from running altogether. Ensure the exact package you are submitting runs through without errors before you submit it. Best practice is to have another research team member (not the primary code author) run the package as well (for example, this helps catch hard-coded filepaths). 
 
 - *Incomplete Version Control or Environment Info:**  
   Failing to specify software versions (e.g., using Stata 18 but not declaring it), or not locking Python/R environments (e.g., with `requirements.txt`, `renv.lock`) can cause code to behave differently on other systems. Reproducibility requires knowing exactly what software environment was used. [This presentation](https://osf.io/q7rjt) contains more information on this issue and potential solutions.
