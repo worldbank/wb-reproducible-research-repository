@@ -8,6 +8,7 @@ Before diving into the FAQs, we recommend reviewing the [Guidance Note](https://
 
 - [General FAQs](#general-faqs)
   - [How do I submit a package?](#how-do-i-submit-a-package)
+  - [Who can submit a reproducibility package?](#who-can-submit-a-reproducibility-package)
   - [How long does the reproducibility verification process take?](#how-long-does-the-reproducibility-verification-process-take)
   - [How should I organize my package?](#how-should-i-organize-my-package)
   - [What does the reproducibility report contain?](#what-does-the-reproducibility-report-contain)
@@ -15,7 +16,7 @@ Before diving into the FAQs, we recommend reviewing the [Guidance Note](https://
   - [What if my package uses Excel?](#what-if-my-package-uses-excel)
 
 - [Data-Related Questions](#data-related-questions)
-  - [What is original data?](#what-is-original-data)
+  - [What is the starting point for a reproducibility package?](#what-is-the-starting-point-for-a-reproducibility-package)
   - [Can you do a reproducibility verification if the research relies on confidential data?](#can-you-do-a-reproducibility-verification-if-the-research-relies-on-confidential-data)
   - [How do I document the datasets used in the reproducibility package?](#how-do-i-document-the-datasets-used-in-the-reproducibility-package)
 
@@ -35,6 +36,9 @@ Before diving into the FAQs, we recommend reviewing the [Guidance Note](https://
 
 ### How do I submit a package?
 Authors can request a reproducibility verification through [this submission form](https://survey.wb.surveycto.com/collect/prwp_reproducibility?caseid=).    The package must include all components listed in this [checklist](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/reproducibility_package_checklist.md).
+
+### Who can submit a reproducibility package?
+World Bank staff and consultants are eligible to submit reproducibility packages for verification.
 
 ### How long does the reproducibility verification process take?
 
@@ -104,8 +108,8 @@ If your package includes Excel files:
 
 ## Data-Related Questions
 
-### What is original data?
-Original data refers to a citable dataset—one that is documented, publicly accessible or archived in a World Bank internal catalog—and serves as the starting point for reproducibility.  A few options include:
+### What is the starting point for a reproducibility package?
+A reproducibility package should begin from documented data sources—often referred to as “source data.” Source data refers to a citable dataset—one that is documented, publicly accessible or archived in a World Bank internal catalog—and serves as the starting point for reproducibility.  A few options include:
 -   Unmodified raw data: As originally received, from surveys, administrative systems, or fieldwork, with no changes beyond the removal of personally identifiable information(PII).  
 -   Published datasets: Datasets from trusted sources like the Microdata Library, LSMS, DHS, etc.  
 -   Official statistics & indicators: Data from sources like the World Development Indicators, national statistics portals, or IMF/WEO
