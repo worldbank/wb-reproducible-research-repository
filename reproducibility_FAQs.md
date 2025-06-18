@@ -17,7 +17,7 @@ Before diving into the FAQs, we recommend reviewing the [Guidance Note](https://
 
 - [Data-Related Questions](#data-related-questions)
   - [What is the starting point for a reproducibility package?](#what-is-the-starting-point-for-a-reproducibility-package)
-  - [Can you do a reproducibility verification if the research relies on confidential data?](#can-you-do-a-reproducibility-verification-if-the-research-relies-on-confidential-data)
+  - [Can you do a reproducibility verification if the research relies on confidential and/or proprietary data?](#can-you-do-a-reproducibility-verification-if-the-research-relies-on-confidential-data)
   - [How do I document the datasets used in the reproducibility package?](#how-do-i-document-the-datasets-used-in-the-reproducibility-package)
 
 - [Code-Related Questions](#code-related-questions)
