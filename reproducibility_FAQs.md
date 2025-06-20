@@ -1,4 +1,11 @@
-﻿## Frequently Asked Questions: Reproducibility Packages
+---
+layout: default
+title: "FAQs"
+---
+
+[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](./index.html)
+ 
+ ## Frequently Asked Questions: Reproducibility Packages
 
 Before diving into the FAQs, we recommend reviewing the [Guidance Note](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/guidance_note_wb.md) for a comprehensive overview of reproducibility standards and submission expectations.
 
@@ -262,5 +269,5 @@ The DAS can be included as a section within the README file and should contain t
 -   **Include a rights and permissions statement**:  Confirm that the authors had legitimate access to the data and, where applicable, that permission has been granted to redistribute it. If redistribution is not allowed, explain the terms of use or link to the data’s license.
 
 
-
+[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](./index.html)
 
