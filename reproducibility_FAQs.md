@@ -5,9 +5,9 @@ title: "FAQs"
 
 [![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](./index.html)
  
- ## Frequently Asked Questions: Reproducibility Packages
+# Frequently Asked Questions: Reproducibility Packages
 
-Before diving into the FAQs, we recommend reviewing the [Guidance Note](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/guidance_note_wb.md) for a comprehensive overview of reproducibility standards and submission expectations.
+Before diving into the FAQs, we recommend reviewing the [Guidance Note](https://worldbank.github.io/wb-reproducible-research-repository/guidance_note_wb.html) for a comprehensive overview of reproducibility standards and submission expectations.
 
 **Note for World Bank Staff:** For internal FAQs tailored to World Bank researchers—please visit the [internal reproducibility resources page](https://worldbankgroup.sharepoint.com/sites/WBPRWP/SitePages/PublishingPages/FAQs-10262018-142102.aspx).
 
@@ -66,7 +66,7 @@ Also known as: the copy-paste problem.  In some cases, the code is up to date bu
 
 
 ### How do I submit a package?
-Authors can request a reproducibility verification through [this submission form](https://survey.wb.surveycto.com/collect/prwp_reproducibility?caseid=).    The package must include all components listed in this [checklist](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/reproducibility_package_checklist.md).
+Authors can request a reproducibility verification through [this submission form](https://survey.wb.surveycto.com/collect/prwp_reproducibility?caseid=).    The package must include all components listed in this [checklist](https://worldbank.github.io/wb-reproducible-research-repository/reproducibility_package_checklist.html).
 
 ### Who can submit a reproducibility package?
 World Bank staff and consultants are eligible to submit reproducibility packages for verification.
