@@ -50,7 +50,8 @@ title: "World Bank Reproducible Research Repository Resources"
   <a href="./reproducibility_package_checklist.html" style="margin: 0 15px;">Checklist</a> |
   <a href="./reproducibility_reviewer_protocol.html" style="margin: 0 15px;">Reviewer Protocol</a> |
   <a href="./resources.html" style="margin: 0 15px;">Resources for Reproducibility</a> |
-  <a href="./reproducible_research_trainings.html" style="margin: 0 15px;">Our Trainings</a>
+  <a href="./reproducible_research_trainings.html" style="margin: 0 15px;">Our Trainings</a> |
+  <a href="./reproducibility_FAQs.html" style="margin: 0 15px;">FAQs</a>
 </nav>
 
 
@@ -81,6 +82,9 @@ title: "World Bank Reproducible Research Repository Resources"
   </li>
   <li>
     <a href="./reproducible_research_trainings.html">Our Trainings</a> – Information about workshops and training sessions on reproducible research practices.
+  </li>
+  <li>
+    <a href="./reproducibility_FAQs.html">FAQs</a> – Frequently Asked Questions about Reproducibility Packages.
   </li>
 </ul>
 
