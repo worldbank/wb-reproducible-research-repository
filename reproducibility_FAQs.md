@@ -117,22 +117,22 @@ A reproducibility package should begin from documented data sources—often refe
 -   Official statistics & indicators: Data from sources like the World Development Indicators, national statistics portals, or IMF/WEO
 -   Data as it was received from another WB team or an external counterpart, except for the removal of personally identifiable information (see the question below on documenting the data sources for more information).
 
+
 ### Can you do a reproducibility verification if the research relies on confidential and/or proprietary data?
 
-Reproducibility verification is still possible when data access is restricted. We use several strategies depending on the nature of the restriction:
+Yes, reproducibility verification is still possible when data access is restricted. We use several strategies depending on the nature of the restriction:
 
--   **Data access for verification only**
-    -   The reproducibility team may request temporary access directly from the data provider.
-    -   If needed, we can sign a non-disclosure agreement (NDA) to access the data solely for verification purposes.        
--   **Virtual verification**
-    -   The author runs the full package in a prepared environment in their computer (e.g., via screen sharing or secure remote session).
-    -   The reviewer observes the process and receives the resulting outputs for comparison.
--   **Synthetic data approach**
-    -   Authors share synthetic datasets that mimic the structure of the real data.
-    -   The reviewer verifies reproducibility using the actual data, while the public package includes only the synthetic version.
-    
-These approaches help ensure transparency and reproducibility without compromising data confidentiality.
+- **Data access for verification only**  
+  - The reproducibility team may request temporary access directly from the data provider.  
+  - If needed, we can sign a non-disclosure agreement (NDA) to access the data solely for verification purposes.
 
+- **Virtual verification**  
+  - The author runs the full package in a secure environment on their machine (e.g., via screen sharing or remote desktop).  
+  - The reviewer observes the process and receives the resulting outputs and logs for review.
+
+- **Synthetic data (as a complement to the above)**  
+  - Authors provide fake but structurally similar data for the public package.​
+  - The reviewer still verifies the package using the actual data, through one of the secure methods above. The public package includes only the synthetic version.
 
 ### How do I document the datasets used in the reproducibility package?
 
