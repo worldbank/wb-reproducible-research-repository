@@ -3,6 +3,8 @@ library(dplyr)
 library(readr)
 library(tools)
 library(tibble)
+library(rstudioapi)
+library(utils)
 
 # Function to calculate SHA256 hash of a file
 calculate_sha256 <- function(filepath) {
