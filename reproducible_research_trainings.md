@@ -1,9 +1,25 @@
 ---
 layout: default
-title: "Trainings"
+title: "Trainings and Conference Presentations"
 ---
 
 [![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](./index.html)
+
+# **Conference Presentations**
+
+## Berkeley Initiative for Transparency in Social Science (BITSS) Annual Meeting 2025
+
+- Lightning talk: *repkit: Stata tools for Reproducible Research*
+- Date: February 27, 2025
+- [See slides](https://osf.io/sneya)
+
+## Metascience 2025
+
+- Presentation: *Advancing Metascience through Institutional Mandates: Learnings from the World Bank’s Reproducible Research Initiative*
+- Date: July 1, 2025
+- [See slides](https://osf.io/wtxga)
+
+---
 
 # 🚀 **Reproducible Research Training Schedule - FY25**  
 The following training courses are open to all World Bank staff and consultants.  
@@ -58,7 +74,7 @@ This seminar provides:
 
 - **🖥️ Building a Reproducible Environment**  
   📹 [Watch Recording](https://osf.io/q7rjt) 📚 [See Slides](https://osf.io/tfe6u)
-  
+
 - **🖥How to Make your Research More Reproducible Using Github**  
   📹 [Watch Recording](https://osf.io/e3aj5) 📚 [See Slides](https://osf.io/92jtd)
 

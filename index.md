@@ -50,7 +50,7 @@ title: "World Bank Reproducible Research Repository Resources"
   <a href="./reproducibility_package_checklist.html" style="margin: 0 15px;">Checklist</a> |
   <a href="./reproducibility_reviewer_protocol.html" style="margin: 0 15px;">Reviewer Protocol</a> |
   <a href="./resources.html" style="margin: 0 15px;">Resources for Reproducibility</a> |
-  <a href="./reproducible_research_trainings.html" style="margin: 0 15px;">Our Trainings</a> |
+  <a href="./reproducible_research_trainings.html" style="margin: 0 15px;">Our Trainings and Conference Presentations</a> |
   <a href="./reproducibility_FAQs.html" style="margin: 0 15px;">FAQs</a>
 </nav>
 
@@ -81,7 +81,7 @@ title: "World Bank Reproducible Research Repository Resources"
     <a href="./resources.html">Resources for Reproducibility</a> – A collection of tools, templates, and instructions to support reproducible research packages.
   </li>
   <li>
-    <a href="./reproducible_research_trainings.html">Our Trainings</a> – Information about workshops and training sessions on reproducible research practices.
+    <a href="./reproducible_research_trainings.html">Our Trainings and Conference Presentations</a> – Information about workshops, training sessions, and conference presentations on reproducible research.
   </li>
   <li>
     <a href="./reproducibility_FAQs.html">FAQs</a> – Frequently Asked Questions about Reproducibility Packages.
@@ -93,9 +93,7 @@ title: "World Bank Reproducible Research Repository Resources"
     <p><strong>Tools developed and maintained by <a href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation/dime-analytics" target="_blank">DIME Analytics</a></strong></p>
     <p>DIME Analytics, part of the Development Impact Group, creates tools that improve the quality of impact evaluation research. We provide open-source and open-access resources, virtual courses, and solutions to ensure high-quality, reproducible research for the global development research community.</p>
   </div>
-  
+
 <div style="text-align: center;">
   <img src="./img/Dime-Analytics_logo-bb-tlb_RGB-Color.png" alt="DIME Analytics Logo" width="200">
 </div>
-
-
