@@ -57,9 +57,10 @@ Julia packages that call Python packages you previously installed with conda are
 ENV["PYTHON"]="python"
 ```
 
-This will tell Julia that whenever she needs to run Python code or scripts, she should just use the command `python` for it, which is what works in WB computers with an existing conda installation. Once this is done, `PyCall` can be built in an existing Julia environment with:
+This will tell Julia that whenever she needs to run Python code or scripts, she should just use the command `python` for it, which is what works in WB computers with an existing conda installation. Once this is done, `PyCall` can be built by running the following code from Julia's REPL, before activating an environment:
 
 ```{julia}
+import Pkg
 Pkg.build("PyCall")
 ```
 
