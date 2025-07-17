@@ -29,7 +29,7 @@ juliaup default 1.7.4
 
 The complete list of juliaup commands is [here](https://github.com/JuliaLang/juliaup).
 
-## Activating an environment in Julia
+## Activating a new environment in Julia
 
 Julia is specifically built to work with environments. You can create a new environment by opening Julia in the command line, pressing the key `]` and entering the command `activate {folder-path}`. This will create an environment with the name of the folder you're pointing at. If you want the environment to have the same name as your current folder, then type:
 
@@ -77,7 +77,7 @@ If you want to select a specific environment in which to run the script, then us
 julia --project=envName main.jl
 ```
 
-## Activating an existing Julia environment
+## Reproducing an existing Julia environment
 
 Julia stores the environment information in two files: *Project.toml* and *Manifest.toml*. An explanation of both is [here](https://julialang.github.io/Pkg.jl/v1/toml-files/). In short, *Project.toml* lists the dependencies in a high-level, declaring the project's direct dependencies. *Manifest.toml* records the exact versions of direct and indirect dependencies and contains more details to ensure project reproducibility.
 
