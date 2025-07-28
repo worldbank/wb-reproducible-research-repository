@@ -33,7 +33,7 @@ During this session, the author executes the full reproducibility package in a c
    - If the reviewer observes the entire session and confirms that the package runs successfully, this step is optional.
 
 5. **Run the Reproducibility Package**  
-   - The author runs the master script in full, without pausing or editing, unless explicitly agreed upon.
+   - The author runs the main script in full, without pausing or editing, unless explicitly agreed upon.
    - The reviewer observes the execution in real time.
 
 6. **Finalize and Share the Results**  
