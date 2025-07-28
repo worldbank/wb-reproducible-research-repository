@@ -46,7 +46,8 @@ During this session, the author executes the full reproducibility package in a c
    - If the package takes **more than one hour**, the author shares these items **after the session**:
      - Output files  
      - Dataset hash file  
-     - Environment file  
+     - Environment file
+     - Technical specifications of the computer where the code was executed: OS, processor, RAM memory, and software version
      - Log file with recorded start and end timestamps
 
 7. **Post-Session Verification**  
