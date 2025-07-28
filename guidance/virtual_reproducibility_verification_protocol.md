@@ -1,4 +1,7 @@
-# Virtual Reproducibility Verification Protocol
+---
+layout: default
+title: "Virtual Reproducibility Verification Protocol"
+---
 
 This protocol outlines the steps for conducting a **Virtual Reproducibility Verification** session. This approach is used when the reproducibility package relies on strictly confidential data that cannot be shared with the replication team.
 During this session, the author executes the full reproducibility package in a clean environment while the reviewer observes virtually. The aim is to ensure that the code runs successfully and produces the expected outputs, all while documenting and preserving a clean and reproducible setup.
