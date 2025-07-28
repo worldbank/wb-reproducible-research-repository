@@ -3,6 +3,8 @@ layout: default
 title: "Virtual Reproducibility Verification Protocol"
 ---
 
+[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](../index.html)
+
 This protocol outlines the steps for conducting a **Virtual Reproducibility Verification** session. This approach is used when the reproducibility package relies on strictly confidential data that cannot be shared with the replication team.
 During this session, the author executes the full reproducibility package in a clean environment while the reviewer observes virtually. The aim is to ensure that the code runs successfully and produces the expected outputs, all while documenting and preserving a clean and reproducible setup.
 
@@ -171,3 +173,5 @@ Additionally, If the virtual verification included unscripted data processing an
 - [ ] Information on any toolbox or additional tool used
 - [ ] History logs of the manual processes, if the software can generate them
 - [ ] The README should include a high-level description of any manual data processing and exhibit generation
+
+[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](../index.html)
