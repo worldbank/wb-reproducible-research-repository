@@ -42,7 +42,8 @@ During this session, the author executes the full reproducibility package in a c
      - Outputs (tables, figures, etc.)  
      - Dataset hash file (`data_hash_report.csv`)  
      - Environment file (`ado` folder or `renv.lock`)  
-     - Log file with timestamps (optional)  
+     - Log file with timestamps (optional)
+     - Technical specifications of the computer where the code was executed: OS, processor, RAM memory, and software version
    - If the package takes **more than one hour**, the author shares these items **after the session**:
      - Output files  
      - Dataset hash file  
