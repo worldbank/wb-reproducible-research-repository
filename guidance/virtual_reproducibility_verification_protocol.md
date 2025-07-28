@@ -29,7 +29,7 @@ During this session, the author executes the full reproducibility package in a c
 4. **Start Log File** *(Only required if the reviewer cannot observe the full run)*  
    - If the reviewer cannot stay for the full execution, the author must open a timestamp-only log at the beginning of the session to capture:
      - Start and end timestamps  
-   - The log **must not** capture any results or sensitive data.  
+   - The log **must not** capture any personally identifiable data.  
    - This timestamp log allows the reviewer to verify when the code was executed and cross-check output creation times.
    - If the reviewer observes the entire session and confirms that the package runs successfully, this step is optional.
 
