@@ -62,27 +62,48 @@ During this session, the author executes the full reproducibility package in a c
 The main `.do` file should include the environment setup at the top, and optional timestamp logging if the reviewer cannot stay for the full session.
 
 ```stata
-*--- Start of Master Script ---*
+*--- Start of Main Script ---*
 
-* Set clean ado path
-sysdir set PLUS "$path/ado"
+* Set version
+* Use the same that the authors specify in the README. 
+* If no version is mentioned, use your current Stata installation version.
+version 18
+
+* Set project global(s)
+global project 	"???"
+global code 	"${project}/code"
+
+* Set ado folder in the dofiles/code folder
+sysdir set PLUS "${code}/ado"
 
 * Open a plain text log to capture date and time only
-
-global timestamplog "vrv_timestamp_log.txt"
-file open log using "$timestamplog", write replace
+global timestamplog "${project}/vrv_timestamp_log.txt"
+file open log using "${timestamplog}", write replace
 file write log "Start date and time: `c(current_date)' `c(current_time)'" _n
+file write log "Executing the code" _n
 
-* Run Master script
-* (Do not log outputs)
+* Install packages in the ado folder 
+local user_commands	ietoolkit iefieldkit  //Add required user-written commands
+
+foreach command of local user_commands {
+	 cap which `command'
+	 if _rc == 111 {
+		 ssc install `command'
+	 }
+}
+
+* Run do files 
+do "${code}/cleaning.do"
+do "${code}/mainresults.do"
+do "${code}/appendix.do"	
 
 * Write end timestamp
-file write log "End date and time: `c(current_date)' `c(current_time)'" _n
-
-* Close the file
-file close log
-
-*--- End of Master Script ---*
+ file write log "End date and time: `c(current_date)' `c(current_time)'" _n
+ 
+ * Close the file
+ file close log
+	
+*--- End of Main Script ---*	
 ```
 ---
 
