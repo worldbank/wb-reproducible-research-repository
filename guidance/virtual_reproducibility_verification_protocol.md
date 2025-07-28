@@ -57,7 +57,7 @@ During this session, the author executes the full reproducibility package in a c
 
 ## Stata Instructions
 
-### Master Script Setup
+### Main Script Setup
 
 The master `.do` file should include the environment setup at the top, and optional timestamp logging if the reviewer cannot stay for the full session.
 
