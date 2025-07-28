@@ -12,7 +12,7 @@ During this session, the author executes the full reproducibility package in a c
 
 2. **Generate Dataset Hashes (Before Running the Code)**  
    - Use the official [hashing tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/generate_hash) provided by the reproducibility team.  
-   - To run the tool, authors must have R and RStudio installed on their computer.  
+   - To run the tool, authors must have R installed on their computer.  
    - Authors can either:
      - Clone the GitHub repository [here](https://github.com/worldbank/wb-reproducible-research-repository/tree/main), or  
      - Download the `generate_hash.zip` file directly from the GitHub page.  
