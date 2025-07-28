@@ -59,7 +59,7 @@ During this session, the author executes the full reproducibility package in a c
 
 ### Main Script Setup
 
-The master `.do` file should include the environment setup at the top, and optional timestamp logging if the reviewer cannot stay for the full session.
+The main `.do` file should include the environment setup at the top, and optional timestamp logging if the reviewer cannot stay for the full session.
 
 ```stata
 *--- Start of Master Script ---*
