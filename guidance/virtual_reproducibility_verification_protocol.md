@@ -16,6 +16,7 @@ During this session, the author executes the full reproducibility package in a c
    - Authors can either:
      - Clone the GitHub repository [here](https://github.com/worldbank/wb-reproducible-research-repository/tree/main), or  
      - Download the `create_hash.R` script directly from the [GitHub page](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/generate_hash/create_hash.R).
+   - Install all the necessary R packages loaded by `create_hash.R`
    - After running the tool, a file called `data_hash_report.csv` will be generated.
    - This file must be:
      - Shared with the reviewer during or after the virtual session, and  
