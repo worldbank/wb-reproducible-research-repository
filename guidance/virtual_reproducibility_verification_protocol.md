@@ -172,6 +172,7 @@ When verification involves manual, point-and-click steps for data processing or 
 - [ ] Scripts run successfully in clean environment
 - [ ] Log files with start and end time saved and shared
 - [ ] Output files shared and checked
+- [ ] Computer specifications shared
 - [ ] Environment lock file (`renv.lock`, or Stata ado folder) shared
 - [ ] Reviewer confirms alignment with manuscript
 
