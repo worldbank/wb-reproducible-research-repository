@@ -13,26 +13,27 @@ In brief, the process looks like:
 
 ![image](https://github.com/user-attachments/assets/3b5270fc-1da0-4f3a-9031-650b8d3f392f)
 
-Find more details below:
+Find the detailed workflow below:
 
 ## 1. Receive submission
 
-- Submissions come in through the [submission form](https://survey.wb.surveycto.com/collect/prwp_reproducibility?caseid=).
-- **SurveyCTO** sends an automatic reply to the authors, indicating a confirmation will be provided within two days.
-- **Project coordinator**:
-  - Log new submissions in the GitHub project.
-  - Open an issue with the format **ID: TYPE_LOCATION_YEAR_NUMBER** (e.g., RR_NGA_2024_213).
+- Submissions are received via the [submission form](https://survey.wb.surveycto.com/collect/prwp_reproducibility?caseid=).
+- **SurveyCTO** automatically sends an acknowledgment email to authors, indicating that a confirmation will follow within two business days.
+- **Project coordinator** responsibilities:
+  - Log each new submission in the GitHub project board.
+  - Open an issue with the format **ID: TYPE_LOCATION_YEAR_NUMBER** (example: RR_NGA_2024_213).
   - Types options are the following.
     - **PP**: published paper.
     - **RR**: Policy Research Working Paper.
-    - **FR**: Flagships and reports (this category includes databases so far).
-  - Assign the reviewer, download the files, and store them in the designated folder (internal SharePoint named after the review ID)
-    - If there are multiple submissions, zip each version and place them in a subfolder titled "files submitted" for organized tracking.
+    - **FR**: Flagships and reports (includes databases).
+  - Assign a reviewer, download the submitted files, and store them in the designated internal SharePoint folder named after the review ID.
+    - For multiple versions of a package, zip each version separately and place them in a subfolder `files_submitted` with subfolders named `v1`, `v2`, etc., for organized tracking.
 - _Special Case_: If a package is submitted via email instead of the form, respond with a request to complete [the submission form](https://survey.wb.surveycto.com/collect/prwp_reproducibility?caseid=), and share the [reproducibility guidance resources](https://worldbank.github.io/wb-reproducible-research-repository/) in your reply.
 
 **General notes**:
-- **Record Time Spent**: Track and document the total time spent on the review, starting from the initial receipt of the reproducibility package through to its publication.
-- **Document Author Communications**: All communications with the authors must be documented in the GitHub issue for the package. Each message should be reviewed and approved by the coordinator before being sent.
+- **Record Time Spent**: Record the total time spent on the review from receipt to publication. You can use [Toggl](https://track.toggl.com/) for accurate tracking.
+- **Document Author Communications**: Author communications should be documented in the GitHub issue, either by copying the full email or summarizing key discussion points and dates. If coordinator review is needed, reviewers can tag the coordinator in the issue.
+
 
 ## 2.a Verify completeness
 
@@ -60,13 +61,15 @@ Find more details below:
 
 ## 2.c Verify Public Data
 
-- [ ] For datasets that are publicly accessible, verify that the publicly available version matches the data provided by the authors.  
-  - Use the provided [Dataset Comparison and Reproducibility Verification Tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/compare_datasets) to compare the datasets.  
-  - Document any differences between the two versions.  
-  - If discrepancies are found:
-    - Check with the authors to understand the cause.  
-    - If the differences are due to **periodic updates**, note this in the verification report.  
-    - If the differences are due to **manual changes**, ask the authors to ensure that the correct version is used and included in the package.
+- [ ] For datasets that are publicly accessible but cannot be republished in the package, verify that the publicly available version matches the data provided by the authors.  
+  - Use the [Dataset Comparison and Reproducibility Verification Tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/compare_datasets) to compare datasets.  
+  - The tool will generate a `detailed_report.csv` that **must** be included in the final package.  
+  - Document any differences between the two versions:  
+    - If differences are due to **periodic updates**, note this in the verification report.  
+    - If differences are due to **manual changes**, request that the authors ensure the correct version is used and included in the package.  
+- [ ] Create dataset hashes for all data files used in the package.  
+  - Use the [Data Hash Tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/generate_hash) to generate hashes.  
+  - The tool will produce a hash report file that must be included in the final reproducibility package.
 
 ## 3. Start a clean programming environment
 
@@ -85,36 +88,54 @@ Find more details below:
 
 This will help you see if the outputs are changing after you run the code.
 
-## 5. Run the package
+## 5. Run the Package
 
-- [ ] Before starting the run of the package, delete the author's outputs and the intermediate data. This makes sure the code goes from raw data to analysis results, and all outputs are created by the code. If there are files the authors used to create figures (for example: Excel files where code results are manually transformed into figures), make sure this is explained in the README, in which case you wouldn't delete this file.  
-- [ ] Check if it runs from start to finish by only changing the top-level directory.
-- [ ] Document any lines that needed modifications to run the package.
-- [ ] Troubleshoot if the package does not run. Keep in mind this is often due to missing dependencies.
-- [ ] Commit to the Git repo as `first-run`
+- [ ] **Delete existing outputs and intermediate data** before running the package.  
+  - This ensures that the code runs fully from raw data to analysis results, and all outputs are generated by the code. This step is done after setting the Github repo, as it ensure you will be able to comapre if your exhibits match those of the authors.  
+  - If the package contains files (e.g., Excel files) where authors manually transformed results into figures, do **not** delete these files. Ensure they are explained in the README.  
+- [ ] **Run the package from start to finish** by only changing the top-level directory.  
+- [ ] **Document any code modifications** needed for a successful run.  
+- [ ] **Troubleshoot errors** if the package does not run. Often, these are due to missing dependencies.  
+- [ ] **Commit your progress** to the Git repository with the commit message: `first-run`.  
 
-**Document these critical aspects as you prepare and run the package:**
+### Document these critical aspects as you prepare and run the package:
 
 #### 1. Dependencies
-- [ ] **List all Dependencies**: Record all libraries, packages, and other dependencies necessary for the package. This will be saved in the ado folder (Stata), `environment.yml` (Python) or `renv.lock` (R).
+- [ ] **List all dependencies**: Record all libraries, packages, and other dependencies required for the package.  
+  - This will be saved in:
+    - Stata → `ado` folder  
+    - Python → `environment.yml`  
+    - R → `renv.lock`  
 
 #### 2. Changes Made
-- [ ] **Detail all Changes Made**: Note any changes made to get the package to run properly, including installation of packages, path modifications, or minor code adjustments. These changes should be documented on the GitHub issue.
+- [ ] **Document all changes made**: Note any code adjustments, package installations, or path modifications needed for the package to run.  
+- [ ] All changes are tracked in Git automatically; use these commits to document changes in the GitHub issue.  
 
 #### 3. System Information
-- [ ] **Record System Information**: Detail the system specifics where the package is run, including Operating System, Processor, Memory Available, and Software Version (including edition for Stata).
+- [ ] **Record system details**:  
+  - Operating System  
+  - Processor  
+  - Available Memory  
+  - Software Version (including Stata edition)  
+  
+## 6. Confirm Initial Run and Verify Stability 
 
-## 6. Confirm initial run
-
-- [ ] If the package runs successfully from start to finish:
-  - [ ] Note the run time.
-- [ ] **Verify Stability**:
-    - [ ] Run the package one more time based to ensure stability. If the package takes more than 3 days to run, a second full run is not required.
-    - [ ] Use Git locally to track and ensure output stability across runs.
-    - [ ] Confirm that outputs are consistent across runs.
-    - [ ] If discrepancies occur between runs, document them and update the Git repo. If the reproducibility package is in Stata, run `reprun` on it to detect where they start appearing. If it's in R or Python, or if `reprun` didn't work, discuss with the coordinator or the rest of the team to try to find where the issue is. Return the package to the authors for corrections, detailing the issues found. 
-- [ ] Send the confirmation to the authors with an estimated date for the return of the report (2 weeks).
-- [ ] Notify the authors of any missing information for the publication.
+- [ ] If the package runs successfully:
+  - [ ] Note the total run time.  
+- [ ] **Verify stability**:
+  - [ ] Run the package a second time to ensure results are stable.  
+  - [ ] If the package takes more than 3 days to run, a second full run is not required.  
+  - [ ] Use Git locally to track changes.  
+    - If outputs are stable, you should not see changes in `.txt`, `.png`, `.jpg`, or `.csv` files.  
+    - Files such as `.dta` and `.xlsx` may show changes due to metadata (e.g., timestamps); this does not necessarily indicate instability.  
+  - [ ] Confirm that outputs remain consistent across runs.  
+  - [ ] If discrepancies occur:
+    - Document the differences and update the Git repo.  
+    - For Stata packages, run `reprun` to locate where discrepancies arise.  
+    - For R/Python packages or if `reprun` does not work, discuss with the coordinator/team to identify issues.  
+    - Return the package to authors with a detailed explanation of the issues.  
+- [ ] **Send confirmation to authors** with an estimated report return date (2 weeks).  
+- [ ] Notify authors of any missing information required for publication.  
 
 ## 7. Verify consistency with the manuscript
 
@@ -133,9 +154,9 @@ This will help you see if the outputs are changing after you run the code.
     - In the "Main Findings" section of the report, do not include procedural steps already incorporated into the final package. For example, omit details like the execution of `set varabbrev on` or the installation of libraries that are already included in the provided code. Only include what external users will need to modify to run the code on their computers.
   - [ ] **Unsuccessful Reproduction**:
     - In the "List of exhibits" section of the report include a screenshot of your code results and the paper exhibit. Highlight all the differences so they're noticeable by the authors. For each exhibit, mention any pattern in the discrepancies you might have noticed.
-    - Send the report by email. In your email, include a summary of the exhibits that didn't reproduce and actionable information with your suggestions on how to address the reproducibilty issue. Discuss this with the coordinator or rest of the team if needed.
+    - Send the report by email. In your email, include a summary of the exhibits that didn't reproduce and actionable information with your suggestions on how to address the reproducibility issue. Discuss this with the coordinator or rest of the team if needed.
 - [ ] If you ran the code, include the computer specifications at the end of the report. If someone else did this step, then include that person's computer specifications.
-- [ ] Once the draft is complete, send the report to the coordinator for review. When the coordinator approves it, send it to the authors.
+- [ ] If needed send the report to the coordinator for review. When the coordinator approves it, send it to the authors.
 
 ## 9. Prepare Metadata and Publication
 
@@ -149,7 +170,10 @@ This will help you see if the outputs are changing after you run the code.
 - [ ] Ensure the README file is in PDF format; if it is not, convert it to PDF and include only this version in the package. Name it: `README.pdf`.
 - [ ] Check if the package includes a license:
   - [ ] If not present, add a Modified BSD3 license, available [here](https://opensource.org/license/bsd-3-clause/).
-  - [ ] Start the license with: "Copyright (year), Author1, Author2, Author3, ..." followed by the complete license text.
+  - [ ] Start the license with: "Copyright (year), World Bank" followed by the complete license text.
+- [ ] The final package should have the following structure:   
+
+![](img/folder_structure.png)
 
 For full instructions on preparing metadata and the publication process, refer to the document [here](https://github.com/dime-worldbank/prwp-reproducibility-int/blob/main/Metadata_Instruction/markdown_schema_v7.pdf) (internal link).
 
