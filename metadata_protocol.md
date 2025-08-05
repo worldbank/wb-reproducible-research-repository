@@ -129,7 +129,7 @@ For each dataset, include:
   * Requires purchase or human approval.
   * No documented way to access.
 * **License**: e.g., `Creative Commons Attribution 4.0 (CC-BY 4.0)` (if available). 
-* **License URL**: URL for the dataset license (e.g., [WDI Terms of Use](https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets)).
+* **License URL**: URL for the dataset license, e.g., [WDI Terms of Use](https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets) (if available). 
 * **Data URL**: Direct download URL (if available).
 
 ---
