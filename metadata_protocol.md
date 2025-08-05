@@ -166,7 +166,7 @@ Attach the following resources:
   - **Title:** Reproducibility verification for *[Title]*  
 
 - `RR_WLD_2024_100.zip`  
-  - **Resource type:** Document, Other  
+  - **Resource type:** Program / script
   - **Title:** Reproducibility package for *[Title]*  
 
 The `RR_WLD_2024_100.zip` file must include:
