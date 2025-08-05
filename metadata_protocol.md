@@ -14,7 +14,7 @@ The protocol has four components:
 ## Metadata Creation and Publication Process
 
 * World Bank staff and consultants submit reproducibility verification requests via the [SurveyCTO form](https://survey.wb.surveycto.com/collect/prwp_reproducibility?caseid=undefined).
-* The [app](https://datanalytics-int.worldbank.org/RR-automation-SCTO/) automatically fills most metadata fields using this information.
+* The internal app automatically fills most metadata fields using this information.
 * The reviewer opens the app, selects the package to publish, assigns their name, and clicks **Publish JSON** to generate the metadata entry in the Metadata Editor.
 
 ### Steps
