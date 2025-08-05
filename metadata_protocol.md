@@ -1,6 +1,6 @@
 # Metadata Protocol for Reproducibility Packages
 
-This protocol outlines the steps and field requirements for creating high-quality metadata for reproducibility packages. It ensures that entries published on the [Reproducible Research Repository](https://reproducibility.worldbank.org) are consistent, complete, and aligned with verification standards.
+This protocol outlines the steps and field requirements for creating high-quality metadata for reproducibility packages. It is primarily intended to guide metadata producers and reviewers in preparing comprehensive documentation. It can also serve as a reference for authors to understand how their materials will be documented. The goal is to ensure that entries published on the [Reproducible Research Repository](https://reproducibility.worldbank.org/) are complete, consistent, and aligned with verification standards.
 
 The protocol has three components:
 
