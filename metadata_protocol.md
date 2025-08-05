@@ -97,7 +97,7 @@ Review and correct these fields as needed:
     * Dependencies reference ado folder / `renv.lock` / `requirements.txt`.
     * Notes include: “Computational reproducibility verified by the Development Impact Analytics Team, World Bank.”
 
-* **Repository**: Usually “Reproducible Research Repository (World Bank)” with URL [https://reproducibility.worldbank.org](https://reproducibility.worldbank.org). Update only if replication was hosted by a journal or another repository.
+* **Repository**: Usually “Reproducible Research Repository (World Bank)” with URL [https://reproducibility.worldbank.org](https://reproducibility.worldbank.org). Update only if replication was hosted by a journal, if the package was already published to another repository, or if we had to use the [Development Data Hub](https://datacatalog.worldbank.org/) to upload the reproducibility package because it had a size of over 500 MB.
 
 ---
 
