@@ -103,7 +103,7 @@ Review and correct these fields as needed:
 
 ### Manual Input Fields: Data Section
 
-Choose the most restrictive applicable **Data Availability Statement**:
+Choose the most restrictive applicable **Data Availability Statement**. This should match the **Data** statement under *Reproducibility Summary* in the Reproducibility Report.:
 
 * All data sources are publicly available and included in the reproducibility package.
 * All data sources are publicly available but not all are included in the reproducibility package.
