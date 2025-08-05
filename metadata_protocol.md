@@ -28,6 +28,7 @@ The protocol has three components:
    * Upload a thumbnail.
    * Verify auto-filled fields (detailed guidance in the next section).
    * Complete the **Data section** with dataset provenance and access statements.
+   * Complete the **Reproducibility Section** with the reproduction instructions, technology requirements, and technology environment used (detailed guidance in the next section).
    * Upload **External resources**: README, reproducibility report, license, data hash report, and optional comparison report.
    * Check that **tags** (DOI, Data Access, Code Access) are correctly defined.
 4. **Publish to QA** – Save and publish the entry to the QA catalog.
