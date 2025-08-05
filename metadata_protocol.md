@@ -2,11 +2,12 @@
 
 This protocol outlines the steps and field requirements for creating high-quality metadata for reproducibility packages. It is primarily intended to guide metadata producers and reviewers in preparing comprehensive documentation. It can also serve as a reference for authors to understand how their materials will be documented. The goal is to ensure that entries published on the [Reproducible Research Repository](https://reproducibility.worldbank.org/) are complete, consistent, and aligned with verification standards.
 
-The protocol has three components:
+The protocol has four components:
 
 1. **Process Description** – How metadata is created and published.
 2. **Metadata Fields** – Detailed guidance on each field, indicating which are pre-filled.
 3. **External Resources Structure** – The required folder structure accompanying the package.
+4. **Post-Publication Updates** – Fields to review or revise after metadata creation and publication.
 
 ---
 
