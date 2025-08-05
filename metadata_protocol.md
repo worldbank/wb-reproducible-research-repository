@@ -57,7 +57,7 @@ Review and correct these fields as needed:
 
 * **Version Statement**
 
-  * **Project completion date**: Year-month indicating when the paper was finalized.
+  * **Project completion date**: Year-month-day indicating when the paper was finalized. If day is not available Year-month is enough. 
 
 * **Scope and Coverage**
 
