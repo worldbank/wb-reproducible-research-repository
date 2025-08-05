@@ -202,4 +202,23 @@ Ensure tags are added and correct:
   * Restricted code: proprietary or not included (temporary embargo counts as restricted).
   * No code: package includes only manual (e.g., Excel) processes.
 
+---
 
+## Post-Publication Updates
+
+Once the paper is published or the data embargo is lifted, the following updates should be made to ensure the metadata remains accurate and complete:
+
+1. **Thumbnail**  
+   Replace the existing thumbnail with a screenshot of the *published* version of the paper.
+
+2. **Output Section**  
+   Update the following fields under the *Processes and Outputs* section:
+   - **Description**: Add the publication number, e.g., *Policy Research Working Paper (PRWP) No. 11165*.
+   - **URL**: Link to the final published paper.
+   - **DOI**: Enter the DOI provided at publication.
+
+3. **Data Section**  
+   - If data previously marked as *forthcoming* is now available, verify that it matches the version originally included in the reproducibility package. Then update the dataset’s **URL** and **notes** fields accordingly.
+   - If an embargo has been lifted, update the dataset’s **URL** and **notes** fields accordingly.
+
+   
