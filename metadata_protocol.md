@@ -189,7 +189,7 @@ The `RR_WLD_2024_100.zip` file must include:
 
 Ensure tags are added and correct:
 
-* **DOI**: `DOI`. Once DOI is issued, replace `DOI` with the DOI number.
+* **DOI**: `DOI`. 
 * **Data Access**:
 
   * Open data: freely downloadable and redistributable.
