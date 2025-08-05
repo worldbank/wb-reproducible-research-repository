@@ -25,6 +25,7 @@ The protocol has three components:
 
 3. **Review and Edit Metadata** – In the Metadata Editor:
 
+   * Upload a thumbnail.
    * Verify auto-filled fields (detailed guidance in the next section).
    * Complete the **Data section** with dataset provenance and access statements.
    * Upload **External resources**: README, reproducibility report, license, data hash report, and optional comparison report.
