@@ -17,7 +17,7 @@ Questions should be directed to reproducibility@worldbank.org.
 
   * [ ] **Data**
 
-    * All data files required for reproducibility verification should be included (for verification purposes only; see [here](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/guidance_note_wb.md) for publication guidelines and embargo options for reproducibility packages). The data should be provided in its original form.
+    * All data files required for reproducibility verification should be included (for verification purposes only; see [here](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/guidance_note_wb.md) for publication guidelines and embargo options for reproducibility packages). **The data should be provided in its original form**.
     * If the data cannot be shared via OneDrive (e.g., large datasets), please email [reproducibility@worldbank.org](mailto:reproducibility@worldbank.org) to discuss alternatives.
 
   * [ ] **Code**
@@ -42,6 +42,8 @@ Questions should be directed to reproducibility@worldbank.org.
     * For each dataset: include filename, source, URL, and access year. Provide a link (if public), or step-by-step instructions on how/where/when a third party can access the data (if restricted or embargoed)
     * Description of any restrictions on data access, publication, or storage/retention periods based on data terms of use
     * Rights statement confirming that the authors had legitimate access to all data used in the manuscript
+      
+    See our [FAQ](https://worldbank.github.io/wb-reproducible-research-repository/reproducibility_FAQs.html#how-do-i-document-the-datasets-used-in-the-reproducibility-package) for guidance on documenting different types of datasets.
 
   * [ ] **Outputs used in the paper** (e.g., tables and figures) in raw form
 
