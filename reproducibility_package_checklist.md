@@ -17,7 +17,7 @@ Questions should be directed to reproducibility@worldbank.org.
 
   * [ ] **Data**
 
-    * All data files required for reproducibility verification should be included (for verification purposes only; see [publication guidelines and embargo options](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/guidance_note_wb.md)). **The data should be provided in its original form** (see [FAQ: What is the starting point for a reproducibility package?](https://worldbank.github.io/wb-reproducible-research-repository/reproducibility_FAQs.html#what-is-the-starting-point-for-a-reproducibility-package)).
+    * All data files required for reproducibility verification should be included (for verification purposes only; see [publication guidelines and embargo options](https://worldbank.github.io/wb-reproducible-research-repository/guidance_note_wb.html)). **The data should be provided in its original form** (see [FAQ: What is the starting point for a reproducibility package?](https://worldbank.github.io/wb-reproducible-research-repository/reproducibility_FAQs.html#what-is-the-starting-point-for-a-reproducibility-package)).
     * If the data cannot be shared via OneDrive (e.g., large datasets, data that requires a non-disclosure agreement, strictly confidential data), please email [reproducibility@worldbank.org](mailto:reproducibility@worldbank.org) to discuss alternatives. Options include signing an NDA or conducting a [virtual reproducibility verification](https://worldbank.github.io/wb-reproducible-research-repository/guidance/virtual_reproducibility_verification_protocol.html).
 
   * [ ] **Code**
@@ -26,7 +26,7 @@ Questions should be directed to reproducibility@worldbank.org.
     * A main script that allows the reviewer to run all code after changing only the top-level directory. A recommended template is available here: [Stata](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/main.do), [R](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/main.R).
     * If the package does not include a main script, it must have a README that specifies the order of execution of code files.
     * Code should create all exhibits and in-text numerical citations not drawn directly from tables.
-    * If the package does not use code and is an Excel package, please review [these guidelines](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/excel/Excel_Guidelines.md).
+    * If the package does not use code and is an Excel package, please review [these guidelines](https://worldbank.github.io/wb-reproducible-research-repository/resources/excel/Excel_Guidelines.html).
 
   * [ ] **README**
 
