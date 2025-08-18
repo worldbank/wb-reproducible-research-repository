@@ -14,13 +14,13 @@ Before diving into the FAQs, we recommend reviewing the [Guidance Note](https://
 ## Table of Contents
 
 - [General FAQs](#general-faqs)
-  - [What are the most common reasons reproducibility checks fail?](#what-are-the-most-common-reasons-reproducibility-checks-fail)
   - [How do I submit a package?](#how-do-i-submit-a-package)
   - [Who can submit a reproducibility package?](#who-can-submit-a-reproducibility-package)
   - [How long does the reproducibility verification process take?](#how-long-does-the-reproducibility-verification-process-take)
   - [How should I organize my package?](#how-should-i-organize-my-package)
   - [What does the reproducibility report contain?](#what-does-the-reproducibility-report-contain)
   - [What if my package uses Excel?](#what-if-my-package-uses-excel)
+  - [What are the most common reasons reproducibility checks fail?](#what-are-the-most-common-reasons-reproducibility-checks-fail)
 
 - [Data-Related Questions](#data-related-questions)
   - [What is the starting point for a reproducibility package?](#what-is-the-starting-point-for-a-reproducibility-package)
