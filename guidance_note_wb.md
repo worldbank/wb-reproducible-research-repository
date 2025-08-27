@@ -25,7 +25,7 @@ This is not a review of the accuracy or quality of the code, the data, or the me
 Detailed guidelines on the process for submission, verification, and publication of reproducibility packages are included below. World Bank staff and consultants can address any questions to the WB Reproducibility team at [reproducibility@worldbank.org](mailto:reproducibility@worldbank.org). 
 Please review our FAQs [here](https://worldbank.github.io/wb-reproducible-research-repository/reproducibility_FAQs.html) as well.  
 
----
+
 
 
 ## Reproducibility package submission
@@ -37,10 +37,7 @@ It needs to clearly document the data, code, and steps used to generate the pape
 A well-structured package typically organizes data, code, and outputs in separate folders, includes a README file, and provides a main script that specifies the order in which the code should be run. 
 Supporting resources can be found [here](https://worldbank.github.io/wb-reproducible-research-repository/resources.html).
 
-
-
-
-#### Documenting Data  
+### Documenting Data  
 
 A reproducibility package should always begin from documented data sources, often referred to as *source data*. Source data is a citable dataset that is properly documented, either publicly accessible or archived in a World Bank internal catalog, and serves as the starting point for reproducibility.
 
@@ -69,12 +66,12 @@ In the case of confidential and/or restricted-access data, the authors have the 
    Authors provide fake but structurally similar data in the public package. 
    The reviewer verifies the package with the actual data through one of the secure methods above.  
 
-#### Exemptions  
+### Exemptions  
 Exemptions apply to literature reviews, theoretical papers, and qualitative research. A
 ny other exemption must be approved by the author’s manager. 
 Managers may also approve temporary embargoes for data collected by World Bank teams, to preserve intellectual property while the team seeks academic publication.  
 
----
+
 
 
 ## Reproducibility package verification
@@ -108,7 +105,7 @@ Sections of the paper that are theoretical or involve model-based simulations ar
 
 For more details, see the complete [Reproducibility Verification Protocol](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/reproducibility_reviewer_protocol.md).  
 
----
+
 
 
 ## Reproducibility package publication
@@ -127,7 +124,7 @@ Each published reproducibility package will include:
 
 Every reproducibility package will be assigned a DOI to support discovery, cross-linking, and citation.  
 
-#### Treatment of Data in Published Packages  
+### Treatment of Data in Published Packages  
 Depending on access restrictions, data in the reproducibility package will take one of the following forms:  
 
 1. **Data already published (internally or externally):**  
