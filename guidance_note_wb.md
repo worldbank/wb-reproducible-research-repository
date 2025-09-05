@@ -41,7 +41,7 @@ Supporting resources can be found [here](https://worldbank.github.io/wb-reproduc
 
 A reproducibility package should always begin from documented data sources, often referred to as *source data*. Source data is a citable dataset that is properly documented, either publicly accessible or archived in a World Bank internal catalog, and serves as the starting point for reproducibility.
 
-For each dataset used, authors are expected to provide a full data citation. This should include a URL for publicly available datasets, or clear instructions on how to compile or request access for datasets that cannot be redistributed, or require purchase or human approval.
+For each dataset used, authors are expected to provide a full data citation. This should include a URL for publicly available datasets, or clear instructions on how to compile or request access for datasets that cannot be redistributed, or require purchase or human approval. For more guidance, see our [FAQ on documenting datasets](https://worldbank.github.io/wb-reproducible-research-repository/reproducibility_FAQs.html#how-do-i-document-the-datasets-used-in-the-reproducibility-package).
 
 Any original data generated for the publication that is owned by the World Bank **must** be deposited in one of the Bank’s official repositories (a copy of the data may be shared with the Reproducibility Team directly, to facilitate the verification process): 
 
@@ -67,8 +67,7 @@ In the case of confidential and/or restricted-access data, the authors have the 
    The reviewer verifies the package with the actual data through one of the secure methods above, and additionally verifies that the package runs with the synthetic data. The published version of the package includes the synthetic data, so users can interact directly with the code.
 
 ### Exemptions  
-Exemptions apply to literature reviews, theoretical papers, and qualitative research. A
-ny other exemption must be approved by the author’s manager. 
+Exemptions apply to literature reviews, theoretical papers, and qualitative research. Any other exemption must be approved by the author’s manager. 
 Managers may also approve temporary embargoes for data collected by World Bank teams, to preserve intellectual property while the team seeks academic publication.  
 
 
@@ -129,7 +128,7 @@ Depending on access restrictions, data in the reproducibility package will take 
 
 1. **Data already published (internally or externally):**  
    The Data Availability Statement (DAS) links to the data with access instructions and version details. 
-   If permitted, the data may also be included directly in the package, which is recommended when no DOI or stable link exists. ch is recommended when no DOI or stable link exists.  
+   If permitted, the data may also be included directly in the package, which is recommended when no DOI or stable link exists.
 
 2. **Proprietary or confidential data:**  
    The DAS explains how third parties may access the data. 
@@ -141,10 +140,6 @@ Depending on access restrictions, data in the reproducibility package will take 
    The DAS will link to the published data. 
    Authors may also request a renewable one-year embargo on data or code publication to allow time for follow-up work with newly collected datasets or developed code.  
 
-4. **Data with limited stand-alone value:**  
-   This includes manually constructed or derivative datasets drawn from public sources. 
-   If unrestricted, such datasets may be published directly in the package. 
-   This also includes dummy datasets, which can substitute for restricted data to allow users to verify that the code runs correctly.  
 
 
 The reproducibility package will be cross-linked with the PRWP in Documents & Reports. 
