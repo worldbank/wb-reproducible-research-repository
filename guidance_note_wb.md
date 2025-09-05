@@ -7,10 +7,10 @@ title: "Guidance to Authors"
 
 # Guidance Note for World Bank Staff and Consultants on Reproducible Publications
 
-To enhance the credibility, transparency, and impact of its analytical products, the World Bank’s Development Economics Vice Presidency (DEC) launched the [Reproducible Research Repository](https://reproducibility.worldbank.org/). 
-The repository documents the data and code underlying Bank analytics and provides reproducibility packages, complete sets of instructions and materials required to regenerate the results of specific publications.  
+To enhance the credibility, transparency, and impact of the World Bank's analytical products, the Development Economics Vice Presidency (DEC) launched the [Reproducible Research Repository](https://reproducibility.worldbank.org/). 
+The repository documents the data and code underlying Bank analytics and provides reproducibility packages, complete sets of instructions and materials required to regenerate the results of specific publications.  As of September 2025, Policy Research Working Papers are required to produce a reproducibility package (if empirical) and all other publications are highly encouraged to do so. Publications with a reproducibility package are distinguished by a Reproducible Research badge on the front cover.
 
-By making these packages available, the repository allows users to scrutinize the underlying data and methodological choices, reproduce results, and build on existing research. 
+Making reproducibility packages available allows research consumers to scrutinize the underlying data and methodological choices, reproduce results, and build on existing research. 
 To ensure reliability, all reproducibility packages are verified for completeness and functionality before they are posted.  
 
 Reproducibility verification ensures that a reviewer can regenerate exactly the outputs (statistical tables and data visualizations) presented in a publication by running the reproducibility package provided by the authors. 
@@ -20,7 +20,7 @@ In this process, the reviewer checks that the package is:
 - **Stable**: producing identical results each time it is executed  
 - **Consistent**: reproducing tables and figures that match those in the publication  
 
-This is not a review of the accuracy or quality of the code, the data, or the methods applied, or the validity of the research itself.  
+This is **not** a review of the accuracy or quality of the code, the data, or the methods applied, or the validity of the research itself.  
 
 Detailed guidelines on the process for submission, verification, and publication of reproducibility packages are included below. World Bank staff and consultants can address any questions to the WB Reproducibility team at [reproducibility@worldbank.org](mailto:reproducibility@worldbank.org). 
 Please review our FAQs [here](https://worldbank.github.io/wb-reproducible-research-repository/reproducibility_FAQs.html) as well.  
@@ -43,7 +43,7 @@ A reproducibility package should always begin from documented data sources, ofte
 
 For each external dataset used, authors are expected to provide a full data citation. This should include a URL for publicly available datasets, or clear instructions on how to compile or request access for datasets that cannot be redistributed, or require purchase or human approval.
 
-Any original data generated for the publication that is owned by the World Bank **must** also be deposited in one of the Bank’s official repositories: 
+Any original data generated for the publication that is owned by the World Bank **must** be deposited in one of the Bank’s official repositories (a copy of the data may be shared with the Reproducibility Team directly, to facilitate the verification process): 
 
 -	[Microdata Library (MDL)](https://microdatalib.worldbank.org/index.php/data-deposit) for survey data  
 - [Development Data Hub (DDH)](https://datacatalog.worldbank.org/int/data/add) for geospatial, administrative, time series, and other types of data  
@@ -64,7 +64,7 @@ In the case of confidential and/or restricted-access data, the authors have the 
 
 3. **Synthetic Data**  
    Authors provide fake but structurally similar data in the public package. 
-   The reviewer verifies the package with the actual data through one of the secure methods above.  
+   The reviewer verifies the package with the actual data through one of the secure methods above, and additionally verifies that the package runs with the synthetic data. The published version of the package includes the synthetic data, so users can interact directly with the code.
 
 ### Exemptions  
 Exemptions apply to literature reviews, theoretical papers, and qualitative research. A
