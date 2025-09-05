@@ -41,7 +41,7 @@ Supporting resources can be found [here](https://worldbank.github.io/wb-reproduc
 
 A reproducibility package should always begin from documented data sources, often referred to as *source data*. Source data is a citable dataset that is properly documented, either publicly accessible or archived in a World Bank internal catalog, and serves as the starting point for reproducibility.
 
-For each external dataset used, authors are expected to provide a full data citation. This should include a URL for publicly available datasets, or clear instructions on how to compile or request access for datasets that cannot be redistributed, or require purchase or human approval.
+For each dataset used, authors are expected to provide a full data citation. This should include a URL for publicly available datasets, or clear instructions on how to compile or request access for datasets that cannot be redistributed, or require purchase or human approval.
 
 Any original data generated for the publication that is owned by the World Bank **must** be deposited in one of the Bank’s official repositories (a copy of the data may be shared with the Reproducibility Team directly, to facilitate the verification process): 
 
