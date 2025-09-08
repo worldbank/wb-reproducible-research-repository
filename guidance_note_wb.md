@@ -135,10 +135,15 @@ Depending on access restrictions, data in the reproducibility package will take 
    Input data will not be included, though derivative datasets may be shared if allowed. 
    Data available to Bank staff should also be deposited in the internal catalogue and linked in the DAS.  
 
-3. **World Bank–owned unpublished data:**  
-   These should be added to the Microdata Library (if microdata) or the Development Data Hub (if any other type of data). 
-   The DAS will link to the published data. 
-   Authors may also request a renewable one-year embargo on data or code publication to allow time for follow-up work with newly collected datasets or developed code.  
+3. **Data that is not yet published and is owned by the World Bank (e.g., survey data procured by the Bank):**  
+   If the data used for the paper is not published at the time the reproducibility package is submitted, the Reproducibility Team will connect the authors to the relevant World Bank data catalogue to facilitate publication.
+   The MicroData Library (MDL) is used for survey or other microdata, and the Development Data Hub (DDH) for other types of data.
+   The Reproducible Research Repository is not designed as a data catalogue; publishing data in the existing data catalogues ensures it is fully documented, discoverable and reusable.
+
+
+   Once the data is published, the DAS in the reproducibility package will link to the published data.
+   In the case of an embargo, or if there is a delay in the data publication, the DAS will note that the data is forthcoming.
+   Authors may request a renewable one-year embargo on data publication to protect intellectual property rights, in advance of publication in an academic journal.
 
 
 
