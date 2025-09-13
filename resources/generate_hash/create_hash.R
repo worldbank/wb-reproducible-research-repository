@@ -3,8 +3,18 @@ library(dplyr)
 library(readr)
 library(tools)
 library(tibble)
-library(rstudioapi)
 library(utils)
+
+# Cross-platform directory chooser
+choose_directory <- function() {
+    if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable()) {
+        rstudioapi::selectDirectory(caption = "Select your data folder")
+    } else if (requireNamespace("tcltk", quietly = TRUE)) {
+        tcltk::tk_choose.dir()
+    } else {
+        stop("No suitable method for choosing a directory. Please install RStudio or tcltk.")
+    }
+}
 
 # Function to calculate SHA256 hash of a file
 calculate_sha256 <- function(filepath) {
@@ -17,9 +27,9 @@ calculate_sha256 <- function(filepath) {
 
 # Ask user to select the working directory
 cat("Please select the directory where your data files are stored:\n")
-data_dir <- choose.dir()
+data_dir <- choose_directory()
 
-if (is.na(data_dir)) {
+if (is.na(data_dir) || data_dir == "") {
     stop("No directory selected. Exiting.")
 }
 
@@ -49,7 +59,8 @@ hash_df <- tibble(
 )
 
 # Save output
-output_path <- file.path("data_hash_report.csv")
+output_path <- file.path(getwd(), "data_hash_report.csv")
 write_csv(hash_df, output_path)
 
 cat("Hash report saved to:\n", output_path, "\n")
+
