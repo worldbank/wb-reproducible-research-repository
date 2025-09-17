@@ -35,8 +35,8 @@ read_dataset <- function(file) {
 dataframe_types <- c('csv', 'xlsx', 'dta')
 
 # === LOAD FILES ===
-pkg_files <- list.files(pkg_path, full.names = TRUE)
-pub_files <- list.files(pub_path, full.names = TRUE)
+pkg_files <- list.files(pkg_path, full.names = TRUE, recursive = TRUE)
+pub_files <- list.files(pub_path, full.names = TRUE, recursive = TRUE)
 pkg_files <- pkg_files[pkg_files != 'package/README.md']
 pub_files <- pub_files[pub_files != 'public/README.md']
 
