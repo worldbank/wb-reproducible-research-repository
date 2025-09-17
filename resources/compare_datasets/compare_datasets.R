@@ -41,8 +41,8 @@ pkg_files <- pkg_files[pkg_files != 'package/README.md']
 pub_files <- pub_files[pub_files != 'public/README.md']
 
 matched_files <- intersect(
-    file_path_sans_ext(basename(pkg_files)),
-    file_path_sans_ext(basename(pub_files))
+    file_path_sans_ext(tolower(basename(pkg_files))),
+    file_path_sans_ext(tolower(basename(pub_files)))
 )
 
 summary_report <- list()
@@ -50,12 +50,12 @@ all_value_diffs <- list()
 
 # === LOOP THROUGH MATCHED FILES ===
 for (name in matched_files) {
-    pkg_file <- pkg_files[basename(file_path_sans_ext(pkg_files)) == name][1]
-    pub_file <- pub_files[basename(file_path_sans_ext(pub_files)) == name][1]
+    pkg_file <- pkg_files[tolower(basename(file_path_sans_ext(pkg_files))) == name][1]
+    pub_file <- pub_files[tolower(basename(file_path_sans_ext(pub_files))) == name][1]
     
     # for data types
-    if (file_ext(pkg_file) %in% dataframe_types &
-        file_ext(pub_file) %in% dataframe_types) {
+    if (tolower(file_ext(pkg_file)) %in% dataframe_types &
+        tolower(file_ext(pub_file)) %in% dataframe_types) {
     
         pkg_data <- tryCatch(read_dataset(pkg_file), error = function(e) NULL)
         pub_data <- tryCatch(read_dataset(pub_file), error = function(e) NULL)
