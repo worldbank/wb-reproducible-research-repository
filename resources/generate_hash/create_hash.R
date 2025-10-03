@@ -36,8 +36,8 @@ if (is.na(data_dir) || data_dir == "") {
 # Normalize path
 data_dir <- normalizePath(data_dir, winslash = "/", mustWork = TRUE)
 
-# Define allowed file extensions
-valid_extensions <- c("csv", "xlsx", "dta")
+# Define allowed file extensions (added zip)
+valid_extensions <- c("csv", "xlsx", "dta", "zip")
 
 # Recursively list all valid data files
 data_files <- list.files(
@@ -63,4 +63,5 @@ output_path <- file.path(getwd(), "data_hash_report.csv")
 write_csv(hash_df, output_path)
 
 cat("Hash report saved to:\n", output_path, "\n")
+
 
