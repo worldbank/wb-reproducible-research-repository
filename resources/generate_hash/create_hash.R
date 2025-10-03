@@ -36,8 +36,8 @@ if (is.na(data_dir) || data_dir == "") {
 # Normalize path
 data_dir <- normalizePath(data_dir, winslash = "/", mustWork = TRUE)
 
-# Define allowed file extensions (added zip)
-valid_extensions <- c("csv", "xlsx", "dta", "zip")
+# Define allowed file extensions
+valid_extensions <- c("csv", "xlsx", "dta", "zip", "tif", "shp", "cpg", "dbf", "prj", "sbn", "sbx", "shx")
 
 # Recursively list all valid data files
 data_files <- list.files(

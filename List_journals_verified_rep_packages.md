@@ -19,3 +19,6 @@
 17. Journal of Financial Economics
 18. Quarterly Journal of Economics
 19. Review of Economic Studies
+20. Journal of the European Economic Association
+21. Quantitative Economics
+22. Theoretical Economics
