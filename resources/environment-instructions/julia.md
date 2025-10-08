@@ -31,7 +31,7 @@ The complete list of juliaup commands is [here](https://github.com/JuliaLang/jul
 
 ## Activating a new environment in Julia
 
-Julia is specifically built to work with environments. You can create a new environment by opening Julia in the command line, pressing the key `]` and entering the command `activate {folder-path}`. This will create an environment with the name of the folder you're pointing at. If you want the environment to have the same name as your current folder, then type:
+Julia is specifically built to work with environments. You can create a new environment by opening Julia in the command line with `julia`, pressing the key `]` and entering the command `activate {folder-path}`. This will create an environment with the name of the folder you're pointing at. If you want the environment to have the same name as your current folder, then type:
 
 ```{julia}
 activate ./
