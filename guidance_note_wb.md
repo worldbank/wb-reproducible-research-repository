@@ -39,7 +39,7 @@ Supporting resources can be found [here](https://worldbank.github.io/wb-reproduc
 
 ### Documenting Data  
 
-A reproducibility package should always begin from documented data sources, often referred to as *source data*. Source data is a citable dataset that is properly documented, either publicly accessible or archived in a World Bank internal catalog, and serves as the starting point for reproducibility.
+A reproducibility package should always begin from documented data sources, often referred to as *source data*. Source data is a citable dataset that is properly documented, either publicly accessible or archived in a World Bank internal catalog, and serves as the starting point for reproducibility. Where lawful redistribution of raw data is infeasible or where data construction is institutionally standardized and documented elsewhere, the package may start from “usable data” (a fully documented, citable intermediate dataset) provided the README includes (i) provenance and access instructions for raw sources, and (ii) scripts or written protocols that reproduce the usable dataset when access is granted.
 
 For each dataset used, authors are expected to provide a full data citation. This should include a URL for publicly available datasets, or clear instructions on how to compile or request access for datasets that cannot be redistributed, or require purchase or human approval. For more guidance, see our [FAQ on documenting datasets](https://worldbank.github.io/wb-reproducible-research-repository/reproducibility_FAQs.html#how-do-i-document-the-datasets-used-in-the-reproducibility-package).
 
@@ -65,6 +65,14 @@ In the case of confidential and/or restricted-access data, the authors have the 
 3. **Synthetic Data**  
    Authors provide fake but structurally similar data in the public package. 
    The reviewer verifies the package with the actual data through one of the secure methods above, and additionally verifies that the package runs with the synthetic data. The published version of the package includes the synthetic data, so users can interact directly with the code.
+
+4. **Pre-computed outputs**
+Authors provide pre-computed outputs (tables/figures and intermediate artifacts) accompanied by code and SHA256 checksums to enable integrity checks.
+
+5. **Containerized environments**
+    Authors provide a containerized environment (e.g., Docker/Apptainer), or deterministic compiled binaries with source escrow (source shared upon journal acceptance or after embargo).
+
+The verification report will specify the pathway used. 
 
 ### Exemptions  
 Exemptions apply to literature reviews, theoretical papers, and qualitative research. Any other exemption must be approved by the author’s manager. 
@@ -96,7 +104,10 @@ Specifically, the reviewer checks:
 - Graphs and visualizations match those in the manuscript, including the data displayed, axis titles and ticks, and legends.  
 - Outputs are stable across multiple runs, meaning no changes are observed between runs.  
 - The code produces all statistical tables and data visualizations reported in the paper.  
-- If the appendix contains more than 10 exhibits, the reviewer will verify a random sample of 10, selected using a [reproducible randomization code](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/select_appendix_exhibits.do).  
+- If the appendix contains more than 10 exhibits, the reviewer will verify a random sample of 10, selected using a [reproducible randomization code](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/select_appendix_exhibits.do).
+- Appendices that are online only will not be considered in the verification process.
+
+For model-based simulations, verification will focus on reproducibility of reported outputs given fixed inputs and calibration (stability and determinism), not on re-solving models under alternative calibrations. Where solve times exceed the “standard workstation” threshold, authors may submit pre-computed artifacts plus scripts to regenerate exhibits from those artifacts
 
 #### Step 4. Reporting  
 Once verification is successfully completed, the reviewer issues a report describing the scope and outcome of the process. 
