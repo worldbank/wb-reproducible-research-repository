@@ -51,7 +51,7 @@ Any original data generated for the publication that is owned by the World Bank 
 Access to these submission portals is limited to World Bank staff. 
 Depositing original data in the appropriate repository ensures compliance with the [Bank Procedure for Development Dataset Acquisition, Archiving and Dissemination](https://worldbankgroup.sharepoint.com/sites/ppfonline/PPFDocuments/ef8d76aeb7b541509672704768ee0c24.pdf) (link requires WB intranet access).
 
-In the case of confidential and/or restricted-access data, the authors have the following options which may be used as appropriate, these are listed in order of preference:
+In the case of restricted-access data and/or computationally-intensive packages (compute time >5 days) the authors have the following options which may be used as appropriate. These are listed in order of preference:
 
 1. **Non-Disclosure Agreement (NDA)**  
    Reviewers sign an agreement stating that they will access the data only for reproducibility checks and will not re-use it. 
@@ -63,21 +63,24 @@ In the case of confidential and/or restricted-access data, the authors have the 
    See detailed protocol [here](https://worldbank.github.io/wb-reproducible-research-repository/guidance/virtual_reproducibility_verification_protocol.html).  
 
 3. **Synthetic Data**  
-   Authors provide fake but structurally similar data in the public package. 
+   In the case of strictly confidential or very large datasets, authors may provide fake but structurally similar data in the public package. 
    The reviewer verifies the package with the actual data through one of the secure methods above, and additionally verifies that the package runs with the synthetic data. The published version of the package includes the synthetic data, so users can interact directly with the code.
 
-4. **Pre-computed outputs**
-Authors provide pre-computed outputs (tables/figures and intermediate artifacts) accompanied by code and SHA256 checksums to enable integrity checks.
+4. **Artifact pathway**
+In the case of very large datasets, or simulations of large models, authors may provide pre-computed outputs (tables/figures and intermediate artifacts) accompanied by code and SHA256 checksums to enable integrity checks. 
 
 5. **Containerized environments**
     Authors provide a containerized environment (e.g., Docker/Apptainer), or deterministic compiled binaries with source escrow (source shared upon journal acceptance or after embargo).
 
 The verification report will specify the pathway used. 
 
+For model-based simulations, verification will focus on reproducibility of reported outputs given fixed inputs and calibration (stability and determinism), not on re-solving models under alternative calibrations. Where solve times exceed the “standard workstation” threshold, authors may submit pre-computed artifacts plus scripts to regenerate exhibits from those artifacts (Artifact pathway). 
+
 ### Exemptions  
 Exemptions apply to literature reviews, theoretical papers, and qualitative research. Any other exemption must be approved by the author’s manager. 
-Managers may also approve temporary embargoes for data collected by World Bank teams, to preserve intellectual property while the team seeks academic publication.  
 
+### Embargoes
+Managers may approve renewable 12-month embargoes for data and/or code while a paper is under active review at a journal. During embargo, the metadata and reproducibility verification report are published at a minimum. Non-embargoed elements of the reproducibility package may be published, to be determined on a case-by-case basis. 
 
 
 
