@@ -53,6 +53,7 @@ Authors will receive an initial response within **two business days** of submiss
 
 Most packages are reviewed within **two weeks** when only minor or no corrections are needed. The overall timeline may vary depending on the complexity of the analysis and the completeness of the submission. Packages that require significant clarification or additional input from authors may take longer.
 
+Heavy-compute or packages using restricted data may require coordination time (e.g., NDA processing, scheduling virtual verification). Authors receive an initial triage within 2 business days specifying the pathway and timeline.
 
 ### How should I organize my package?
 
@@ -178,7 +179,7 @@ A main script is a single entry point that runs all other scripts in the correct
 -   A recommended template is available here: [Stata](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/main.do), [R](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/main.R).
 
 ### How do I check if my code is stable?
-**Stable code**  produces the same outputs every time it is run with the same inputs.  **Unstable code**  yields different results on repeated runs, which undermines reproducibility.
+**Stable code**  produces the same outputs every time it is run with the same inputs.  **Unstable code**  yields different results on repeated runs, which undermines reproducibility. For stochastic models, set seeds and document any nondeterministic components; otherwise verification will fail on stability grounds.
 
 **How to test for stability:**  
 Run the full code twice. If any outputs differ between runs, the code is unstable.
@@ -212,7 +213,7 @@ To set this up, follow the environment setup guides for each language:
 Using a clean, well-defined environment is critical to computational reproducibility.
 
 ### Do you check if the code is correct?
-No. We only verify complete documentation and **computational reproducibility**: whether running the same code and data produces the same outputs.  We do not assess whether the code correctly implements the intended methods, nor the quality of the code.
+No. We only verify complete documentation and **computational reproducibility**: whether running the same code and data produces the same outputs.  We do not assess whether the code correctly implements the intended methods, nor the quality of the code. 
 
 ### What if my package uses Excel?
 
@@ -227,6 +228,15 @@ If your package includes Excel files:
 
 
  [See our Excel guidelines](https://worldbank.github.io/wb-reproducible-research-repository/resources/excel/Excel_Guidelines.html)  for recommended practices and our [presentation on how to produce tables and plots in Stata and R](https://osf.io/ezmsb) for quick instructions on how to build reproducible outputs.
+
+### Can I submit compiled code or binaries?
+Yes. Provide (i) build instructions and compiler versions, or (ii) a container image, or (iii) deterministic binaries plus environment details. If source cannot be shared immediately, indicate source-escrow terms (e.g., released at journal acceptance or after embargo).
+
+### What if my simulations take weeks to run?
+Use the Artifact Pathway: submit pre-computed solve outputs (with hashes) and scripts that generate all exhibits from those outputs. Provide a short “smoke test” subset that runs in ≤1 hour to demonstrate determinism.
+
+### Do you support Julia/MATLAB/Fortran/C++?” 
+Yes. Use environment files or containers. Guidance and minimal templates are provided for Julia (Project/Manifest), MATLAB (version + toolboxes), and compiled languages.
 
 ## Documentation-Related Questions
 
