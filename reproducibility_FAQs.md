@@ -88,7 +88,7 @@ Also known as: the copy-paste problem.  In some cases, the code is up to date bu
   A Data Statement is required for every package. The Data Statement must document every data source. The reproducibility packages should start from documented, original files (not intermediate files such as 'cleaned_for_analysis.dta'). For more details on data sources, see [What is the starting point for a reproducibility package?](#what-is-the-starting-point-for-a-reproducibility-package)
 
 - **Manual Steps Not Documented:**  
-  If figures or tables are modified manually (e.g., in Excel) without clear instructions or supporting code, the process is difficult for third parties to follow. All steps used to generate results—even if manual—must be documented clearly in the README or equivalent instructions.
+  If figures or tables are modified manually (e.g., in Excel) or manually copied from results in a console log (e.g., results manually copied from the Stata console panel) without clear instructions, supporting code, or information on where results shown in exhibits come from, the process is difficult for third parties to follow. All steps used to generate results—even if manual—must be documented clearly in the README or equivalent instructions.
 
 - **Coding Errors:**  
   Broken scripts, incorrect file paths, missing dependencies, or syntax errors can prevent the code from running altogether. Ensure the exact package you are submitting runs through without errors before you submit it. Best practice is to have another research team member (not the primary code author) run the package as well (for example, this helps catch hard-coded filepaths). 
