@@ -39,7 +39,7 @@ Supporting resources can be found [here](https://worldbank.github.io/wb-reproduc
 
 ### Documenting Data  
 
-A reproducibility package should always begin from documented data sources, often referred to as *source data*. Source data is a citable dataset that is properly documented, either publicly accessible or archived in a World Bank internal catalog, and serves as the starting point for reproducibility. Where lawful redistribution of raw data is infeasible or where data construction is institutionally standardized and documented elsewhere, the package may start from “usable data” (a fully documented, citable intermediate dataset) provided the README includes (i) provenance and access instructions for raw sources, and (ii) scripts or written protocols that reproduce the usable dataset when access is granted.
+A reproducibility package should always begin from documented data sources, typically *raw data*. Where lawful redistribution of raw data is infeasible or where data construction is institutionally standardized and documented elsewhere, the package may start from *intermediate data*. **All data sources must be fully documented, citable and have clear data access instructions.** Source data files should be  published or archived in a World Bank data catalogue so that they are documented and permanently accessible.  In the case of intermedidate data, the README must include provenance and access instructions for raw sources. Data documentation should include the scripts or written protocols that reproduce the intermediate dataset when access is granted.
 
 For each dataset used, authors are expected to provide a full data citation. This should include a URL for publicly available datasets, or clear instructions on how to compile or request access for datasets that cannot be redistributed, or require purchase or human approval. For more guidance, see our [FAQ on documenting datasets](https://worldbank.github.io/wb-reproducible-research-repository/reproducibility_FAQs.html#how-do-i-document-the-datasets-used-in-the-reproducibility-package).
 
@@ -51,7 +51,8 @@ Any original data generated for the publication that is owned by the World Bank 
 Access to these submission portals is limited to World Bank staff. 
 Depositing original data in the appropriate repository ensures compliance with the [Bank Procedure for Development Dataset Acquisition, Archiving and Dissemination](https://worldbankgroup.sharepoint.com/sites/ppfonline/PPFDocuments/ef8d76aeb7b541509672704768ee0c24.pdf) (link requires WB intranet access).
 
-In the case of restricted-access data and/or computationally-intensive packages (compute time >5 days) the authors have the following options which may be used as appropriate. These are listed in order of preference:
+## Packages with Restricted or Confidential Data
+In the case of **restricted-access or confidential data**, the following options which may be used as appropriate:
 
 1. **Non-Disclosure Agreement (NDA)**  
    Reviewers sign an agreement stating that they will access the data only for reproducibility checks and will not re-use it. 
@@ -66,11 +67,14 @@ In the case of restricted-access data and/or computationally-intensive packages 
    In the case of strictly confidential or very large datasets, authors may provide fake but structurally similar data in the public package. 
    The reviewer verifies the package with the actual data through one of the secure methods above, and additionally verifies that the package runs with the synthetic data. The published version of the package includes the synthetic data, so users can interact directly with the code.
 
-4. **Artifact pathway**
-In the case of very large datasets, or simulations of large models, authors may provide pre-computed outputs (tables/figures and intermediate artifacts) accompanied by code and SHA256 checksums to enable integrity checks. 
+## Computationally Intensive Packages
+For packages requiring **very large datasets or extensive compute time (typically >5 days)**, the following pathways are recommended:
 
-5. **Containerized environments**
-    Authors provide a containerized environment (e.g., Docker/Apptainer), or deterministic compiled binaries with source escrow (source shared upon journal acceptance or after embargo).
+1. **Artifact pathway**
+Authors may provide pre-computed outputs (tables, figures, and intermediate artifacts) accompanied by code and SHA256 checksums to enable integrity and consistency checks without requiring full recomputation.
+
+2. **Containerized environments**
+Authors provide a containerized environment (e.g., Docker/Apptainer), or deterministic compiled binaries with source escrow (source shared upon journal acceptance or after embargo).**
 
 The verification report will specify the pathway used. 
 
