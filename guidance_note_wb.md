@@ -26,8 +26,6 @@ Detailed guidelines on the process for submission, verification, and publication
 Please review our FAQs [here](https://worldbank.github.io/wb-reproducible-research-repository/reproducibility_FAQs.html) as well.  
 
 
-
-
 ## Reproducibility package submission
 
 To begin, authors must complete the [Reproducibility Verification Request Form](https://survey.wb.surveycto.com/collect/prwp_reproducibility?caseid=) and submit their package through a GitHub repository, a OneDrive folder, another cloud-based sharing service, or, for small datasets, a compressed folder sent directly by email to reproducibility@worldbank.org. 
@@ -39,9 +37,15 @@ Supporting resources can be found [here](https://worldbank.github.io/wb-reproduc
 
 ### Documenting Data  
 
-A reproducibility package should always begin from documented data sources, typically *raw data*. Where lawful redistribution of raw data is infeasible or where data construction is institutionally standardized and documented elsewhere, the package may start from *intermediate data*. **All data sources must be fully documented, citable and have clear data access instructions.** Source data files should be  published or archived in a World Bank data catalogue so that they are documented and permanently accessible.  In the case of intermedidate data, the README must include provenance and access instructions for raw sources. Data documentation should include the scripts or written protocols that reproduce the intermediate dataset when access is granted.
+A reproducibility package should always begin from documented data sources, referred to as ***source data***.
+Source data must be citable, properly documented, and either (a) publicly accessible, (b) archived in a World Bank–approved internal catalog, or (c) subject to clear access procedures when access is restricted. This dataset serves as the official starting point for reproduction.
 
-For each dataset used, authors are expected to provide a full data citation. This should include a URL for publicly available datasets, or clear instructions on how to compile or request access for datasets that cannot be redistributed, or require purchase or human approval. For more guidance, see our [FAQ on documenting datasets](https://worldbank.github.io/wb-reproducible-research-repository/reproducibility_FAQs.html#how-do-i-document-the-datasets-used-in-the-reproducibility-package).
+Where lawful redistribution of raw data is infeasible, or when the data construction process is institutionally standardized and documented elsewhere, the package may begin from an intermediate dataset. 
+In such cases, the intermediate dataset becomes a valid ***source dataset*** when it is (a) formally published in an approved World Bank catalogue (e.g., MDL, DDH), (b) permanently accessible, and (c) accompanied by proper citation and access instructions.
+
+For each dataset used, authors are expected to provide a full data citation. 
+This should include a URL for publicly available datasets, or clear instructions on how to compile or request access for datasets that cannot be redistributed, or require purchase or human approval. 
+For more guidance, see our [FAQ on documenting datasets](https://worldbank.github.io/wb-reproducible-research-repository/reproducibility_FAQs.html#how-do-i-document-the-datasets-used-in-the-reproducibility-package).
 
 Any original data generated for the publication that is owned by the World Bank **must** be deposited in one of the Bank’s official repositories (a copy of the data may be shared with the Reproducibility Team directly, to facilitate the verification process): 
 
