@@ -110,7 +110,6 @@ Specifically, the reviewer checks:
 - If the appendix contains more than 10 exhibits, the reviewer will verify a random sample of 10, selected using a [reproducible randomization code](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/select_appendix_exhibits.do).
 - Appendices that are online only will not be considered in the verification process.
 
-For model-based simulations, verification will focus on reproducibility of reported outputs given fixed inputs and calibration (stability and determinism), not on re-solving models under alternative calibrations. Where solve times exceed the “standard workstation” threshold, authors may submit pre-computed artifacts plus scripts to regenerate exhibits from those artifacts
 
 #### Step 4. Reporting  
 Once verification is successfully completed, the reviewer issues a report describing the scope and outcome of the process. 
