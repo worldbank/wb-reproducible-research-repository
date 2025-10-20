@@ -17,8 +17,10 @@ Questions should be directed to reproducibility@worldbank.org.
 
   * [ ] **Data**
 
-    * All data files required for reproducibility verification should be included (for verification purposes only; see [publication guidelines and embargo options](https://worldbank.github.io/wb-reproducible-research-repository/guidance_note_wb.html)). **The data should be provided in its original form** (see [FAQ: What is the starting point for a reproducibility package?](https://worldbank.github.io/wb-reproducible-research-repository/reproducibility_FAQs.html#what-is-the-starting-point-for-a-reproducibility-package)).
-    * If the data cannot be shared via OneDrive (e.g., large datasets, data that requires a non-disclosure agreement, strictly confidential data), please email [reproducibility@worldbank.org](mailto:reproducibility@worldbank.org) to discuss alternatives. Options include signing an NDA or conducting a [virtual reproducibility verification](https://worldbank.github.io/wb-reproducible-research-repository/guidance/virtual_reproducibility_verification_protocol.html).
+    * All data files required for reproducibility verification should be included (for verification purposes only; see [publication guidelines and embargo options](https://worldbank.github.io/wb-reproducible-research-repository/guidance_note_wb.html)). **The reproducibility package must start from documented data**. For traceability, the reproducibility package is expected to start from original (unprocessed) data. See [FAQ: What is the starting point for a reproducibility package?](https://worldbank.github.io/wb-reproducible-research-repository/reproducibility_FAQs.html#what-is-the-starting-point-for-a-reproducibility-package)).
+    * If access is restricted to any input dataset, the dataset(s) should not be included in the original submission. Data can be shared after an NDA is signed. In the case of [virtual reproducibility verification](https://worldbank.github.io/wb-reproducible-research-repository/guidance/virtual_reproducibility_verification_protocol.html),  data is never shared directly with the reproducibility team.  For questions on tailored pathways, please email [reproducibility@worldbank.org](mailto:reproducibility@worldbank.org).
+    * If the input data is very large, the package may start from “usable data” (a fully documented, citable intermediate dataset) provided the README includes (i) provenance and access instructions for raw sources, and (ii) scripts or written protocols that reproduce the usable dataset when access is granted.
+    * 
 
   * [ ] **Code**
 
@@ -27,6 +29,7 @@ Questions should be directed to reproducibility@worldbank.org.
     * If the package does not include a main script, it must have a README that specifies the order of execution of code files.
     * Code should create all exhibits and in-text numerical citations not drawn directly from tables.
     * If the package does not use code and is an Excel package, please review [these guidelines](https://worldbank.github.io/wb-reproducible-research-repository/resources/excel/Excel_Guidelines.html).
+    * If applicable, the author may submit (i) build instructions and compiler versions, or (ii) a container image, or (iii) deterministic binaries plus environment details. If source cannot be shared immediately, indicate source-escrow terms (e.g., released at journal acceptance or after embargo).
 
   * [ ] **README**
 
@@ -47,7 +50,8 @@ Questions should be directed to reproducibility@worldbank.org.
     See our [FAQ](https://worldbank.github.io/wb-reproducible-research-repository/reproducibility_FAQs.html#how-do-i-document-the-datasets-used-in-the-reproducibility-package) for guidance on documenting different types of datasets.
 
   * [ ] **Outputs used in the paper** (e.g., tables and figures) in raw form
-  
+* In the case of very large datasets, or simulations of large models (compute time >5 days), authors may select the Artifact Pathway. In this case, authors will provide pre-computed outputs (tables/figures and intermediate artifacts) accompanied by code and SHA256 checksums to enable integrity checks.
+
   * [ ] **Manuscript**  
   
     * Please include the **final manuscript** that will be used for publication. This is the version we will use to review exhibits one by one.  
