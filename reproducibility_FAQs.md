@@ -236,7 +236,7 @@ Yes. Provide (i) build instructions and compiler versions, or (ii) a container i
 Use the Artifact Pathway: submit pre-computed solve outputs (with hashes) and scripts that generate all exhibits from those outputs. Provide a short “smoke test” subset that runs in ≤1 hour to demonstrate determinism.
 
 ### Do you support Julia/MATLAB/Fortran/C++?” 
-Yes. Use environment files or containers. Guidance and minimal templates are provided for Julia (Project/Manifest), MATLAB (version + toolboxes), and compiled languages.
+Yes. Authors should submit environment files or containers. For Julia, authors must provide the project and manifest along with scripts. For MATLAB, authors provide the version plus all toolboxes, along with scripts. 
 
 ## Documentation-Related Questions
 
