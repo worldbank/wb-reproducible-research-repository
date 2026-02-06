@@ -122,7 +122,9 @@ For each dataset, include:
   > Source: World Bank. File name: `gdp_wdi.dta`. Located in `Summary/1-data/raw/other`. Indicators: GDP (constant 2015 US\$).
 * **Access Policy**: Choose from:
 
-  - **Open data**: Data is publicly available and included in the reproducibility package.  
+  - **Open data**:
+     - Data is publicly available and included in the reproducibility package.
+     - Data is publicly available but not included in the reproducibility package due to file size constraints.
   - **Accessible data**: Data is publicly available but does not allow redistribution and it is not included in the reproducibility package.
   - **Limited-access data**: Data access requires purchase or human approval and is not included in the reproducibility package.
   - **Forthcoming data**: Data is forthcoming in the World Bank Microdata Library.
