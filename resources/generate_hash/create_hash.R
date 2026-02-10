@@ -37,7 +37,7 @@ if (is.na(data_dir) || data_dir == "") {
 data_dir <- normalizePath(data_dir, winslash = "/", mustWork = TRUE)
 
 # Define allowed file extensions
-valid_extensions <- c("csv", "xlsx", "dta", "zip", "tif", "shp", "cpg", "dbf", "prj", "sbn", "sbx", "shx")
+valid_extensions <- c("csv", "xlsx", "dta", "zip", "tif", "shp", "cpg", "dbf", "prj", "sbn", "sbx", "shx", "CSV", "DAT", "dcf")
 
 # Recursively list all valid data files
 data_files <- list.files(
@@ -47,16 +47,26 @@ data_files <- list.files(
     recursive = TRUE
 )
 
+file_times <- file.info(data_files)
+
+
 # Convert to relative paths
 relative_paths <- sub(paste0("^", data_dir, "/?"), "", normalizePath(data_files, winslash = "/"))
 
 # Create a data frame with filename, relative path, hash, and date
 hash_df <- tibble(
-    filename = basename(data_files),
-    path = relative_paths,
-    sha256sum = sapply(data_files, calculate_sha256),
-    date = Sys.Date()
+    filename    = basename(data_files),
+    path        = relative_paths,
+    sha256sum   = sapply(data_files, calculate_sha256),
+    date = Sys.Date(),
+    modified    = format(
+        as.POSIXct(file_times$mtime, tz = Sys.timezone()),
+        tz = Sys.timezone(),
+        format = "%Y-%m-%d %H:%M:%S"
+    ),
+    timezone    = Sys.timezone()
 )
+
 
 # Save output
 output_path <- file.path(getwd(), "data_hash_report.csv")
