@@ -101,8 +101,8 @@ This will help you see if the outputs are changing after you run the code.
 ### Document these critical aspects as you prepare and run the package:
 
 #### 1. Dependencies
-- [ ] **List all dependencies**: Record all libraries, packages, and other dependencies required for the package.  
-  - This will be saved in:
+- [ ] **List all dependencies**: Save all libraries, packages, and other dependencies required for the package.  
+  - This will be saved automatically in:
     - Stata → `ado` folder  
     - Python → `environment.yml`  
     - R → `renv.lock`  
@@ -124,7 +124,7 @@ This will help you see if the outputs are changing after you run the code.
   - [ ] Note the total run time.  
 - [ ] **Verify stability**:
   - [ ] Run the package a second time to ensure results are stable.  
-  - [ ] If the package takes more than 3 days to run, a second full run is not required.  
+  - [ ] If the package takes more than 48 hours to run, a second full run is not required.  
   - [ ] Use Git locally to track changes.  
     - If outputs are stable, you should not see changes in `.txt`, `.png`, `.jpg`, or `.csv` files.  
     - Files such as `.dta` and `.xlsx` may show changes due to metadata (e.g., timestamps); this does not necessarily indicate instability.  

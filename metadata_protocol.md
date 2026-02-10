@@ -122,12 +122,16 @@ For each dataset, include:
   > Source: World Bank. File name: `gdp_wdi.dta`. Located in `Summary/1-data/raw/other`. Indicators: GDP (constant 2015 US\$).
 * **Access Policy**: Choose from:
 
-  * Publicly available and included in package.
-  * Data created specifically for the project and included in package.
-  * Restricted and not included (README must document access).
-  * Public but cannot be redistributed (requires comparison).
-  * Requires purchase or human approval.
-  * No documented way to access.
+  - **Open data**:
+     - Data is publicly available and included in the reproducibility package.
+     - Data is publicly available but not included in the reproducibility package due to file size constraints.
+  - **Accessible data**: Data is publicly available but does not allow redistribution and it is not included in the reproducibility package.
+  - **Limited-access data**: Data access requires purchase or human approval and is not included in the reproducibility package.
+  - **Forthcoming data**: Data is forthcoming in the World Bank Microdata Library.
+  - **Restricted data**:
+     - There is no documented way to access the data, and it is not included in the reproducibility package
+     - Data access was granted directly to the study authors by the data owners/managers. It was obtained with a custom data license that does not allow for redistribution and it is not included in the reproducibility package.
+
 * **License**: e.g., `Creative Commons Attribution 4.0 (CC-BY 4.0)` (if available). 
 * **License URL**: URL for the dataset license, e.g., [WDI Terms of Use](https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets) (if available). 
 * **Data URL**: Direct download URL (if available).
