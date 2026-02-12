@@ -180,7 +180,7 @@ The `RR_WLD_2024_100.zip` file must include:
 - `reproducibility_report_PID.pdf`  
 - `data_hash_report.csv` (created with the [hash tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/generate_hash))  
 - `comparison_report.csv` (include if data type is Limited Access or Accessible; created with the [data comparison tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/compare_datasets))  
-- `Reproducibility package/` folder containing the original code and data (e.g., `ado` folder for Stata, `renv` or `myenv` for R/Python).
+- `Reproducibility package/` folder containing the original code and data (e.g., `ado` folder for Stata, `renv` (`renv.lock`, `.Rprofile`, and `renv/activate.R`) or `myenv` for R/Python).
 
 ![](img/package_structure.png)
 
