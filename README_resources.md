@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "README Resources"
+title: "README Generator"
 ---
 
 [![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](./index.html)

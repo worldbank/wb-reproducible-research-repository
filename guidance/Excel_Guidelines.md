@@ -3,6 +3,8 @@ layout: default
 title: "Excel Packages: Guidelines"
 ---
 
+[![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](../index.html)
+
 ## Overview
 
 In our commitment to enhancing reproducibility, it is essential to address the inherent challenges posed by manual steps in **Excel-based packages**. We aim to bridge this gap through automation and comprehensive documentation. The following guidelines are designed to structure Excel files to improve transparency, minimize manual intervention, and streamline the verification process for replicators.
