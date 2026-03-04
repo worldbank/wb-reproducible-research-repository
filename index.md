@@ -86,24 +86,19 @@ title: "World Bank Reproducible Research Repository Resources"
     <div class="dropdown-content">
       <a href="./guidance_note_wb.html">📘 Full Guidance Note for Authors</a>
       <a href="./guidance/step_by_step_flagships.html">📋 Step-by-Step – For Flagships</a>
+      <a href="./guidance/Excel_Guidelines.html"> 📈 Excel Guidelines </a>
     </div>
   </div> |
-
-  <!-- 2. Protocols -->
-  <div class="dropdown">
-    <a href="./reproducibility_reviewer_protocol.html">Protocols ▾</a>
-    <div class="dropdown-content">
-      <a href="./reproducibility_reviewer_protocol.html">🔎 Full Reviewer Protocol</a>
-      <a href="./guidance/virtual_reproducibility_verification_protocol.html">💻 Virtual Verification Protocol</a>
-    </div>
-  </div> |
-
+  
+  <!-- 2. Checklist -->
+  <a href="./reproducibility_package_checklist.html">Checklist</a> |
+  
   <!-- 3. FAQs -->
   <a href="./reproducibility_FAQs.html">FAQs</a> |
-
-  <!-- 4. Checklist -->
-  <a href="./reproducibility_package_checklist.html">Checklist</a> |
-
+  
+  <!-- 4. Resources -->
+  <a href="./resources.html">Resources</a> |
+  
   <!-- 5. README -->
   <div class="dropdown">
     <a href="./README_resources.html">README ▾</a>
@@ -113,9 +108,15 @@ title: "World Bank Reproducible Research Repository Resources"
       <a href="https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/README_Template.md" target="_blank">📝 README Template (.md)</a>
     </div>
   </div> |
-  
-  <!-- 6. Resources -->
-  <a href="./resources.html">Resources</a> |
+
+  <!-- 6. Protocols -->
+  <div class="dropdown">
+    <a href="./reproducibility_reviewer_protocol.html">Protocols ▾</a>
+    <div class="dropdown-content">
+      <a href="./reproducibility_reviewer_protocol.html">🔎 Full Reviewer Protocol</a>
+      <a href="./guidance/virtual_reproducibility_verification_protocol.html">💻 Virtual Verification Protocol</a>
+    </div>
+  </div> |
 
   <!-- 7. Trainings -->
   <a href="./reproducible_research_trainings.html">Trainings</a>
@@ -125,48 +126,62 @@ title: "World Bank Reproducible Research Repository Resources"
 <!-- UPDATED SECTIONS OVERVIEW WITH CARDS -->
 <section>
   <div class="card-container">
+
+    <!-- 1. Guidance -->
     <div class="card">
       <a href="./guidance_note_wb.html">
         <h3>Guidance for Authors</h3>
         <p>Detailed instructions for preparing a reproducible publication.</p>
       </a>
     </div>
-    <div class="card">
-      <a href="./reproducibility_reviewer_protocol.html">
-        <h3>Review Protocols</h3>
-        <p>Evaluation guidelines for assessing the reproducibility of research.</p>
-      </a>
-    </div>
-    <div class="card">
-      <a href="./reproducibility_FAQs.html">
-        <h3>FAQs</h3>
-        <p>Frequently asked questions about reproducibility packages.</p>
-      </a>
-    </div>
+
+    <!-- 2. Checklist -->
     <div class="card">
       <a href="./reproducibility_package_checklist.html">
         <h3>Checklist</h3>
         <p>A step-by-step guide to ensure all components are included.</p>
       </a>
     </div>
+
+    <!-- 3. FAQs -->
+    <div class="card">
+      <a href="./reproducibility_FAQs.html">
+        <h3>FAQs</h3>
+        <p>Frequently asked questions about reproducibility packages.</p>
+      </a>
+    </div>
+
+    <!-- 4. Resources -->
+    <div class="card">
+      <a href="./resources.html">
+        <h3>Resources</h3>
+        <p>Tools, templates, and other assets to support your research.</p>
+      </a>
+    </div>
+    
+    <!-- 5. README -->
     <div class="card">
       <a href="./README_resources.html">
-        <h3>README Resources</h3>
-        <p>Templates and tools to create a high-quality README file.</p>
+        <h3>README Generator</h3>
+        <p>Templates and generator tool to create a high-quality README file.</p>
       </a>
     </div>
-     <div class="card">
-      <a href="./reproducible_research_trainings.html">
-        <h3>Trainings</h3>
-        <p>Information on our workshops, presentations, and conferences.</p>
+
+    <!-- 6. Protocols -->
+    <div class="card">
+      <a href="./reproducibility_reviewer_protocol.html">
+        <h3>Review Protocols</h3>
+        <p>Evaluation guidelines for assessing the reproducibility of research.</p>
       </a>
     </div>
+
   </div>
 </section>
 
+
 <footer style="text-align: center; padding: 20px; border-top: 1px solid #ddd; margin-top: 20px;">
   <p><strong>Tools developed and maintained by 
-    <a href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation/dime-analytics" target="\_blank">DIME Analytics</a></strong></p>
+    <a href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation/dime-analytics" target="\_blank">DECDI Analytics</a></strong></p>
   <p>DIME Analytics creates open-source resources and solutions to ensure high-quality, reproducible research for the global development research community.</p>
 </footer>
 

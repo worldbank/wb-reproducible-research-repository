@@ -41,10 +41,12 @@ It’s important to isolate your environment to ensure reproducibility. Follow t
 
 ---
 
-## Excel Guidelines
+## Guidelines
 
 If your package is in Excel, or includes any component that uses Excel, please review our Excel guidelines:  
-- [Excel Guidelines](./resources/excel/Excel_Guidelines.md)
+- [Excel Guidelines](./guidance/Excel_Guidelines.md)
+If your package is for a Flagship report, please review our Flagship guidelines
+- [Guide For Flagships](./guidance/step_by_step_flagships.md)
 
 
 
