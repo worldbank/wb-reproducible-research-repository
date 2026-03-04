@@ -110,7 +110,7 @@ title: "World Bank Reproducible Research Repository Resources"
     <div class="dropdown-content">
       <a href="https://dime-worldbank.github.io/wb-reproducible-research-repository-automation/" target="_blank">▶️ README Automation Tool</a>
       <a href="https://github.com/worldbank/wb-reproducible-research-repository/raw/refs/heads/main/resources/README_Template.docx" target="_blank">📄 README Template (.docx)</a>
-      <a href="https://raw.githubusercontent.com/worldbank/wb-reproducible-research-repository/refs/heads/main/resources/README_Template.md" target="_blank">📝 README Template (.md)</a>
+      <a href="https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/README_Template.md" target="_blank">📝 README Template (.md)</a>
     </div>
   </div> |
   
