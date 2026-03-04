@@ -34,7 +34,7 @@ Questions should be directed to reproducibility@worldbank.org.
   * [ ] **README**
 
     * A README file that guides future readers through the package and how to proceed with replication.  
-  A recommended template is available [here](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/README_Template.md), and you can also use our [README generator](https://dime-worldbank.github.io/wb-reproducible-research-repository-automation/).
+  Please use our [README generator](https://dime-worldbank.github.io/wb-reproducible-research-repository-automation/) for easier verification, or our recommended template available [here](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/README_Template.md).
     * Software and version used
     * Line(s) in the main script that should be changed to run the code on a different machine
     * Mapping of outputs to scripts responsible for generating them
