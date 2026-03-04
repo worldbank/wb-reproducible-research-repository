@@ -10,14 +10,15 @@ title: "Resources"
 This section provides useful templates, main files, and environment setup instructions to help you build reproducibility packages efficiently.
 
 ## README Templates
+
+- [README Generator](https://dime-worldbank.github.io/wb-reproducible-research-repository-automation/)  
+  *Use this tool to create your own README.* The app includes all the essential components of a high-quality README and will generate a Word document based on your responses.
+  
 - [README Template (Markdown)](https://raw.githubusercontent.com/worldbank/wb-reproducible-research-repository/refs/heads/main/resources/README_Template.md)  
   *Use this as a guide if you're working on a reproducibility package to include all required elements.*
 
 - [README Template (Word)](./resources/README_Template.docx)  
   *Same content as the Markdown template but in Word format.*
-
-- [README Generator](https://dime-worldbank.github.io/wb-reproducible-research-repository-automation/)  
-  *Use this tool to create your own README.* The app includes all the essential components of a high-quality README and will generate a Word document based on your responses.
 
 ---
 

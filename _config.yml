@@ -15,9 +15,11 @@ plugins:
 header_pages:
   - index.md
   - guidance_note_wb.md
-  - reproducibility_package_checklist.md
   - reproducibility_reviewer_protocol.md
+  - reproducibility_FAQs.md
+  - reproducibility_package_checklist.md
+  - README_resources.md
   - resources.md
   - reproducible_research_trainings.md
-  - reproducibility_FAQs.md
+
 
