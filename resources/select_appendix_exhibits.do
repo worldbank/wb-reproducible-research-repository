@@ -4,7 +4,7 @@
 *** PURPOSE: 			
 
 This code is to select 10 exhbits from appendix at random when there are more
-than 10 tables in appendix 
+than 10 exhibits in appendix 
 				
 *** INSTRUCTIONS:		
 
@@ -19,7 +19,7 @@ for the package so the code can be reprodced.
 
 4. Set the Stata version on line 34
 
-5. Set number of exhibits in appendix in line 40
+5. Set number of analytical exhibits in appendix in line 40
 
 6. Line 53 will give a list of tables that need to be verified
 
