@@ -219,7 +219,7 @@ If the exhibits are not reproducible and the authors have shared an updated pack
 ## Additional Resources
 
 - Not sure how to categorize an exhibit? See `example.tex` in this directory for sample color coding examples
-- For a fully completed report, see reproducibility_report_example_reproduced.pdf and reproducibility_report_example_not_reproduced.pdf in this folder.
+- For a fully completed report, see [reproducibility_report_example_reproduced.pdf](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/reproducibility_report_template/reproducibility_report_example_reproduced.pdf) and [reproducibility_report_example_not_reproduced.pdf](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/reproducibility_report_template/reproducibility_report_example_not_reproduced.pdf) in this folder.
 - [Appendix exhibit selection tool](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/select_appendix_exhibits.do)
 - [World Bank Reproducibility Guidelines](https://worldbank.github.io/wb-reproducible-research-repository/guidance_note_wb.html)
 
