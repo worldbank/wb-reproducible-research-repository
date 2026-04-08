@@ -1,6 +1,6 @@
 # Reproducibility Report Template - Instructions
 
-This document provides guidance on how to complete the reproducibility report template (`main.tex`) for World Bank reproducibility reviews.
+This document provides guidance on how to complete the reproducibility report template (`main.tex`) for World Bank reproducibility reviews. Download the zipped folder (reproducibility_report_template.zip) and edit it in a LaTeX editor, or upload the folder to Overleaf.
 
 ## Overview
 
@@ -13,7 +13,7 @@ The template consists of three main sections:
 ## Getting Started
 
 1. Open `main.tex` in a LaTeX editor
-2. Update the header information (lines 127-129):
+2. Update the header information (lines 103-105):
    - Replace "An incredibly cool title" with the paper title
    - Replace "RR_WLD_2026_500" with the actual Package ID
    - Add your name
@@ -24,14 +24,14 @@ The template consists of three main sections:
 ### Items to Complete
 
 #### 1.1 Reproducibility Status (choose one)
-Select the appropriate statement (lines 144-149):
+Select the appropriate statement (lines 132-135):
 
-- **Red**: If exhibits failed to reproduce - specify how many
-- **Green (main only)**: If only main paper exhibits were verified and reproduced
-- **Green (main + appendix)**: If main paper and randomly selected appendix exhibits reproduced
+- **Red**: If exhibits failed to reproduce - specify how many.
+- **Green (main only)**: If only main paper exhibits were verified and reproduced.
+- **Green (main + appendix)**: If main paper and randomly selected 10 empirical appendix exhibits reproduced.
 
 #### 1.2 Code Execution Instructions
-Fill in line 151-154 with specific instructions. Use software-specific templates:
+Fill in line 137-140 with specific instructions. Use software-specific templates:
 
 **For Stata:**
 ```latex
@@ -53,18 +53,17 @@ Fill in line 151-154 with specific instructions. Use software-specific templates
 
 **For mixed software:** Combine the above as needed.
 
-#### 1.3 Runtime Information (lines 156 & 158)
+#### 1.3 Stability & Runtime Information (lines 142-146)
+- Specify whether stability checks were done or not
 - Specify execution time: "X minutes" or "X hours"
 - Update date and source of paper version
 
-#### 1.4 Verification Process and Data Handling (REQUIRED)
-
-**YOU MUST COMPLETE THIS SECTION** (starting at line 161).
+#### 1.4 Verification Process and Data Handling (starting at line 149).
 
 Fill in the data types used. Choose from:
 - **Open** - Publicly available, included in package
 - **Accessible** - Publicly available, not included in package
-- **Limited-access** - Available to specific groups (e.g., Only World Bank Staff)
+- **Limited-access** - Requires purchase or human approval or only available to World Bank Staff
 - **Restricted** - Available only from authors, Government, etc
 - **Forthcoming** - Will be made available in the future (e.g., World Bank Microdata Library)
 
@@ -76,8 +75,8 @@ Example text to customize:
 
 \item Reviewers used [forthcoming/accessible/restricted] data provided directly 
 by the authors to conduct the reproducibility verification, and this is not included 
-in the public reproducibility package. The data is forthcoming on the World Bank 
-Microdata Library.
+in the public reproducibility package. [The data is forthcoming on the World Bank 
+Microdata Library.]
 
 \item Reviewers verified that the limited-access data matches what was provided 
 by the authors; results of this verification are documented in the file 
@@ -87,21 +86,19 @@ by the authors; results of this verification are documented in the file
 the Data folder to support data integrity checks.
 ```
 
-#### 1.5 Reproducibility Summary (REQUIRED)
-
-**YOU MUST COMPLETE THIS SECTION** (starting at line 176).
+#### 1.5 Reproducibility Summary (starting at line 165).
 
 Select ONE option for each category:
 
 ##### **Data** (choose one):
 - All data sources are publicly available and included in the reproducibility package.
 - All data sources are publicly available but not all are included in the reproducibility package.
-- All data is not yet publicly available but is expected to be made available through the World Bank Microdata Library in the future.
-- Some data is not yet publicly available but is expected to be made available through the World Bank Microdata Library in the future.
+- All data is not yet publicly available but is expected to be made available through the [World Bank Microdata Library] in the future.
+- Some data is not yet publicly available but is expected to be made available through the [World Bank Microdata Library] in the future.
 - All data is temporarily embargoed by the authors (expected to be made public in the future).
 - Some data is temporarily embargoed by the authors (expected to be made public in the future).
-- Some data is restricted and has not been included in the reproducibility package. For more details, please refer to the README file.
-- All data is restricted and has not been included in the reproducibility package. For more details, please refer to the README file.
+- Some data is restricted/limited-access and has not been included in the reproducibility package. For more details, please refer to the README file.
+- All data is restricted/limited-access and has not been included in the reproducibility package. For more details, please refer to the README file.
 
 ##### **Code** (choose one):
 - All code files (from cleaning to analysis) are included in the reproducibility package.
@@ -118,15 +115,6 @@ Select ONE option for each category:
 - Some outputs are generated by code that is not included in the reproducibility package.
 - Some outputs are not generated by code (created manually in Excel, ArcGIS, etc) but instructions for producing these outputs are included in the README file.
 
-##### **Reproducibility Verification** (choose one):
-- Reviewers had access to the same materials in the public reproducibility package. The reviewers did not verify if publicly available data matches the data in the reproducibility package.
-- Reviewers had access to the same materials in the public reproducibility package. The reviewers verified that publicly available data matches the data in the reproducibility package.
-- Reviewers used data provided directly by the authors to conduct the reproducibility verification, and this is not included in the public reproducibility package. The reviewers did not verify if publicly available data matches the data provided by the authors.
-- Reviewers used data provided directly by the authors to conduct the reproducibility verification, and this is not included in the public reproducibility package. The reviewers verified that publicly available data matches the data provided by the authors.
-- Reviewers used data provided directly by the authors to conduct the reproducibility verification, and this is not included in the public reproducibility package. The reviewers also attempted to verify whether the publicly available version of the data matched the one used in the original analysis, but found that the public version had since been updated and differs from the version used by the authors.
-- Reviewers verified all data access information by requesting data and conducting reproducibility verification from requested data.
-- Reviewers verified the package via virtual verification and did not have access to the data.
-
 ##### **Dependencies Environment** (choose one):
 - The reviewers created a new environment using the latest versions of dependencies available at the moment of the review.
 - The reviewers created a new environment for dependencies using specific versions defined by the authors in the README file.
@@ -138,7 +126,7 @@ Select ONE option for each category:
 ### Color Coding System
 Use these LaTeX color codes for exhibit status:
 
-- `\textcolor{OliveGreen}{Reproduced.}` - Perfect reproduction
+- `\textcolor{OliveGreen}{Reproduced.}` - Perfect reproduction from the code
 - `\textcolor{LimeGreen}{Results reproduced, but table or figure includes manual changes from code output}` - Minor manual edits,  like when results are shown in Stata console. 
 - `\textcolor{Gray}{Does not apply}` - Not applicable (If figure is a diagram, or cited from another paper)
 - `\textcolor{Goldenrod}{All values reproduced}` - Not common category, but used when we verified the values and not the graphs, for instance, when reviewing the underlying data used to produce a map. 
@@ -161,7 +149,7 @@ If verifying appendix exhibits through sampling:
 
 ## Section 3: Reproduction Environment
 
-Fill in your computer specifications (lines 236-241):
+Fill in your computer specifications (lines 252-255):
 - Operating System
 - Processor
 - Memory
@@ -192,13 +180,8 @@ Fill in your computer specifications (lines 236-241):
     the reproducibility package.
     \item \textbf{Outputs}: All outputs are generated by code included in the 
     reproducibility package.
-    \item \textbf{Reproducibility Verification}: Reviewers used data provided directly 
-    by the authors to conduct the reproducibility verification, and this is not included 
-    in the public reproducibility package. The reviewers verified that publicly 
-    available data matches the data provided by the authors.
-    \item \textbf{Dependencies environment}: The reviewers reproduced an existing 
-    environment for dependencies using dependency files or an environment metadata 
-    file provided by the authors.
+    \item \textbf{Dependencies environment}: The reviewers created a new environment
+   using the latest versions of dependencies available at the moment of the review.
 \end{itemize}
 ```
 
@@ -210,27 +193,35 @@ Fill in your computer specifications (lines 236-241):
 - [ ] Code execution instructions filled in with specific details
 - [ ] Runtime specified
 - [ ] Paper version/date documented
-- [ ] **Verification Process and Data Handling section completed**
-- [ ] **Reproducibility Summary section completed with all 4-5 categories**
+- [ ] Verification Process and Data Handling section completed
+- [ ] Reproducibility Summary section completed with all 4-5 categories
 - [ ] All exhibits listed with status
 - [ ] Side-by-side comparisons added for failed reproductions
 - [ ] Appendix sampling methodology documented (if applicable)
 - [ ] Reproduction environment specifications filled in
-- [ ] File renamed to: `verification_report_[PackageID].tex`
 
 ## Compiling the Report
 
 After completing the template:
-1. Compile with LaTeX (pdfLaTeX recommended)
+1. Compile with Overleaf or LaTeX (pdfLaTeX recommended)
 2. Review the PDF output for formatting
 3. Ensure all images display correctly
-4. Save final PDF as `verification_report_[PackageID].pdf`
+4. Save final PDF as `reproducibility_report_[PackageID].pdf` (e.g. reproducibility_report_RR_WLD_2026_541)
+
+## Updating the Report
+If the exhibits are not reproducible and the authors have shared an updated package, follow these steps:
+
+1. Do not overwrite the existing report in `main.tex`.
+2. Copy everything from `main.tex`, create a new file in the same directory, and name it `v2.tex` (update the version number based on the submission round).
+3. Update the submission label on line 104 — for example, replace "First Submission" with "Second Submission".
+4. Complete the report following the same steps as the initial submission.
 
 ## Additional Resources
 
-- Example completed report: See `example.tex` in this directory
-- Appendix exhibit selection tool: https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/select_appendix_exhibits.do
-- World Bank Reproducibility Guidelines: Contact reproducibility@worldbank.org
+- Not sure how to categorize an exhibit? See `example.tex` in this directory for sample color coding examples
+- For a fully completed report, see reproducibility_report_example_reproduced.pdf and reproducibility_report_example_not_reproduced.pdf in this folder.
+- [Appendix exhibit selection tool](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/select_appendix_exhibits.do)
+- [World Bank Reproducibility Guidelines](https://worldbank.github.io/wb-reproducible-research-repository/guidance_note_wb.html)
 
 ## Questions?
 
