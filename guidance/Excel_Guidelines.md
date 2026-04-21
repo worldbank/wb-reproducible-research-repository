@@ -9,12 +9,18 @@ title: "Excel Packages: Guidelines"
 
 In our commitment to enhancing reproducibility, it is essential to address the inherent challenges posed by manual steps in **Excel-based packages**. We aim to bridge this gap through automation and comprehensive documentation. The following guidelines are designed to structure Excel files to improve transparency, minimize manual intervention, and streamline the verification process for replicators.
 
-In our experience, we’ve encountered **three** common cases when it comes to packages that use Excel:
+In our experience, we've encountered **three** common cases when it comes to packages that use Excel:
 
 ![](../../img/excel_cases.png)
 
--   If your package falls under **Case 1**, we recommend reviewing the entire document thoroughly.
--   If your package falls under Case 2 or Case 3, focus on Point 4 in [Setting up Excel: Best Practices to Follow](#setting-up-excel-best-practices-to-follow) as well as [Using Excel as a Secondary Software](#using-excel-as-a-secondary-software).
+- **Case 1 — Excel-only package:** All data processing, analysis, and output creation happen entirely within Excel, with no other statistical software involved.
+- **Case 2 — Excel as secondary software (automated):** A primary statistical software (e.g., Stata or R) handles the analysis and exports data directly to Excel with minimal or no manual steps.
+- **Case 3 — Excel as secondary software (manual steps):** A primary statistical software handles the analysis, but data is transferred to Excel through manual steps (e.g., copy/pasting values).
+
+**Which sections apply to you?**
+
+- If your package falls under **Case 1 (Excel-only)**, review the entire document thoroughly.
+- If your package falls under **Case 2 or Case 3 (Excel as secondary software)**, focus on Point 4 in [Setting up Excel: Best Practices to Follow](#setting-up-excel-best-practices-to-follow) and the [Using Excel as a Secondary Software](#using-excel-as-a-secondary-software) section.
 
 ## Setup
 
@@ -62,14 +68,14 @@ The reproducibility package should **not** include:
 -   Always start with the raw data in its unaltered form.
 -   Place raw data in the initial sheets of your workbook  (e.g., Sheet 1).  Never overwrite the cells  that contain the raw data.
 -   Document the source data, and ensure that the data in the sheet matches the source data.
-	- Document any modifications from the source, for example, if only a subset of variables or observations are included). Subsequent sheets can display processed or cleaned data where transformations and calculations have been applied using Excel’s formulae and functions.
+	- Document any modifications from the source, for example, if only a subset of variables or observations are included). Subsequent sheets can display processed or cleaned data where transformations and calculations have been applied using Excel's formulae and functions.
 
 2\.  **Organize Sheets Logically:**
 
--   Include a  “README” sheet at the beginning of the workbook with a directory of contents.
+-   Include a  "README" sheet at the beginning of the workbook with a directory of contents.
 -   Organize workbooks and sheets following the logical flow of the exhibits or analysis. If the output from one sheet feeds into another or informs subsequent analyses, arrange them sequentially.
 -   If multiple exhibits share the same input data, consolidate them into one workbook with separate sheets for clarity and better data management.
--   Label each sheet clearly based on its content  (e.g.,  “raw”,  “processed”,  “table1”,  “fig1a”).
+-   Label each sheet clearly based on its content  (e.g.,  "raw",  "processed",  "table1",  "fig1a").
 -   Use consistent color-coded tabs to help differentiate between data types.
 
 3\.  **Optimize Data Management and References:**
