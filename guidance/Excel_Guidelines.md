@@ -11,11 +11,7 @@ In our commitment to enhancing reproducibility, it is essential to address the i
 
 In our experience, we've encountered **three** common cases when it comes to packages that use Excel:
 
-![](../../img/excel_cases.png)
-
-- **Case 1 — Excel-only package:** All data processing, analysis, and output creation happen entirely within Excel, with no other statistical software involved.
-- **Case 2 — Excel as secondary software (automated):** A primary statistical software (e.g., Stata or R) handles the analysis and exports data directly to Excel with minimal or no manual steps.
-- **Case 3 — Excel as secondary software (manual steps):** A primary statistical software handles the analysis, but data is transferred to Excel through manual steps (e.g., copy/pasting values).
+![](../img/excel_cases.png)
 
 **Which sections apply to you?**
 
@@ -106,7 +102,7 @@ The reproducibility package should **not** include:
 
 -   The Excel file will contain only formulas and macros. Any sheet or column that requires non-publishable data will be left blank, and formula outputs will display placeholders, as shown below:
 
-![](../../img/excel_upload.png)
+![](../img/excel_upload.png)
 
 -   Once the data is downloaded and added according to the instructions, these cells will generate the expected outputs.
 -   In such cases, **clearly document in the README file** **precisely** **where users need to** **place** **the** **input** **data** to fully replicate the paper's results. This documentation is crucial to ensure that users understand exactly how to replace missing data and achieve the correct outputs.
