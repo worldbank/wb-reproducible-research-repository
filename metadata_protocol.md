@@ -32,26 +32,9 @@ The protocol has four components:
    * Complete the **Reproducibility Section** with the reproduction instructions, technology requirements, and technology environment used (detailed guidance in the next section).
    * Upload **External resources**: README, reproducibility report, license, data hash report, and optional comparison report.
    * Check that **tags** (DOI, Data Access, Code Access) are correctly defined.
-4. **Publish to QA** – Save and publish the entry to the QA catalog. To publish to QA:
-   - Click on the three dots next to the save icon and select **Publish to NADA**.
-   - **Catalog**: Select `RRR QA` (https://reproducibilityqa.worldbank.org/).
-   - **Project options**:
-     - Overwrite if already exists?: `Yes`
-     - Publish: `Publish`
-     - Data access: `Data not available` [default]
-     - Collection: Choose the collection accordingly.
-   - **External Resources**: Toggle to `Overwrite resources` and select all three.
-   - **Options**: Toggle `Yes` to all.
-   - Click **Publish**.
+4. **Publish to QA** – Save and publish the entry to the QA catalog.
 5. **TTL Review** – Send the QA link to the TTL for approval.
-6. **DECDG Review** - After TTL approval, add the QA link to the [Excel file (internal)](https://worldbankgroup.sharepoint.com/:x:/r/teams/DECReproducibilityVerification-WBGroup/_layouts/15/Doc.aspx?sourcedoc=%7B85BCD5CD-A897-421F-AA99-F78CFAC3FF7F%7D&file=Reproducibility%20packages-DECDG%20review.xlsx&action=default&mobileredirect=true) for DECDG's review. Share the temporary link with the authors.
-7. **Publish to Production** – After DECDG's approval, finalize publication in PROD. Follow the same steps as step 4, but with the following change:
-   - **Catalog**: Select `RRR` (https://reproducibility.worldbank.org/) instead of `RRR QA`.
-8. **Add to Collection** – Add the metadata entry to the Reproducible Research Repository collection:
-   - On the Metadata Editor page, locate the entry in the list.
-   - Click on the three dots under the **Actions** column for the entry.
-   - Click **Add to Collection**.
-   - Select **Reproducible Research Repository**.
+6. **Publish to Production** – After TTL approval, finalize publication in PROD.
 
 ---
 
@@ -76,7 +59,7 @@ Review and correct these fields as needed:
 
 * **Version Statement**
 
-  * **Project completion date**: Auto-generated. Year-month-day indicating when the paper was finalized. 
+  * **Project completion date**: Year-month-day indicating when the paper was finalized. If day is not available Year-month is enough. 
 
 * **Scope and Coverage**
 
@@ -120,8 +103,7 @@ Review and correct these fields as needed:
 
 ### Manual Input Fields: Data Section
 
-Choose the most restrictive applicable **Data Availability Statement**.
->This should match the **Data** statement under *Reproducibility Summary* in the Reproducibility Report.:
+Choose the most restrictive applicable **Data Availability Statement**. This should match the **Data** statement under *Reproducibility Summary* in the Reproducibility Report.:
 
 * All data sources are publicly available and included in the reproducibility package.
 * All data sources are publicly available but not all are included in the reproducibility package.
@@ -131,79 +113,47 @@ Choose the most restrictive applicable **Data Availability Statement**.
 * Some data is temporarily embargoed by the authors (expected to be made public in the future).
 * Some data is restricted and has not been included in the reproducibility package. For more details, refer to the README file.
 * All data is restricted and has not been included in the reproducibility package. For more details, refer to the README file.
-* * Some data is limited-access and has not been included in the reproducibility package. For more details, refer to the README file.
-* All data is limited-access and has not been included in the reproducibility package. For more details, refer to the README file.
 
-For each **DATA SOURCE**, include:
+For each dataset, include:
 
-- **Dataset Name**: Descriptive name (e.g., "World Development Indicators"). A data source is not necessarily the same as an input file, for example, a survey split across multiple files should be documented once, with individual filenames listed in the **Note** field.
+* **Dataset Name**: Descriptive name (e.g., “World Development Indicators”).
+* **Note**: Include source (or citation), file location, and access instructions. Example:
 
-- **Note**: Include the access date, file location(s) within the package, and any relevant access instructions or details (e.g., indicators used, variable descriptions, data transformations applied by the authors). Example:
-  > Data accessed in September 2024. File location: `data/raw/gdp_wdi.dta`. Indicators used: GDP (constant 2015 US$).
-
-- **Access Policy**: Choose the option that most accurately reflects the data's access and redistribution status:
+  > Source: World Bank. File name: `gdp_wdi.dta`. Located in `Summary/1-data/raw/other`. Indicators: GDP (constant 2015 US\$).
+* **Access Policy**: Choose from:
 
   - **Open data**:
-    - Data is publicly available and included in the reproducibility package.
-    - Data is publicly available but not included in the reproducibility package due to file size constraints.
-  - **Accessible data**: Data is publicly available but does not allow redistribution and is not included in the reproducibility package.
+     - Data is publicly available and included in the reproducibility package.
+     - Data is publicly available but not included in the reproducibility package due to file size constraints.
+  - **Accessible data**: Data is publicly available but does not allow redistribution and it is not included in the reproducibility package.
   - **Limited-access data**: Data access requires purchase or human approval and is not included in the reproducibility package.
-  - **Forthcoming data**: Data is forthcoming in the World Bank Microdata Library or the World Bank Development Data Hub.
+  - **Forthcoming data**: Data is forthcoming in the World Bank Microdata Library.
   - **Restricted data**:
-    - There is no documented way to access the data, and it is not included in the reproducibility package.
-    - Data access was granted directly to the study authors by the data owners/managers. It was obtained with a custom data license that does not allow for redistribution and it is not included in the reproducibility package.
+     - There is no documented way to access the data, and it is not included in the reproducibility package
+     - Data access was granted directly to the study authors by the data owners/managers. It was obtained with a custom data license that does not allow for redistribution and it is not included in the reproducibility package.
 
-- **License**: License name, e.g., `Creative Commons Attribution 4.0 (CC BY 4.0)` (if available).
-
-- **License URL**: URL for the dataset license (if available), e.g., [WDI Terms of Use](https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets).
-
-- **Data URL**: Direct download URL (if available). If multiple URLs apply, include them in the **Note** field instead.
-
-- **Citation**: Full citation for the dataset, following standard dataset citation format, e.g.,
-  >World Bank. 2025. "World Development Indicators" [dataset]. Indicator accessed: GDP per capita. https://databank.worldbank.org/source/world-development-indicators. Accessed September 2024.
-  
-  For author-compiled datasets, use one of the following formats:
-  - When compiled for a specific report or publication:
-    > Authors' compilation. 2025. International Accreditation Forum Data [dataset]. World Bank, World Development Report 2025 – Standards for Development.
-  - When compiled from multiple sources:
-    > Authors' compilation. 2026. Global Monitoring of School Closures and Human Capital Index [dataset]. Based on UNESCO's Global Monitoring of School Closures Caused by the COVID-19 Pandemic and the World Bank's Human Capital Project.
-
-   **Tip:** Use the [README Generator](https://dime-worldbank.github.io/wb-reproducible-research-repository-automation/) to create dataset citations. 
+* **License**: e.g., `Creative Commons Attribution 4.0 (CC-BY 4.0)` (if available). 
+* **License URL**: URL for the dataset license, e.g., [WDI Terms of Use](https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets) (if available). 
+* **Data URL**: Direct download URL (if available).
 
 ---
 
 ### Reproducibility Section
 
-- **Reproduction Instructions**:
+* **Reproduction Instructions**: Add detailed steps to reproduce findings, including environment setup and path adjustments.
 
-  Add detailed steps to reproduce findings, including accessing data, environment setup, and path adjustments. The instructions should follow this structure:
-  ```
-  To reproduce the findings in this paper, a replicator must:
-  1. **Secure Access to Data:** Access the datasets not included in the package. See the Datasets section for more details.
-  2. **Run the Package:**
-    - Update the working directory in line 19 of the do-file `00_master`, and run it.
-  
-  Since all the original data cannot be redistributed, the package includes the outputs produced by the authors, which can be used to review the results presented in the paper.
-  ```
-  See additional examples:
-    - [Stata (restricted data example)](https://reproducibility.worldbank.org/index.php/catalog/311)
-    - [R example](https://reproducibility.worldbank.org/index.php/catalog/267)
-    - [Python example](https://reproducibility.worldbank.org/index.php/catalog/243)
+  * Stata (restricted data example): [Link](https://reproducibility.worldbank.org/index.php/catalog/311)
+  * R example: [Link](https://reproducibility.worldbank.org/index.php/catalog/267)
+  * Python example: [Link](https://reproducibility.worldbank.org/index.php/catalog/243)
+* **Technology Requirements**: Approximate run time (minutes/hours). Example: ~10 minutes run time. 
+* **Technology Environment**: Document system specifications used for reproduction (match reproducibility report). Example:
 
-- **Technology Requirements**:
+Paper exhibits were reproduced on a computer with the following specifications:
 
-  Approximate run time in minutes or hours. Example: `Run time: ~10 minutes`
-
-- **Technology Environment**:
-
-  Document the system specifications used for reproduction. This should match the specifications reported in the reproducibility verification report. Example:
-  
-  ```
-   Paper exhibits were reproduced on a computer with the following specifications:
-   - OS: Windows 11 Enterprise
-   - Processor: Intel(R) Core(TM) i5-1145G7 CPU @ 2.60GHz
-   - Memory: 15.7 GB
-  ```
+- OS: Windows 11 Enterprise
+- Processor: Intel(R) Core(TM) i5-1145G7 CPU @ 2.60GHz
+- Memory: 15.7 GB
+- Software: Stata 18.0 MP
 
 ---
 
@@ -225,24 +175,17 @@ Attach the following resources:
 
 The `RR_WLD_2024_100.zip` file must include:
 
-- `README.pdf`
-  - If the README and Data Availability Statement (DAS) are provided as separate documents, combine them into a single file and include it as a PDF.
-- `LICENSE.txt` (available [here](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/LICENSE.txt); ensure the year is updated)
-- `reproducibility_report_PID.pdf`
-- `data_hash_report.csv` (created with the [hash tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/generate_hash))
-- `comparison_report.csv` (include if data type is Limited Access or Accessible; created with the [data comparison tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/compare_datasets))
-- `Reproducibility package/` folder containing the original code and data. When preparing this folder, ensure the following:
-  - The folder must be named `Reproducibility package` exactly.
-  - The data folder must only include data that is publicly available and can be published in a public repository. Restricted, limited-access, or accessible data must not be included.
-  - Include code outputs (e.g., tables, figures) only if not all data can be published, so that results can still be reviewed without access to the restricted data.
-  - Include empty folders where data cannot be published, to prevent the code from breaking due to missing directories. For example, if restricted data is expected in `data/raw`, include that folder as an empty placeholder.
-  - For Stata packages, include the `ado` folder containing all user-written dependencies.
-  - For R or Python packages, include `renv` (`renv.lock`, `.Rprofile`, and `renv/activate.R`) or `myenv` as applicable.
+- `README.pdf`  
+- `LICENSE.txt` (available [here](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/LICENSE.txt); ensure the year is updated)  
+- `reproducibility_report_PID.pdf`  
+- `data_hash_report.csv` (created with the [hash tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/generate_hash))  
+- `comparison_report.csv` (include if data type is Limited Access or Accessible; created with the [data comparison tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/compare_datasets))  
+- `Reproducibility package/` folder containing the original code and data (e.g., `ado` folder for Stata, `renv` (`renv.lock`, `.Rprofile`, and `renv/activate.R`) or `myenv` for R/Python).
 
-**Note:** Place `README.pdf`, `LICENSE.txt`, `reproducibility_report_PID.pdf`, `data_hash_report.csv`, and `comparison_report.csv` at the **top level** of the ZIP file, not inside the `Reproducibility Package` folder, for immediate visibility. 
 ![](img/package_structure.png)
 
 
+> **Note:** Place `README.pdf`, `LICENSE.txt`, `reproducibility_report_PID.pdf`, `data_hash_report.csv`, and `comparison_report.csv` at the **top level** of the ZIP file, not inside the `Reproducibility Package` folder, for immediate visibility. 
 
 ---
 
@@ -250,22 +193,18 @@ The `RR_WLD_2024_100.zip` file must include:
 
 Ensure tags are added and correct:
 
-- **DOI**: `DOI`.
+* **DOI**: `DOI`. 
+* **Data Access**:
 
-- **Data Access**: Use the most restrictive tag that applies across all datasets in the package. For instance, if some data is restricted and some is open, use Restricted; if some data is limited-access and some is accessible, use Limited-access.
+  * Open data: freely downloadable and redistributable.
+  * Accessible data: freely downloadable but cannot be redistributed (e.g., MDL public use).
+  * Limited-access data: requires purchase or human approval (e.g., MDL licensed data).
+  * Restricted data: no documented access method or requires ad-hoc agreements.
+* **Code Access**:
 
-  - Open data: all data is freely downloadable and redistributable.
-  - Accessible data: data is freely downloadable but cannot be redistributed (e.g., World Bank Microdata Library public use files).
-  - Limited-access data: data requires purchase or human approval to access (e.g., World Bank Microdata Library licensed data).
-  - Restricted data: data has no documented access method, or access was granted directly to the authors under a custom or ad-hoc agreement that does not allow redistribution.
-
-  If the package includes synthetic data in place of restricted original data, add a second Data Access tag with the value "Synthetic data", in addition to the most restrictive access tag for the original data. In total there will be two rows for Data Access in this case.
-
-- **Code Access**: Use the most restrictive tag that applies.
-
-  - Open code: code is included in the package and freely accessible.
-  - Restricted code: code is proprietary, not included in the package, or is under a temporary embargo.
-  - No code: the package includes only manual processes (e.g., Excel-based analysis with no scripts).
+  * Open code: code included and accessible.
+  * Restricted code: proprietary or not included (temporary embargo counts as restricted).
+  * No code: package includes only manual (e.g., Excel) processes.
 
 ---
 
