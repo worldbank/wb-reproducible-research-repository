@@ -80,14 +80,14 @@ Each dataset falls into one of the following accessibility categories. For each 
 *Data is publicly available and included in the reproducibility package.*
 
 - Check that the link in the DAS works and that the data actually exists at that location.
-- You do not need to verify every value, but download the data to confirm that what is downloaded matches what is in the package.
+- Follow the access instructions in the DAS and verify that they are sufficient to download the data, i.e., that a third party could retrieve the data without any additional information. If the instructions are unclear or incomplete, ask the authors to clarify.
 - If the instructions for accessing the data are unclear, ask the authors to clarify.
 
 ### Accessible data
 *Data is publicly available but does not allow redistribution and it is not included in the reproducibility package.*
 
 - Follow the same steps as for Open data.
-- Additionally, run the [Dataset Comparison Tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/compare_datasets) to compare the publicly available version with the data provided by the authors.
+- Additionally, run the [Dataset Comparison Tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/compare_datasets) to compare the publicly available version with the data provided by the authors. For datasets that are too large or time-consuming to download in full (e.g., UN Comtrade), running the comparison tool may not be feasible. In these cases, manually check a few key values against the source and document the approach taken in the verification report.
 - If differences are due to periodic updates to the source data, note this in the verification report. If differences appear to be due to manual changes, confirm with the authors whether any modifications or processing were done. If processing was done in code, ask for the code. If it was done manually, ask the authors to document the steps. In general, encourage authors to start from the raw source data where possible.
 
 ### Limited-access data
