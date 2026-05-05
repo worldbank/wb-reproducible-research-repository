@@ -120,7 +120,7 @@ Each dataset falls into one of the following accessibility categories. For each 
 - **Statement of Rights is missing.** Required in every DAS.
 - **URL is missing for publicly available data.** Required if the data is accessible online.
 - **Access date is missing.** Required. Verification can proceed without an access date, but request the details from the authors for the publication stage. 
-- **No license or redistribution statement for restricted data.** Required.
+- **No license or redistribution statement for restricted data.** Required. Verification can proceed without a license, but request the details from the authors for the publication stage. 
 - **World Bank-owned data not deposited in MDL or DDH.** Flag and initiate deposit process (unless the exception applies).
 - **Data only accessible via a staff member's personal storage.** Flag as a critical issue; data must be in a permanent, institutional location.
 - **Restricted data has no access instructions.** A third party must be able to understand how to request the same data.
