@@ -227,8 +227,9 @@ The `RR_WLD_2024_100.zip` file must include:
 
 - `README.pdf`
   - If the README and Data Availability Statement (DAS) are provided as separate documents, combine them into a single file and include it as a PDF.
-- `LICENSE.txt` (available [here](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/LICENSE.txt); ensure the year is updated)
 - `reproducibility_report_PID.pdf`
+- `LICENSE.txt` (available [here](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/LICENSE.txt); ensure the year is updated)
+- `WB-IGO-RIDER.txt` (available [here](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/WB-IGO-RIDER.txt))
 - `data_hash_report.csv` (created with the [hash tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/generate_hash))
 - `comparison_report.csv` (include if data type is Limited Access or Accessible; created with the [data comparison tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/compare_datasets))
 - `Reproducibility package/` folder containing the original code and data. When preparing this folder, ensure the following:
@@ -239,7 +240,7 @@ The `RR_WLD_2024_100.zip` file must include:
   - For Stata packages, include the `ado` folder containing all user-written dependencies.
   - For R or Python packages, include `renv` (`renv.lock`, `.Rprofile`, and `renv/activate.R`) or `myenv` as applicable.
 
-**Note:** Place `README.pdf`, `LICENSE.txt`, `reproducibility_report_PID.pdf`, `data_hash_report.csv`, and `comparison_report.csv` at the **top level** of the ZIP file, not inside the `Reproducibility Package` folder, for immediate visibility. 
+**Note:** Place `README.pdf`, `reproducibility_report_PID.pdf`, `LICENSE.txt`, `WB-IGO-RIDER.txt`, `data_hash_report.csv`, and `comparison_report.csv` at the **top level** of the ZIP file, not inside the `Reproducibility Package` folder, for immediate visibility. 
 ![](img/package_structure.png)
 
 
