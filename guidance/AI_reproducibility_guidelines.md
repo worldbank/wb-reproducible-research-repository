@@ -5,14 +5,17 @@ title: "Documenting AI Use in a Reproducible manner"
 
 [![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](../index.html)
 
+> *Living document — last updated 05/15/2026. 
+> Guidelines are revised periodically as AI tools and documentation standards evolve.*
+
 ## 1. Purpose
 
 These guidelines establish documentation requirements for authors who use AI tools as part of their analytical workflow. 
 
-AI tools used to generate analytical outputs must be documented with the same rigor as data sources and code. 
-The standard is: **a reviewer must be able to understand what the AI did, with what inputs, and how the output was validated.** 
-Full replication of AI-assisted steps is not possible in the traditional sense, since large language models are non-deterministic — running the same prompt twice may produce different outputs. 
+Full replication of AI-assisted steps is not possible in the traditional sense, since large language models are non-deterministic, running the same prompt twice may produce different outputs. 
 The goal is therefore **transparency**, not exact replication.
+
+The standard is: **a reviewer must be able to understand what the AI did, with what inputs, and how the output was validated.** 
 
 Reviewers will **not** re-run prompts. Verification focuses on completeness and consistency of documentation.
 
@@ -29,11 +32,13 @@ This guideline applies when an AI tool **directly produces an analytical output*
 - Generating structured action plans or diagnostic outputs used in the knowledge product
 - Any AI-generated result that feeds directly into a finding, table, or exhibit
 
-This guideline does **not** apply when AI was used as a coding assistant to help write or debug scripts (e.g., using GitHub Copilot or Claude to write Stata or Python code). In those cases, the script itself is the auditable artifact and is already required to be included in the package.
+This guideline does not apply when AI was used as a coding assistant to help write or debug scripts (e.g., using GitHub Copilot or Claude to write Stata or Python code). In those cases, the script itself is the auditable output and is already required to be included in the package. 
+Researchers may nonetheless wish to disclose the use of AI coding tools in their README (e.g., "Code was developed with the assistance of GitHub Copilot/Claude Code"), though this is not a strict requirement.
 
 > **Decision rule:** If an AI output appears, directly or transformed, in the knowledge product, document it. If AI only helped produce code that you then ran, no additional documentation is required.
 
-> **Data sensitivity warning:** Do not upload restricted, confidential, or personally identifiable data to commercial AI tools (e.g., ChatGPT, Claude.ai, Gemini). This includes household survey microdata, administrative records, or any data governed by a data use agreement. If your analysis involves sensitive data, use only tools approved for that data classification or anonymize/aggregate inputs before use.
+> **Data sensitivity note:** Do not upload restricted, confidential, or personally identifiable data to commercial AI tools (e.g., ChatGPT, Claude.ai, Gemini). This includes household survey microdata, administrative records, or any data governed by a data use agreement. 
+If your analysis involves sensitive data, use only tools approved for that data classification or anonymize/aggregate inputs before use.
 
 ---
 
@@ -83,7 +88,11 @@ For each in-scope use of an AI tool, authors must record the following:
 
 ## 4. Documentation Format
 
-AI use must be documented in **two places**:
+All AI use documentation must include an **AI Use Statement** in the README. 
+For packages with one or few AI-assisted outputs, the full documentation may 
+be included directly in the README. For packages with multiple AI-assisted 
+outputs, authors are encouraged to create a dedicated `/ai_documentation/` 
+folder and reference the relevant log files from the README.
 
 ### 4.1 In the README
 
@@ -95,17 +104,21 @@ Include an **AI Use Statement** section in the README file. This section should:
 
 **Example:**
 
-```
-## AI Use Statement
+> #### AI Use Statement
+>The keyword classification in Table 3 was generated using Claude Sonnet 4.6
+>(Anthropic, accessed 2025-03-12) via the API. Full prompt text, raw outputs,
+and human review notes are documented in 
+/ai_documentation/table3_classification_log.md (or section X of this README).
 
-The keyword classification in Table 3 was generated using Claude Sonnet 4.6
-(Anthropic, accessed 2025-03-12) via the API. Full prompt text, raw outputs,
-and human review notes are documented in /ai_documentation/table3_classification_log.md.
-```
 
 ### 4.2 In an AI Documentation Log
 
-Include a dedicated log file in the reproducibility package under `/ai_documentation/`. This file must contain the full details from Section 4.
+If the package includes several AI-assisted outputs, authors may create a 
+dedicated log file under `/ai_documentation/`. This keeps the README readable 
+while preserving full documentation. The template in Section 5 can be used 
+for each log file. Include a dedicated log file in the reproducibility package under `/ai_documentation/`. 
+
+This file must contain the full details from Section 3.
 
 You can use the template provided in Section 5.
 
@@ -113,7 +126,8 @@ You can use the template provided in Section 5.
 
 ## 5. Template: AI Documentation Log
 
-Save as `/ai_documentation/documentation_log.md` in your reproducibility package.
+Save as `/ai_documentation/documentation_log.md` in your reproducibility package, 
+or include directly in README file.
 
 ```markdown
 # AI Documentation Log
@@ -181,4 +195,4 @@ Save as `/ai_documentation/documentation_log.md` in your reproducibility package
 
 ## 6. Questions and Support
 
-For questions about these guidelines or whether your AI use falls within scope, contact the WB Reproducibility Team.
+For questions about these guidelines or whether your AI use falls within scope, contact the WB Reproducibility Team at reproducibility@worldbank.org.
