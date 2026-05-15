@@ -118,3 +118,8 @@ token.*
 tokens.*
 token/
 tokens/
+
+# Jekyll local dev
+!Gemfile
+_site/
+.jekyll-cache/
