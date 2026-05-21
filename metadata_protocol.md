@@ -303,6 +303,7 @@ Most of this section is auto-filled. In some cases, the following will need to b
 * **Affiliation for Creators**:
   * If the authors have more than one affiliation, for instance, World Bank and University of Cambridge, add a row for the second affiliation. Each row should have one affiliation only.
   * If the affiliation is other than World Bank, World Bank Group, IFC, or IMF, look up the ROR for the organization here: https://ror.org/ and add it to the Affiliation Identifier field. If multiple affiliations are used, add one for each in a separate row.
+  * If the affiliation does not have a ROR, leave the following fields blank: Affiliation Identifier, Affiliation Identifier Scheme, and Schema URI.
 
 * **Creator section when creator is World Bank and not individual authors**: For flagships, in certain cases, instead of listing all the authors, only World Bank or World Bank Group is mentioned as a creator. In that case, the following fields need to be updated:
   * Name: Name of the organization (e.g., `World Bank`)
