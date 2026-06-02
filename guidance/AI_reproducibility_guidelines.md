@@ -13,7 +13,7 @@ title: "Documenting AI Use in a Reproducible manner"
 These guidelines cover ways to improve the reproducibility of AI assisted analytical processes, and how to document use of AI in reproducible research packages. 
 
 Full replication of AI-assisted steps is not possible in the traditional sense. Since large language models are non-deterministic, running the same prompt twice may produce different outputs. 
-The goal is therefore **transparency**, not exact replication.
+The goal is therefore **transparency**, not exact replication. We additionally offer guidance on steps to take to improve the reproducibility of AI-assisted processes. 
 
 The standard is: **a reviewer must be able to understand what the AI did, with what inputs, and how the output was validated.** 
 
