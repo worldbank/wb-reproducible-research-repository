@@ -98,7 +98,7 @@ folder and reference the relevant log files from the README.
 
 Include an **AI Use Statement** section in the README file. This section should:
 
-- State which outputs in the knowledge product involved AI tools
+- State which outputs in the knowledge product were generated using AI tools
 - Identify the tool(s) used (name, version, access date)
 - Reference the AI documentation log file
 
