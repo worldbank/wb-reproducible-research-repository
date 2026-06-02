@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Documenting AI Use in a Reproducible manner"
+title: "Documenting AI use for Reproducible Research"
 ---
 
 [![Back to Home](https://img.shields.io/badge/Back_to-Home-blue)](../index.html)
 
-> *Living document — last updated 05/15/2026. 
+> *Living document — last updated 06/02/2026. 
 > Guidelines are revised periodically as AI tools and documentation standards evolve.*
 
 ## 1. Purpose
@@ -15,9 +15,9 @@ These guidelines cover ways to improve the reproducibility of AI assisted analyt
 Full replication of AI-assisted steps is not possible in the traditional sense. Since large language models are non-deterministic, running the same prompt twice may produce different outputs. 
 The goal is therefore **transparency**, not exact replication. We additionally offer guidance on steps to take to improve the reproducibility of AI-assisted processes. 
 
-The standard is: **a reviewer must be able to understand what the AI did, with what inputs, and how the output was validated.** 
+The standard is: **a reviewer must be able to understand what model was used, exactly how the model was prompted, and how the output was validated.**
 
-Reviewers will **not** re-run prompts. Verification focuses on completeness and consistency of documentation.
+Rather than re-running prompts, reviewers will focus on whether the available documentation is sufficient for a third party to replicate the query.
 
 ---
 
@@ -63,8 +63,8 @@ For each in-scope use of an AI tool, authors must record the following:
 |---|---|
 | **System prompt** | Full text of any system-level instructions given to the model (or "None") |
 | **User prompt(s)** | Full text of all prompts used. If iterative, include all prompts in sequence. For long multi-turn sessions, export and save the full chat transcript as a file and reference it here. If prompts were not recorded in real time, reconstruct them as faithfully as possible and note that they are reconstructed |
-| **Input data** | Description of any data or documents passed to the model as context, with filenames |
-| **Parameters** | Temperature, top-p, max tokens, or other settings if configurable |
+| **Input data** | Description of any data or documents passed to the model as context, with filenames. Any input files that are not publicly accessible should be included in the reproducibility package where permissible; at minimum, provide full citations or documentation for all inputs. |
+| **Parameters** | Record any configurable generation settings: **Temperature** (typically 0–2) controls randomness — lower values yield more consistent outputs, higher values more varied; **Top-p** (0–1) sets the nucleus sampling threshold; **Max tokens** caps the response length. These settings are found in API call parameters, the platform's settings panel, or the system configuration. If using a web interface that does not expose these settings, write "Not configurable." |
 | **Processing structure** | If the AI was applied to multiple records (e.g., classifying 500 survey responses): specify whether items were sent individually or batched, and how many items were processed |
 
 ### 3.3 Outputs
@@ -88,111 +88,25 @@ For each in-scope use of an AI tool, authors must record the following:
 
 ## 4. Documentation Format
 
-All AI use documentation must include an **AI Use Statement** in the README. 
-For packages with one or few AI-assisted outputs, the full documentation may 
-be included directly in the README. For packages with multiple AI-assisted 
-outputs, authors are encouraged to create a dedicated `/ai_documentation/` 
-folder and reference the relevant log files from the README.
+The README must include an **AI Use Statement** for each in-scope AI output. This statement must cover the full set of information described in Section 3. Authors can choose how to organize that documentation — pick the format that fits the scale and structure of the package:
 
-### 4.1 In the README
+- **Inline in the README:** Include the Section 3 documentation directly under the AI Use Statement. Suitable when there are one or few AI-assisted outputs.
+- **Single AI documentation log** (`/ai_documentation/ai_log.md`): Create one package-level log file. Document any fields shared across outputs (e.g., tool, model version, system prompt) once at the top, then add a sub-section per output covering the output-specific fields (user prompt, input data, raw output, validation). Reference this file from the README. Recommended when multiple outputs share a common setup.
+- **Separate log per output** (e.g., `/ai_documentation/table3_classification_log.md`): Create one log file per output, each containing the full Section 3 documentation for that output. Reference each file from the README. Recommended when outputs differ substantially in tool, model, or setup.
 
-Include an **AI Use Statement** section in the README file. This section should:
+In any of the cases, the documentation must include the full set of fields in Section 3 somewhere in the package.
 
-- State which outputs in the knowledge product were generated using AI tools
-- Identify the tool(s) used (name, version, access date)
-- Reference the AI documentation log file
-
-**Example:**
+**Example AI Use Statement (referencing a single log file):**
 
 > #### AI Use Statement
->The keyword classification in Table 3 was generated using Claude Sonnet 4.6
->(Anthropic, accessed 2025-03-12) via the API. Full prompt text, raw outputs,
-and human review notes are documented in 
-/ai_documentation/table3_classification_log.md (or section X of this README).
-
-
-### 4.2 In an AI Documentation Log
-
-If the package includes several AI-assisted outputs, authors may create a 
-dedicated log file under `/ai_documentation/`. This keeps the README readable 
-while preserving full documentation. The template in Section 5 can be used 
-for each log file. Include a dedicated log file in the reproducibility package under `/ai_documentation/`. 
-
-This file must contain the full details from Section 3.
-
-You can use the template provided in Section 5.
+> The keyword classification in Table 3 and the country summaries in Annex B
+> were generated using Claude Sonnet 4.6 (Anthropic, accessed 2025-03-12) via
+> the API. Full documentation — including prompt text, raw outputs, and human
+> review notes — is in `/ai_documentation/ai_log.md`.
 
 ---
 
-## 5. Template: AI Documentation Log
-
-Save as `/ai_documentation/documentation_log.md` in your reproducibility package, 
-or include directly in README file.
-
-```markdown
-# AI Documentation Log
-
-## Output description
-[Brief description of what this log covers, e.g., "Keyword classification for Table 3"]
-
-## Publication reference
-[Paper title, section, table/figure number where this output appears]
-
----
-
-## Tool identification
-
-| Field            | Value |
-|------------------|-------|
-| Tool name        |       |
-| Model version    |       |
-| Provider         |       |
-| Access method    | Web / API / institutional license |
-| Access date      | YYYY-MM-DD |
-| Prompt language  |       |
-| Temperature      |       |
-| Other parameters |       |
-
----
-
-## Inputs
-
-### System prompt
-[Paste full system prompt here, or "None"]
-
-### User prompt(s)
-[Paste full prompt(s) here. If iterative, include all prompts in sequence. For long multi-turn sessions, export the full chat transcript, save it as a file, and reference it here. If prompts were reconstructed after the fact, note this.]
-
-### Input data or context
-[Describe any data or documents passed to the model. Include filenames or paths. If items were processed in batch, specify whether they were sent individually or batched and how many items were processed.]
-
----
-
-## Outputs
-
-### Raw AI output
-[Paste the model's full, unedited response here. For large-scale outputs (e.g., hundreds of classified records), save as a separate file and reference the filename instead of pasting inline.]
-
-### Final output (as it appears in the final product)
-[Paste or describe the final version used.]
-
-### Changes from raw to final
-[Describe any edits made and the rationale. If no changes, write "None."]
-
----
-
-## Human review
-
-| Field               | Value |
-|---------------------|-------|
-| Reviewer name/role  |       |
-| Review date         | YYYY-MM-DD |
-| Validation criteria | [e.g., checked against source documents, spot-checked 20% of items] |
-| Review notes        |       |
-```
-
----
-
-## 6. Questions and Support
+## 5. Questions and Support
 
 For questions about these guidelines or whether your AI use falls within scope, contact the WB Reproducibility Team at reproducibility@worldbank.org.
+
