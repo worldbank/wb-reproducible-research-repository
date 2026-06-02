@@ -38,7 +38,7 @@ Researchers are encouraged to disclose the use of AI coding tools in their READM
 > **Decision rule:** If an AI output appears, directly or transformed, in the knowledge product, document it. If AI only helped produce code that you then ran, no additional documentation is required.
 
 > **Data sensitivity note:** Do not upload Official Use, Confidential, or Strictly Confidential data, any data acquired from partners that is not open access, and/or any personal data to commercial AI tools (e.g., ChatGPT, Claude.ai, Gemini). This includes household survey microdata, administrative records, or any data governed by a data use agreement. 
-If your analysis involves sensitive data, use only tools approved for that data classification or anonymize/aggregate inputs before use.
+If your analysis involves sensitive data, use only tools approved for that data classification. A first step of of de-identifying, aggregating, or stripping sensitive data data before the analysis is recommended where feasible and may allow for use of a broader set of tools for the analysis.
 
 ---
 
