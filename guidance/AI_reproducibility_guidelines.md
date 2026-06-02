@@ -33,7 +33,7 @@ This guideline applies when an AI tool **directly produces an analytical output*
 - Any AI-generated result that feeds directly into a finding, table, or exhibit
 
 This guideline does not apply when AI was used as a coding assistant to help write or debug scripts (e.g., using GitHub Copilot or Claude to write Stata or Python code). In those cases, the script itself is the auditable output and is already required to be included in the package. 
-Researchers may nonetheless wish to disclose the use of AI coding tools in their README (e.g., "Code was developed with the assistance of GitHub Copilot/Claude Code"), though this is not a strict requirement.
+Researchers are encouraged to disclose the use of AI coding tools in their README (e.g., "Code was developed with the assistance of GitHub Copilot/Claude Code"), though this is not a strict requirement.
 
 > **Decision rule:** If an AI output appears, directly or transformed, in the knowledge product, document it. If AI only helped produce code that you then ran, no additional documentation is required.
 
