@@ -21,7 +21,7 @@ Reviewers will **not** re-run prompts. Verification focuses on completeness and 
 
 ---
 
-## 2. Scope — When This Guideline Applies
+## 2. Scope — Documenting AI generated outputs in a reproducibility package
 
 This guideline applies when an AI tool **directly produces an analytical output** that is used in a knowledge product. Examples include:
 
