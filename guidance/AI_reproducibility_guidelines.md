@@ -10,7 +10,7 @@ title: "Documenting AI Use in a Reproducible manner"
 
 ## 1. Purpose
 
-These guidelines establish documentation requirements for authors who use AI tools as part of their analytical workflow. 
+These guidelines cover ways to improve the reproducibility of AI assisted analytical processes, and how to document use of AI in reproducible research packages. 
 
 Full replication of AI-assisted steps is not possible in the traditional sense, since large language models are non-deterministic, running the same prompt twice may produce different outputs. 
 The goal is therefore **transparency**, not exact replication.
