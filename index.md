@@ -182,7 +182,7 @@ title: "World Bank Reproducible Research Repository Resources"
 
 <footer style="text-align: center; padding: 20px; border-top: 1px solid #ddd; margin-top: 20px;">
   <p><strong>Tools developed and maintained by 
-    <a href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation/dime-analytics" target="_blank">DECDI Analytics</a></strong></p>
+    <a href="hhttps://www.worldbank.org/en/about/unit/unit-dec/impactevaluation/analytics" target="_blank">DECDI Analytics</a></strong></p>
   <p>DIME Analytics creates open-source resources and solutions to ensure high-quality, reproducible research for the global development research community.</p>
 </footer>
 
