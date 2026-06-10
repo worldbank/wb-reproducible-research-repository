@@ -87,6 +87,7 @@ title: "World Bank Reproducible Research Repository Resources"
       <a href="./guidance_note_wb.html">📘 Full Guidance Note for Authors</a>
       <a href="./guidance/step_by_step_flagships.html">📋 Step-by-Step – For Flagships</a>
       <a href="./guidance/Excel_Guidelines.html"> 📈 Excel Guidelines </a>
+      <a href="./guidance/AI_reproducibility_guidelines.html"> 🤖 AI use for Reproducible Research </a>
     </div>
   </div> |
   
@@ -181,7 +182,7 @@ title: "World Bank Reproducible Research Repository Resources"
 
 <footer style="text-align: center; padding: 20px; border-top: 1px solid #ddd; margin-top: 20px;">
   <p><strong>Tools developed and maintained by 
-    <a href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation/dime-analytics" target="\_blank">DECDI Analytics</a></strong></p>
+    <a href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation/dime-analytics" target="_blank">DECDI Analytics</a></strong></p>
   <p>DIME Analytics creates open-source resources and solutions to ensure high-quality, reproducible research for the global development research community.</p>
 </footer>
 
