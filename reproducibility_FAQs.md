@@ -229,7 +229,7 @@ If your package includes Excel files:
 -   Explain how outputs were created from Excel files, especially if they appear in the manuscript
 
 
- [See our Excel guidelines](https://worldbank.github.io/wb-reproducible-research-repository/resources/excel/Excel_Guidelines.html)  for recommended practices and our [presentation on how to produce tables and plots in Stata and R](https://osf.io/ezmsb) for quick instructions on how to build reproducible outputs.
+ [See our Excel guidelines](https://worldbank.github.io/wb-reproducible-research-repository/guidance/Excel_Guidelines.html)  for recommended practices and our [presentation on how to produce tables and plots in Stata and R](https://osf.io/ezmsb) for quick instructions on how to build reproducible outputs.
 
 ### Can I submit compiled code or binaries?
 Yes. Provide (i) build instructions and compiler versions, or (ii) a container image, or (iii) deterministic binaries plus environment details. If source cannot be shared immediately, indicate source-escrow terms (e.g., released at journal acceptance or after embargo).
