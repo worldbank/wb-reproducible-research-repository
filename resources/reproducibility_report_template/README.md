@@ -1,6 +1,6 @@
 # Reproducibility Report Template - Instructions
 
-This document provides guidance on how to complete the reproducibility report template (`main.tex`) for World Bank reproducibility reviews. Download the zipped folder (reproducibility_report_template.zip) and edit it in a LaTeX editor, or upload the folder to Overleaf.
+This document provides guidance on completing the reproducibility report template (`main.tex`) for World Bank reproducibility reviews. The most updated version of the template can be found [here](https://www.overleaf.com/project/6554e2afa4981698545f181c) and should be used to prepare the report. Access is granted to reviewers actively working on verifications. The zipped folder (reproducibility_report_template.zip) is provided here as a static reference.
 
 ## Overview
 
