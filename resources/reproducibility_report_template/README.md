@@ -12,12 +12,14 @@ The template consists of three main sections:
 
 ## Getting Started
 
-1. Open `main.tex` in a LaTeX editor
-2. Update the header information (lines 103-105):
-   - Replace "An incredibly cool title" with the paper title
-   - Replace "RR_WLD_2026_500" with the actual Package ID
-   - Add your name
-   - The date will auto-generate
+To start a new report, open the template in Overleaf, make a copy by clicking "Menu" > "Copy Project", and rename it `reproducibility_report_[PID]`, where `[PID]` is the package ID (e.g. `RR_WLD_2026_500`). Do not edit the template directly.
+
+1. Open `main.tex` in your LaTeX editor.
+2. Update the header information (lines 103–105):
+   - Replace "An incredibly cool title" with the paper title.
+   - Replace `RR_WLD_2026_500` with the actual package ID.
+   - Add your name.
+   - The date will auto-generate.
 
 ## Section 1: Main Findings
 
