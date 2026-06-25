@@ -27,11 +27,13 @@ The template consists of three main sections:
 Select the appropriate statement (lines 132-135):
 
 - **Red**: If exhibits failed to reproduce - specify how many.
-- **Green (main only)**: If only main paper exhibits were verified and reproduced.
+- **Green (all exhibits)**: If all the paper exhibits were verified and reproduced.
 - **Green (main + appendix)**: If main paper and randomly selected 10 empirical appendix exhibits reproduced.
 
+> Note: If some exhibits were verified virtually, add this information. For instance: "Every exhibit of the paper has been reproduced accurately. 5 exhibits were verified through virtual verification."
+
 #### 1.2 Code Execution Instructions
-Fill in line 137-140 with specific instructions. Use software-specific templates:
+Fill in line 137-140 with specific instructions. These instructions should reflect what a new user needs to do to reproduce the results, not the changes you made to run the code. For instance, if you installed packages to run the code, you do not need to mention this — the published reproducibility package will already include the installed packages. Use software-specific templates:
 
 **For Stata:**
 ```latex
@@ -52,6 +54,8 @@ Fill in line 137-140 with specific instructions. Use software-specific templates
 ```
 
 **For mixed software:** Combine the above as needed.
+
+> Note: If the entire code was not executed by the replicators, see section "Special Case: Partial Reproducibility" on how to modify the report.
 
 #### 1.3 Stability & Runtime Information (lines 142-146)
 - Specify whether stability checks were done or not
@@ -183,6 +187,41 @@ Fill in your computer specifications (lines 252-255):
     \item \textbf{Dependencies environment}: The reviewers created a new environment
    using the latest versions of dependencies available at the moment of the review.
 \end{itemize}
+```
+
+## Special Case: Partial Reproducibility 
+
+There are cases when the entire code cannot be executed by the replicators — for example, due to extensive runtime, restricted data, or software licensing restrictions. In such cases, make the following changes:
+
+**1. Main Findings**
+
+Under Reproducibility Status and before the code execution instructions, add a bullet point noting that the package was partially reproduced and briefly state the reason. Examples:
+
+```latex
+\item The code was partially reproduced on a new computer due to the extensive runtime of [script name] (approximately [X]), which was not executed by the replicators. See below for details.
+\item The code was partially reproduced on a new computer due to a proprietary input required by [component name], which could not be shared. See below for details.
+```
+
+**2. Code Execution Steps**
+
+Replace:
+```latex
+\item The code was successfully executed on a new computer after:
+```
+With:
+```latex
+\item The following steps were executed on a new computer:
+```
+Then list each step, clearly distinguishing between steps executed by the replicators and steps executed by the authors. 
+
+**3. Verification Process and Data Handling**
+
+Add an explanation of which components were run by the replicators and which were run by the authors, and why. Examples:
+
+```latex
+Due to the extensive runtime of [script], this step was not executed by the replicators. The replicators ran [component A] and [component B] except for [script], shared the required inputs with the authors, who ran [script] and returned the outputs. The replicators used these outputs to complete the verification.
+
+Due to a proprietary input required by [component], that portion of the code was not executed by the replicators. All steps are documented in the README and package. The authors shared the pre-processed outputs, and the replicators used these to execute and verify [remaining component].
 ```
 
 ## Checklist Before Submission
