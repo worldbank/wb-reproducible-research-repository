@@ -209,7 +209,7 @@ For each **DATA SOURCE**, include:
   2. **Run the Package:**
     - Update the working directory in line 19 of the do-file `00_master`, and run it.
   
-  Since all the original data cannot be redistributed, the package includes the outputs produced by the authors, which can be used to review the results presented in the paper.
+  Since not all the data is included, the package includes the results produced by replicators. These files can be used to review the results presented in the paper.
   ```
   See additional examples:
     - [Stata (restricted data example)](https://reproducibility.worldbank.org/index.php/catalog/311)
