@@ -1,0 +1,76 @@
+# Releases the reproducibility skill as a downloadable .zip
+#
+# Triggers on any push to main that touches ai-skills/reproducibility-skill/
+# (i.e., whenever a PR editing the skill is merged), or manually from the
+# Actions tab ("Run workflow").
+#
+# Versioning: reads the `version:` field from SKILL.md front matter.
+#   - New version number  -> creates a new release tagged skill-v<version>
+#   - Version not bumped  -> refreshes the .zip on the existing release,
+#     so the releases/latest link always serves the current skill either way.
+#
+# File location: .github/workflows/release-skill.yml
+
+name: Release reproducibility skill
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "ai-skills/reproducibility-skill/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Read skill version from SKILL.md
+        id: version
+        run: |
+          VERSION=$(grep -m1 -E '^version:' ai-skills/reproducibility-skill/SKILL.md \
+                    | sed 's/version:[[:space:]]*//' | tr -d '"' || true)
+          if [ -z "$VERSION" ]; then
+            # Fallback if no version field exists: date-based tag
+            VERSION="$(date +%Y.%m.%d)"
+          fi
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "tag=skill-v${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "Releasing version ${VERSION}"
+
+      - name: Build the zip
+        run: |
+          cd ai-skills
+          zip -r ../reproducibility-skill.zip reproducibility-skill \
+            -x "*.DS_Store" -x "*/__pycache__/*" -x "*~"
+          cd ..
+          unzip -l reproducibility-skill.zip
+
+      - name: Create release (or refresh zip on existing one)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${{ steps.version.outputs.tag }}"
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release upload "$TAG" reproducibility-skill.zip --clobber \
+              --repo "$GITHUB_REPOSITORY"
+            echo "Version not bumped: refreshed the zip on existing release $TAG."
+          else
+            gh release create "$TAG" reproducibility-skill.zip \
+              --title "Reproducibility skill v${{ steps.version.outputs.version }}" \
+              --latest \
+              --repo "$GITHUB_REPOSITORY" \
+              --notes "Zip of \`ai-skills/reproducibility-skill\` at commit ${GITHUB_SHA}.
+
+          **Install:**
+          - **Claude.ai:** upload this zip under Settings → Capabilities → Skills.
+          - **Claude Code:** unzip into your project's \`.claude/skills/\` folder.
+          - **GitHub Copilot (VS Code):** unzip into your project's \`.agents/skills/\` folder.
+
+          Documentation: https://github.com/${GITHUB_REPOSITORY}/tree/main/ai-skills/reproducibility-skill"
+          fi
