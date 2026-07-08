@@ -31,6 +31,14 @@ These are templates for main scripts to allow **one-click reproducibility** in b
 
 ---
 
+## AI Skill for Reproducibility Packages
+
+The **WB Reproducibility Package skill** lets an AI coding agent (Claude Code, GitHub Copilot, or Claude.ai) help you prepare a package that meets the World Bank reproducibility standard — before submitting for verification. It audits your project against the [official checklist](./reproducibility_package_checklist.html) and the most common failure flags, proposes a build plan for your approval, drafts the README and main script, and verifies that every exhibit regenerates from a clean run.
+
+- **Get the skill:** [ai-skills/reproducibility-skill](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/ai-skills/reproducibility-skill)  
+  *Installation and usage instructions are in the folder's README. A ready-to-upload `.zip` for Claude.ai is attached to the [latest release](https://github.com/worldbank/wb-reproducible-research-repository/releases/latest).*
+---
+
 ## Environment Setup Instructions
 
 It’s important to isolate your environment to ensure reproducibility. Follow the links below for detailed instructions on environment setup:
