@@ -59,3 +59,7 @@ reproducibility-skill/
 ## Maintaining
 
 `references/checklist.md` mirrors the [official checklist](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/reproducibility_package_checklist.md); update it when the standard changes. `references/datasets.md` records license and redistribution status for common datasets — review periodically (last reviewed: July 2026). Contributions via pull request are welcome.
+
+## Contributors 
+
+This skill was developed by Impact Analytics and [Ruggero Doino](https://github.com/rdoino-wb). 
