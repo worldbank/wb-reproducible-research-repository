@@ -98,7 +98,13 @@ title: "World Bank Reproducible Research Repository Resources"
   <a href="./reproducibility_FAQs.html">FAQs</a> |
   
   <!-- 4. Resources -->
-  <a href="./resources.html">Resources</a> |
+  <div class="dropdown">
+    <a href="./resources.html">Resources ▾</a>
+    <div class="dropdown-content">
+      <a href="./resources.html">🧰 Templates, Main Files & Environments</a>
+      <a href="./resources.html#ai-skill-for-reproducibility-packages">🤖 AI Reproducibility Skill</a>
+    </div>
+  </div> |
   
   <!-- 5. README -->
   <div class="dropdown">
@@ -173,6 +179,14 @@ title: "World Bank Reproducible Research Repository Resources"
       <a href="./reproducibility_reviewer_protocol.html">
         <h3>Review Protocols</h3>
         <p>Evaluation guidelines for assessing the reproducibility of research.</p>
+      </a>
+    </div>
+
+    <!-- 7. AI Skill -->
+    <div class="card">
+      <a href="./resources.html#ai-skill-for-reproducibility-packages">
+        <h3>AI Skill</h3>
+        <p>Prepare your package with an AI agent that applies the checklist and reviewer checks.</p>
       </a>
     </div>
 
