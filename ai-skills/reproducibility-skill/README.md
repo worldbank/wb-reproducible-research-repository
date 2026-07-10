@@ -33,7 +33,7 @@ You do not need a final manuscript to start — the skill builds the exhibit map
 
 ## Usage
 
-Point Claude (terminal or Visual Studio Code) at your project and say something like:
+Point Claude/AI Agent (terminal or Visual Studio Code) at your project and say something like:
 
 > "Prepare a reproducibility package for this project" — full three-phase run
 > "Audit this package / what's missing for replication?" — Phase 1 only
