@@ -27,7 +27,7 @@ During this session, the author executes the full reproducibility package in a c
 
 3. **Set Up a Clean Environment**  
    - The author prepares a clean computing environment following instructions from the reproducibility team.  
-   - See software-specific instructions in the [Stata Instructions](#stata-instructions) and [R Instructions](#r-instructions) sections below.  
+   - See software-specific instructions below.  
 
 4. **Start Log File** *(Only required if the reviewer cannot observe the full run)*  
    - If the reviewer cannot stay for the full execution, the author must open a timestamp-only log at the beginning of the session to capture:
