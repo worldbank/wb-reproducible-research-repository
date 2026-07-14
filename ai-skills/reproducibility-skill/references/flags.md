@@ -48,11 +48,16 @@ Also Stata-specific: sorts that precede `_n`-based operations without `set sorts
 
 Detect: commands like `estout`, `esttab`, `outreg2`, `reghdfe`, `ivreg2`, `winsor2`, `grc1leg` (Stata) with no `ssc install` / `net install` in main; `library(x)` with no installation instruction or `renv` lockfile (R); imports with no `requirements.txt` / `environment.yml` / `Project.toml` (Python/Julia).
 Fix: main script installs required packages (to a package folder inside the project where possible, so versions are frozen), or the package ships a lockfile / requirements file. Versions matter: record them.
+Caveat: a project-local package store makes the install-command requirement moot for whatever it actually contains — check its contents against the commands/library calls used before flagging, and only flag packages genuinely missing from it:
+- Stata: an ado folder (e.g. `code/ado`, pointed to by `sysdir set PLUS`) shipping the `.ado`/`.sthlp` files a command needs.
+- R: an `renv` project library (`renv/library/`) with a `renv.lock`, or any other vendored library folder the code points `.libPaths()` at, containing the packages `library()`/`require()` calls.
+- Python/Julia: a committed virtual environment / vendored packages directory the code activates, containing the imported packages — not just the presence of `requirements.txt`/`Project.toml` naming them (a lockfile alone still needs an install step; a populated local store does not).
 
 ## F6. Software versions not pinned
 
 Detect: README missing software name + version for every language used; Stata scripts missing a `version` statement; Python/R environments unspecified.
 Rule: README lists every software and version, including OS and hardware if relevant (e.g., "Tested on MacBook Pro, M-series"). ~35% of verification failures trace to version mismatches of some kind.
+Caveat: for any package covered by an F5 project-local store (Stata ado folder, R `renv` library, vendored Python/Julia environment), the shipped files are themselves the pinned version — do not flag those as unpinned. This does not extend to the language/runtime itself (Stata, R, Python, Julia) or to packages installed outside the project folder, which still need a stated version in the README.
 
 ## F7. Manuscript–code version mismatch
 
@@ -89,7 +94,7 @@ Rule: every table and figure appears in the mapping. If no manuscript exists yet
 ## F11. Extraneous files
 
 Detect: data or code not referenced by any script and not needed for any exhibit; project notes; internal communication; `.DS_Store`, `Thumbs.db`, editor backups (`*.bak`, `*~`), old versions (`analysis_v2_FINAL_old.do`).
-Rule: the package includes only what reproduction requires. Flag for removal; never delete without approval.
+Rule: the package includes only what reproduction requires. List each flagged file by name in the audit and gap table — never as a batched "remove extraneous files" line item. Before acting in Phase 3, ask the author per file (or per clearly-related group, e.g. all `.DS_Store`): delete it, or move it outside the package instead (the author may want superseded analyses or notes kept, just not shipped)? Only delete files the author confirmed by name; anything not explicitly confirmed stays untouched.
 
 ## F12. Absolute output paths / results overwriting inputs
 
