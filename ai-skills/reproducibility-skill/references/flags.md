@@ -48,11 +48,16 @@ Also Stata-specific: sorts that precede `_n`-based operations without `set sorts
 
 Detect: commands like `estout`, `esttab`, `outreg2`, `reghdfe`, `ivreg2`, `winsor2`, `grc1leg` (Stata) with no `ssc install` / `net install` in main; `library(x)` with no installation instruction or `renv` lockfile (R); imports with no `requirements.txt` / `environment.yml` / `Project.toml` (Python/Julia).
 Fix: main script installs required packages (to a package folder inside the project where possible, so versions are frozen), or the package ships a lockfile / requirements file. Versions matter: record them.
+Caveat: a project-local package store makes the install-command requirement moot for whatever it actually contains — check its contents against the commands/library calls used before flagging, and only flag packages genuinely missing from it:
+- Stata: an ado folder (e.g. `code/ado`, pointed to by `sysdir set PLUS`) shipping the `.ado`/`.sthlp` files a command needs.
+- R: an `renv` project library (`renv/library/`) with a `renv.lock`, or any other vendored library folder the code points `.libPaths()` at, containing the packages `library()`/`require()` calls.
+- Python/Julia: a committed virtual environment / vendored packages directory the code activates, containing the imported packages — not just the presence of `requirements.txt`/`Project.toml` naming them (a lockfile alone still needs an install step; a populated local store does not).
 
 ## F6. Software versions not pinned
 
 Detect: README missing software name + version for every language used; Stata scripts missing a `version` statement; Python/R environments unspecified.
 Rule: README lists every software and version, including OS and hardware if relevant (e.g., "Tested on MacBook Pro, M-series"). ~35% of verification failures trace to version mismatches of some kind.
+Caveat: for any package covered by an F5 project-local store (Stata ado folder, R `renv` library, vendored Python/Julia environment), the shipped files are themselves the pinned version — do not flag those as unpinned. This does not extend to the language/runtime itself (Stata, R, Python, Julia) or to packages installed outside the project folder, which still need a stated version in the README.
 
 ## F7. Manuscript–code version mismatch
 
@@ -74,6 +79,7 @@ This is the data↔README cross-check. Procedure:
 3. Classify: a data file written by some script = INTERMEDIATE/OUTPUT (no DAS entry required). A data file never written by any script = EXTERNAL INPUT.
 4. Rule: every EXTERNAL INPUT must have a DAS entry with filename, source, URL, access year (and license where known). Any external input absent from the DAS is a flag. Any DAS entry with no corresponding file and no access instructions is also a flag.
 5. Reverse check: every file the code READS (`use`, `import delimited`, `read.csv`, `read_dta`, `pd.read_*`, ...) must either exist in the package or be documented in the DAS with access instructions. A read of a file that is neither present nor documented is a flag (the package will crash for the reviewer).
+6. Forthcoming or unpublished data: survey or monitoring data the author collected that will be published later (e.g., in the Microdata Library) but is not yet public is common and is not the same as permanently restricted data. Do not describe it with invented pathways like NDA or IRB-approved access, and do not attribute it to an institution unless the author confirms that institution owns it. Instead ask the author to mark it explicitly (e.g., "forthcoming," "planned for release in MDL, not yet available") and record only what the author confirms: intended repository, expected timing if known, and who to contact. If the author hasn't said, leave those fields as an open question rather than inferring a rights or access story — this counts as a DAS entry (satisfies the rule in item 4) even though there is no URL/access year yet.
 
 ## F9. Outputs not produced by code
 
@@ -88,7 +94,7 @@ Rule: every table and figure appears in the mapping. If no manuscript exists yet
 ## F11. Extraneous files
 
 Detect: data or code not referenced by any script and not needed for any exhibit; project notes; internal communication; `.DS_Store`, `Thumbs.db`, editor backups (`*.bak`, `*~`), old versions (`analysis_v2_FINAL_old.do`).
-Rule: the package includes only what reproduction requires. Flag for removal; never delete without approval.
+Rule: the package includes only what reproduction requires. List each flagged file by name in the audit and gap table — never as a batched "remove extraneous files" line item. Before acting in Phase 3, ask the author per file (or per clearly-related group, e.g. all `.DS_Store`): delete it, or move it outside the package instead (the author may want superseded analyses or notes kept, just not shipped)? Only delete files the author confirmed by name; anything not explicitly confirmed stays untouched.
 
 ## F12. Absolute output paths / results overwriting inputs
 
