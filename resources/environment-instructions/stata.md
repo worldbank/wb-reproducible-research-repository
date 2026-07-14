@@ -2,10 +2,38 @@
 
 These are instructions to make use of Stata's ado folders to create blank-slate programming environments for reproducibility packages.
 
-1. Create a new folder named `ado` where you will store ado files. This should go in the do-files folder if there is one, or in main path of the reproducibilty package if there is no do-files folder
-1. Change the `PLUS` ado folder to this ado folder with the command: `sysdir set PLUS "path/to/ado"`. In addition, add this command to the main do-file after creating the path globals and before running any sub do-file
-1. Install all external commands. Check the ado folder and verify that they have been installed there
-1. If the main do-file installs any external command, delete or deactivate those lines
+### If a main script is present
 
-If you followed these instructions correctly, now your ado folder should include all ado files needed to run the code and the main do-file should change the PLUS ado folder to that location.
-There is no need to install any additional commands since all of them should already be included in the ado folder.
+1. Create a new folder named `ado` inside the code folder.
+2. If the README mentions a Stata version, add the version line at the top of the main script:
+```stata
+   version 18.0 // Replace with the version mentioned in the README
+```
+3. After the path globals are defined, add the following line to redirect the `PLUS` ado folder to the `ado` folder you created:
+```stata
+   sysdir set PLUS "${path_to_code}/ado" // Replace with the correct global
+```
+4. After the `sysdir` line, add the following block to install required packages into the `ado` folder. Replace `xxx` with the required commands. Once installed, you can comment this block out — the packages will persist in the `ado` folder and do not need to be reinstalled on subsequent runs.
+```stata
+   * Install once, then comment out
+   local user_commands xxx xxx  // Replace with required user-written commands
+   foreach command of local user_commands {
+       cap which `command'
+       if _rc == 111 {
+           ssc install `command'
+       }
+   }
+
+   * For packages not available on SSC, use net install, e.g.:
+   * net install xxx, from("https://raw.githubusercontent.com/org/repo/main/")
+```
+5. Check the `ado` folder and verify that all packages have been installed there.
+
+### If a main script is not present
+
+1. If there are only a few do-files and the order in which they should be run is clear from the folder structure or README, create a main script using the [World Bank main.do template](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/main.do) and follow all steps above.
+2. If there are many do-files and the correct order is not immediately clear, ask the authors to create a main script before proceeding.
+
+---
+
+If you followed these instructions correctly, the `ado` folder should contain all packages needed to run the code, and the main script should redirect the `PLUS` ado folder to that location before any sub-scripts are run. There is no need to install any additional commands manually.

@@ -24,7 +24,7 @@ The DAS should begin with an overall categorization of the data used. If it is p
 
 A [Statement about Rights](https://github.com/worldbank/wb-reproducible-research-repository/blob/update_readme/resources/README_Template.md#statement-about-rights) is required in every DAS. It should confirm that the authors had legitimate access to the data and address redistribution rights, i.e., whether they have permission to share the data, or, if not, why not and under what terms others can access it.
 
-If this statement is missing, flag it as a required addition. 
+If this statement is missing, flag it as a required addition. The replicator can add this line directly if the README is in an editable format (Word, .md) and tell the authors that this change to the README was implemented.
 
 ---
 
@@ -80,14 +80,14 @@ Each dataset falls into one of the following accessibility categories. For each 
 *Data is publicly available and included in the reproducibility package.*
 
 - Check that the link in the DAS works and that the data actually exists at that location.
-- You do not need to verify every value, but download the data to confirm that what is downloaded matches what is in the package.
+- Follow the access instructions in the DAS and verify that they are sufficient to download the data, i.e., that a third party could retrieve the data without any additional information. If the instructions are unclear or incomplete, ask the authors to clarify.
 - If the instructions for accessing the data are unclear, ask the authors to clarify.
 
 ### Accessible data
 *Data is publicly available but does not allow redistribution and it is not included in the reproducibility package.*
 
 - Follow the same steps as for Open data.
-- Additionally, run the [Dataset Comparison Tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/compare_datasets) to compare the publicly available version with the data provided by the authors.
+- Additionally, run the [Dataset Comparison Tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/compare_datasets) to compare the publicly available version with the data provided by the authors. For datasets that are too large or time-consuming to download in full (e.g., UN Comtrade), running the comparison tool may not be feasible. In these cases, manually check a few key values against the source and document the approach taken in the verification report.
 - If differences are due to periodic updates to the source data, note this in the verification report. If differences appear to be due to manual changes, confirm with the authors whether any modifications or processing were done. If processing was done in code, ask for the code. If it was done manually, ask the authors to document the steps. In general, encourage authors to start from the raw source data where possible.
 
 ### Limited-access data
@@ -100,7 +100,7 @@ Each dataset falls into one of the following accessibility categories. For each 
 *Data is forthcoming in the World Bank Microdata Library or Development Data Hub.*
 
 - No access verification is needed at this stage.
-- Add a note to the GitHub issue to return to this once the data is published: update the metadata entry with the published link, and if the data is Accessible or Limited-access, run the comparison tool at that point.
+- Add the label `pending in RRR: data publication` to the GitHub issue to return to this once the data is published: update the metadata entry with the published link, and if the data is Accessible or Limited-access, run the comparison tool at that point.
 
 ### Restricted data
 *There is no documented public access path, or data access was granted directly to the authors under a custom license that does not allow redistribution; the data is not included in the reproducibility package.*
@@ -119,8 +119,8 @@ Each dataset falls into one of the following accessibility categories. For each 
 - **Opening statement does not match the actual data** (e.g., claims all data is public when some is restricted). Flag for correction.
 - **Statement of Rights is missing.** Required in every DAS.
 - **URL is missing for publicly available data.** Required if the data is accessible online.
-- **Access date is missing.** Required.
-- **No license or redistribution statement for restricted data.** Required.
+- **Access date is missing.** Required. Verification can proceed without an access date, but request the details from the authors for the publication stage. 
+- **No license or redistribution statement for restricted data.** Required. Verification can proceed without a license, but request the details from the authors for the publication stage. 
 - **World Bank-owned data not deposited in MDL or DDH.** Flag and initiate deposit process (unless the exception applies).
 - **Data only accessible via a staff member's personal storage.** Flag as a critical issue; data must be in a permanent, institutional location.
 - **Restricted data has no access instructions.** A third party must be able to understand how to request the same data.
@@ -135,7 +135,7 @@ Each dataset falls into one of the following accessibility categories. For each 
 - [ ] All input datasets are identified (use hash tool if needed)
 - [ ] Each dataset is documented with required fields (filename, source, URL if available, access date, citation, license/redistribution terms, access instructions)
 - [ ] License terms verified for each dataset
-- [ ] World Bank-owned data is deposited in MDL or DDH, or flagged as forthcoming (with GitHub issue note)
+- [ ] World Bank-owned data is deposited in MDL or DDH, or flagged as forthcoming (with label in the github issue included)
 - [ ] Data accessibility verified per category (link check, comparison tool where applicable)
 - [ ] Restricted data has a documented access pathway and sufficient information for third parties
 - [ ] Package starts from documented source data, not intermediate files

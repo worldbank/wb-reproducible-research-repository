@@ -27,7 +27,7 @@ During this session, the author executes the full reproducibility package in a c
 
 3. **Set Up a Clean Environment**  
    - The author prepares a clean computing environment following instructions from the reproducibility team.  
-   - See software-specific instructions in the [Stata Instructions](#stata-instructions) and [R Instructions](#r-instructions) sections below.  
+   - See software-specific instructions below.  
 
 4. **Start Log File** *(Only required if the reviewer cannot observe the full run)*  
    - If the reviewer cannot stay for the full execution, the author must open a timestamp-only log at the beginning of the session to capture:
@@ -140,6 +140,37 @@ renv::snapshot()
 
 ---
 
+## Python Instructions
+
+### Clean Environment and Logging
+
+1. Set up a clean Python environment following the [Python environment isolation instructions](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/environment-instructions/python.md).
+
+2. Add the following to the top and bottom of the main script to log the start and end times. Note that `datetime` is part of Python's standard library and does not need to be installed.
+
+```python
+from datetime import datetime
+
+log_path = "vrv_timestamp_log.txt"
+
+with open(log_path, "w") as log:
+    log.write(f"Start date and time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+    log.write("Executing the code\n")
+
+# Run main scripts here
+
+with open(log_path, "a") as log:
+    log.write(f"End date and time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+```
+
+> Note: If there is no single main script, create one that calls the other scripts in order and add the logging there. If the order is unclear or there are too many scripts, ask the authors to provide a main script before proceeding. If the package uses Jupyter notebooks, add the start time log as the first cell and the end time log as the last cell of the notebook. If there are multiple notebooks, ask the authors to provide a main script that runs them in order.
+
+3. After the session, share the environment file with the reviewer and include it in the final replication package.
+   - If an environment file already exists in the package (e.g., `environment.yml`, `requirements.txt`), share that directly.
+   - If no environment file exists, export it after the session. 
+
+---
+
 ## Instructions for Unscripted Data Processing and Analysis
 
 When verification involves manual, point-and-click steps for data processing or analysis, reviewer should adhere to the general virtual reproduciblity verification procedure outlined above procedure, with the following additional considerations:
@@ -164,7 +195,7 @@ When verification involves manual, point-and-click steps for data processing or 
 - [ ] Log files with start and end time saved and shared
 - [ ] Output files shared and checked
 - [ ] Computer specifications shared
-- [ ] Environment lock file (`renv.lock`, or Stata ado folder) shared
+- [ ] Environment lock file (`renv.lock`, python `environment.txt`, or Stata ado folder) shared
 - [ ] Reviewer confirms alignment with manuscript
 
 Additionally, If the virtual verification included unscripted data processing and analysis:

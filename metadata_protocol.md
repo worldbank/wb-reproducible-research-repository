@@ -100,7 +100,9 @@ Review and correct these fields as needed:
 * **Access and Rights**
 
   * **Disclaimer**: Ensure it is not “Default”; publish the actual text.
-  * **License**: `Modified BSD3` with URL: [https://opensource.org/license/bsd-3-clause/](https://opensource.org/license/bsd-3-clause/).
+  * **License**: 
+    1. `MIT License` with the URL: https://opensource.org/license/mit
+    2. `World Bank IGO Rider` with the URL: https://github.com/worldbank/metadata-editor/blob/main/WB-IGO-RIDER.md
 
 * **Contacts**: Prefilled with main authors and the reproducibility team. Verify accuracy.
 
@@ -115,6 +117,30 @@ Review and correct these fields as needed:
     * Notes include: “Computational reproducibility verified by the Development Impact Analytics Team, World Bank.”
 
 * **Repository**: Usually “Reproducible Research Repository (World Bank)” with URL [https://reproducibility.worldbank.org](https://reproducibility.worldbank.org). Update only if replication was hosted by a journal, if the package was already published to another repository, or if we had to use the [Development Data Hub](https://datacatalog.worldbank.org/) to upload the reproducibility package because it had a size of over 500 MB.
+
+* **DataCite**:
+  * **Creators**: For each author, verify the following:
+     * Name type: `Personal`
+     * Given name: First name of the author
+     * Family name: Last name of the author 
+     * Affiliation:
+        * Affiliation Identifier: Pre-filled for International Monetary Fund (IMF): https://ror.org/05m4rmw09, International Finance Corporation (IFC): https://ror.org/049rm1a24, World Bank: https://ror.org/00ae7jd04, World Bank Group: https://ror.org/02md09461. 
+        * Affiliation identifier scheme: `ROR`
+        * Name: Name of the affiliated institution	
+        * Schema URI: https://ror.org
+        
+      > Note: In cases when the affiliation is not the ones mentioned above or there will be more than one affiliation, this field will need manual inputs. See section Manual Input Fields: DataCite for more information. 
+
+  * **Titles**: 
+     1. Reproducibility Package for *[Title]*
+     2. Package ID (e.g., `RR_URY_2025_400`)
+  * **Publisher**: `World Bank`
+  * **Publication year**: The year the package is published. 
+  * **Resource type**: `Reproducibility package`
+  * **Resource type general**: `Other`
+  * **URL**: `https://reproducibility.worldbank.org/index.php/catalog/study/[PID]` where PID is the ID of the package. 
+  * **Language**: en  
+
 
 ---
 
@@ -172,7 +198,7 @@ For each **DATA SOURCE**, include:
 
 ---
 
-### Reproducibility Section
+### Manual Input Fields: Reproducibility Section
 
 - **Reproduction Instructions**:
 
@@ -183,7 +209,7 @@ For each **DATA SOURCE**, include:
   2. **Run the Package:**
     - Update the working directory in line 19 of the do-file `00_master`, and run it.
   
-  Since all the original data cannot be redistributed, the package includes the outputs produced by the authors, which can be used to review the results presented in the paper.
+  Since not all the data is included, the package includes the results produced by replicators. These files can be used to review the results presented in the paper.
   ```
   See additional examples:
     - [Stata (restricted data example)](https://reproducibility.worldbank.org/index.php/catalog/311)
@@ -207,7 +233,7 @@ For each **DATA SOURCE**, include:
 
 ---
 
-## External Resources
+### Manual Input Fields: External Resources
 
 Attach the following resources:
 
@@ -227,8 +253,9 @@ The `RR_WLD_2024_100.zip` file must include:
 
 - `README.pdf`
   - If the README and Data Availability Statement (DAS) are provided as separate documents, combine them into a single file and include it as a PDF.
-- `LICENSE.txt` (available [here](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/LICENSE.txt); ensure the year is updated)
 - `reproducibility_report_PID.pdf`
+- `LICENSE.txt` (available [here](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/LICENSE.txt); ensure the year is updated)
+- `WB-IGO-RIDER.txt` (available [here](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/WB-IGO-RIDER.txt))
 - `data_hash_report.csv` (created with the [hash tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/generate_hash))
 - `comparison_report.csv` (include if data type is Limited Access or Accessible; created with the [data comparison tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/compare_datasets))
 - `Reproducibility package/` folder containing the original code and data. When preparing this folder, ensure the following:
@@ -239,14 +266,14 @@ The `RR_WLD_2024_100.zip` file must include:
   - For Stata packages, include the `ado` folder containing all user-written dependencies.
   - For R or Python packages, include `renv` (`renv.lock`, `.Rprofile`, and `renv/activate.R`) or `myenv` as applicable.
 
-**Note:** Place `README.pdf`, `LICENSE.txt`, `reproducibility_report_PID.pdf`, `data_hash_report.csv`, and `comparison_report.csv` at the **top level** of the ZIP file, not inside the `Reproducibility Package` folder, for immediate visibility. 
+**Note:** Place `README.pdf`, `reproducibility_report_PID.pdf`, `LICENSE.txt`, `WB-IGO-RIDER.txt`, `data_hash_report.csv`, and `comparison_report.csv` at the **top level** of the ZIP file, not inside the `Reproducibility Package` folder, for immediate visibility. 
 ![](img/package_structure.png)
 
 
 
 ---
 
-### Tags
+### Manual Input Fields: Tags
 
 Ensure tags are added and correct:
 
@@ -254,18 +281,34 @@ Ensure tags are added and correct:
 
 - **Data Access**: Use the most restrictive tag that applies across all datasets in the package. For instance, if some data is restricted and some is open, use Restricted; if some data is limited-access and some is accessible, use Limited-access.
 
-  - Open data: all data is freely downloadable and redistributable.
-  - Accessible data: data is freely downloadable but cannot be redistributed (e.g., World Bank Microdata Library public use files).
-  - Limited-access data: data requires purchase or human approval to access (e.g., World Bank Microdata Library licensed data).
-  - Restricted data: data has no documented access method, or access was granted directly to the authors under a custom or ad-hoc agreement that does not allow redistribution.
+  - `Open dat`a: all data is freely downloadable and redistributable.
+  - `Accessible data`: data is freely downloadable but cannot be redistributed (e.g., World Bank Microdata Library public use files).
+  - `Limited-access data`: data requires purchase or human approval to access (e.g., World Bank Microdata Library licensed data).
+  - `Restricted data`: data has no documented access method, or access was granted directly to the authors under a custom or ad-hoc agreement that does not allow redistribution.
+  - `Forthcoming data`: data is forthcoming on World Bank MDL or DDH. This tag will need to be updated once the data has been published. 
 
-  If the package includes synthetic data in place of restricted original data, add a second Data Access tag with the value "Synthetic data", in addition to the most restrictive access tag for the original data. In total there will be two rows for Data Access in this case.
+  If the package includes synthetic data in place of restricted original data, add a second Data Access tag with the value `Synthetic data`, in addition to the most restrictive access tag for the original data. In total there will be two rows for Data Access in this case.
 
 - **Code Access**: Use the most restrictive tag that applies.
 
-  - Open code: code is included in the package and freely accessible.
-  - Restricted code: code is proprietary, not included in the package, or is under a temporary embargo.
-  - No code: the package includes only manual processes (e.g., Excel-based analysis with no scripts).
+  - `Open code`: code is included in the package and freely accessible.
+  - `Restricted code`: code is proprietary, not included in the package, or is under a temporary embargo.
+  - `No code`: the package includes only manual processes (e.g., Excel-based analysis with no scripts).
+
+---
+### Manual Input Fields: DataCite
+
+Most of this section is auto-filled. In some cases, the following will need to be filled/verified:
+
+* **Affiliation for Creators**:
+  * If the authors have more than one affiliation, for instance, World Bank and University of Cambridge, add a row for the second affiliation. Each row should have one affiliation only.
+  * If the affiliation is other than World Bank, World Bank Group, IFC, or IMF, look up the ROR for the organization here: https://ror.org/ and add it to the Affiliation Identifier field. If multiple affiliations are used, add one for each in a separate row.
+  * If the affiliation does not have a ROR, leave the following fields blank: Affiliation Identifier, Affiliation Identifier Scheme, and Schema URI.
+
+* **Creator section when creator is World Bank and not individual authors**: For flagships, in certain cases, instead of listing all the authors, only World Bank or World Bank Group is mentioned as a creator. In that case, the following fields need to be updated:
+  * Name: Name of the organization (e.g., `World Bank`)
+  * Name type: `Organization`
+    > Given name and Family name will be empty. Affiliation fields should be filled as usual. 
 
 ---
 

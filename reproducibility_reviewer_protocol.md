@@ -221,14 +221,35 @@ For detailed instructions on how to complete the report, refer to the [Reproduci
 For full instructions on preparing metadata and publishing the package, refer to the [Metadata Editor Protocol](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/metadata_protocol.md).
  
 - [ ] Ensure the metadata entry is complete and reflects all information collected during the review - including data sources, access status, and any issues flagged.
-- [ ] Zip the results folder and upload it to the respective SharePoint folder.
-- [ ] Zip the reproducibility package folder and upload it to the respective SharePoint folder.
-- [ ] Ensure the README is in PDF format. If not, convert it and name it `README.pdf`.
-- [ ] Check if the package includes a license. If not, add a Modified BSD3 license available [here](https://opensource.org/license/bsd-3-clause/), starting with: "Copyright (year), World Bank".
+- [ ] Ensure all the versions of submissions by the author are saved in the respective SharePoint folder (e.g. `RR_WLD_2024_PID/files submitted/`).
+- [ ] Zip the results folder and upload it to the respective SharePoint folder (e.g. `RR_WLD_2024_PID/results/v1`).
+- [ ] Zip the reproducibility package folder and upload it to the respective SharePoint folder (e.g. `RR_WLD_2024_PID/package RRR`).
+
+
 - [ ] The final package should have the following structure:
  
-![](img/folder_structure.png)
+![](img/package_structure.png)
  
+  The `RR_WLD_2024_PID.zip` file must include:
+
+  - `README.pdf`
+    - If the README and Data Availability Statement (DAS) are provided as separate documents, combine them into a single file and include it as a PDF.
+  - `reproducibility_report_PID.pdf`
+  - `LICENSE.txt` (available [here](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/LICENSE.txt); ensure the year is updated)
+  - `WB-IGO-RIDER.txt` (available [here](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/resources/WB-IGO-RIDER.txt))
+  - `data_hash_report.csv` (created with the [hash tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/generate_hash))
+  - `comparison_report.csv` (include if data type is Limited Access or Accessible; created with the [data comparison tool](https://github.com/worldbank/wb-reproducible-research-repository/tree/main/resources/compare_datasets))
+  - `Reproducibility package/` folder containing the original code and data. When preparing this folder, ensure the following:
+    - The folder must be named `Reproducibility package` exactly.
+    - The data folder must only include data that is publicly available and can be published in a public repository. Restricted, limited-access, or accessible data must not be included.
+    - Include code outputs (e.g., tables, figures) only if not all data can be published, so that results can still be reviewed without access to the restricted data.
+    - Include empty folders where data cannot be published, to prevent the code from breaking due to missing directories. For example, if restricted data is expected in `data/raw`, include that folder as an empty placeholder.
+    - For Stata packages, include the `ado` folder containing all user-written dependencies.
+    - For R or Python packages, include `renv` (`renv.lock`, `.Rprofile`, and `renv/activate.R`) or `myenv` as applicable.
+
+  **Note:** Place `README.pdf`, `reproducibility_report_PID.pdf`, `LICENSE.txt`, `WB-IGO-RIDER.txt`, `data_hash_report.csv`, and `comparison_report.csv` at the **top level** of the ZIP file, not inside the `Reproducibility Package` folder, for immediate visibility. 
+
+
 ---
  
 ## 8. Publish Package to reproducibility.worldbank.org
