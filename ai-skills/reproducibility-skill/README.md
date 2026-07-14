@@ -10,18 +10,18 @@ Questions: reproducibility@worldbank.org
 
 The skill runs in four phases, and it will not touch your files without approval:
 
-1. **Audit (read-only).** Checks your project against the official checklist and 14 common failure flags (hardcoded paths, missing seeds, uninstalled packages, no entry point, extraneous files, ...). Scans your data folder, determines which files your code *produces* vs. which are *external inputs*, and verifies every external input is documented with source, URL, and access year. Tries to identify common datasets (WDI, PWT, OECD, ILOSTAT, national surveys, ...) and proposes the correct citation and license status for you to confirm.
+1. **Audit (read-only).** If a manuscript is available, reads it first and scopes the audit to the exhibits it actually contains — useful when the project folder has a lot of files unrelated to the paper. Checks your project against the official checklist and 14 common failure flags (hardcoded paths, missing seeds, uninstalled packages, no entry point, extraneous files, ...). Scans your data folder, determines which in-scope files your code *produces* vs. which are *external inputs*, and verifies every external input is documented with source, URL, and access year — including data you've collected but not yet published, which it marks as forthcoming rather than guessing an access pathway. Tries to identify common datasets (WDI, PWT, OECD, ILOSTAT, national surveys, ...) and proposes the correct citation and license status for you to confirm.
 2. **Outline (proposes, writes nothing).** A target folder structure (`data/`, `code/`, `output/`), an entry-point plan (one main script per language, path changed in exactly one place), and a concrete gap table — the build plan. You approve, edit, or reject each row.
-3. **Build (only after approval).** Drafts the README (with Data Availability Statement and List of Exhibits), the main script(s), applies the approved fixes, and re-runs the audit as a final gate.
-4. **Run check.** Sets existing outputs aside and reruns the package from scratch, verifying that every exhibit file regenerates. Where Claude can execute the code (R/Python in Claude Code or Cowork), it runs it and records run times; where it can't (Stata, Matlab), it gives you the exact clean-run protocol to execute yourself and a reconciliation checklist. The package is ready only when every expected output regenerates.
+3. **Build (only after approval).** Drafts the README (only the sections required by the template — no invented "Troubleshooting"/"FAQ" sections), with Data Availability Statement and List of Exhibits, the main script(s), applies the approved fixes, and re-runs the audit as a final gate.
+4. **Run check.** Sets existing outputs aside and reruns the package from scratch, verifying that every exhibit file regenerates. Where Claude/AI Agent can execute the code (R/Python in Claude Code or Cowork, Visual Studio, GitHub copilot), it runs it and records run times; where it can't (Stata, Matlab), it gives you the exact clean-run protocol to execute yourself and a reconciliation checklist. The package is ready only when every expected output regenerates.
 
 You do not need a final manuscript to start — the skill builds the exhibit map from your code and outputs, and marks what to confirm once the manuscript is final.
 
 ## What it does not do
 
 - It never moves, renames, or deletes files without your explicit approval of the specific action.
-- It never invents access dates, dataset versions, or exhibit numbers — it asks.
-- It can only execute code where the runtime is available (typically R/Python in Claude Code or Cowork; not Stata or Matlab). For anything it can't run, Phase 4 instructs **you** to run the package on a clean setup and gives you the exact protocol and checklist to confirm every exhibit regenerates.
+- It never invents access dates, dataset versions, exhibit numbers, or data-access pathways (NDA, IRB, owning institution) — it asks, and marks unpublished data as forthcoming rather than guessing.
+- It can only execute code where the runtime is available (typically R/Python in Claude Code or Cowork or Visual studio; not Stata or Matlab). For anything it can't run, Phase 4 instructs **you** to run the package on a clean setup and gives you the exact protocol and checklist to confirm every exhibit regenerates.
 
 ## Installation
 
@@ -29,9 +29,11 @@ You do not need a final manuscript to start — the skill builds the exhibit map
 
 **Claude Code:** copy the `reproducibility-skill/` folder into your project's `.claude/skills/` directory `.agents/skills/`. Claude/AI agent picks it up automatically.
 
+**VS Code (GitHub Copilot):** copy the `reproducibility-skill/` folder into your project's `.github/skills/` directory or `.claude/skills/`. GitHub Copilot picks it up automatically once agent mode is enabled.
+
 ## Usage
 
-Point Claude (terminal or Visual Studio Code) at your project and say something like:
+Point Claude/AI Agent (terminal or Visual Studio Code) at your project and say something like:
 
 > "Prepare a reproducibility package for this project" — full three-phase run
 > "Audit this package / what's missing for replication?" — Phase 1 only
