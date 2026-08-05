@@ -11,6 +11,31 @@ The protocol has four components:
 
 ---
 
+## Getting Started: Adding a New User
+
+Before a new user can create or edit metadata entries, an admin must set up their account in both the QA and production catalogs.
+
+### Admin Steps
+
+1. Log in to the QA and production catalogs and create a user account for the new user.
+2. Log in to both catalogs and generate an API key for the new user. Share the API key with the user.
+
+### New User Steps
+
+1. Check your email for an invitation and log in to your account.
+2. Log in to the Metadata Editor and configure both catalogs (QA and production) as follows:
+   1. Open a project and click on the three dots in the upper right corner.
+   2. Click **Publish to NADA**.
+   3. Go to **Catalog > Configure Catalog**.
+   4. Add a catalog title — use `QA` for the QA catalog and `Prod` for the production catalog.
+   5. Enter the catalog URL:
+      - QA: `https://reproducibilityqa.worldbank.org/`
+      - Production: `https://reproducibility.worldbank.org/`
+   6. Enter the API key shared by the admin.
+   7. Repeat steps 1–6 for the second catalog.
+
+---
+
 ## Metadata Creation and Publication Process
 
 * World Bank staff and consultants submit reproducibility verification requests via the [SurveyCTO form](https://survey.wb.surveycto.com/collect/prwp_reproducibility?caseid=undefined).
