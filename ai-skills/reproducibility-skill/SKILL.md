@@ -7,7 +7,7 @@ description: Help an author prepare a complete World Bank reproducibility packag
 
 This skill helps an author turn an existing project — code, data, outputs, in whatever state — into a reproducibility package that meets the World Bank standard on first submission. It is written for authors, but it embeds the exact checks the reproducibility team applies as reviewers, so passing this skill's audit and update the exhibits to this version means passing verification.
 
-It runs in four phases with a stop point between each: audit (read-only), outline (proposes), build (after approval), and run check (prove it runs and regenerates every exhibit). Do not skip phases and do not move or write files before the user approves the outline in Phase 2.
+It runs in five phases with a stop point between each: privacy gate (confirm the data may be shared with this tool), audit (read-only), outline (proposes), build (after approval), and run check (prove it runs and regenerates every exhibit). Do not skip phases, do not open any project file before Phase 0 is cleared, and do not move or write files before the user approves the outline in Phase 2.
 
 Two references are the authority — read them, do not rely on memory:
 - `references/checklist.md`: the official package requirements (what must be present).
@@ -19,12 +19,59 @@ The audit is read only. Phases 1 and 2 report and propose; they never move, rena
 
 If you are in Cowork or another setting with file access, act on the real project folder in Phase 3. In chat without file access, Phase 3 produces the deliverables (README, main script, restructure plan, flag-fix list) for the user to place themselves.
 
+## Phase 0: Privacy gate
+
+Goal: confirm the project's data may be shared with the AI tool running this skill before reading anything. Do this first, every time, before listing, opening, or searching any project file — including when the user only asks for a README or a quick audit.
+
+Ask the user, in one message:
+
+1. What is the classification of the data in this project? Public / will be made public with the package; Official Use Only; Confidential or Strictly Confidential; or personal data (household microdata, administrative records, anything under a data use agreement or NDA, partner data that is not open access).
+2. Which tool is running this skill? (Claude — web, desktop, Cowork, or Claude Code — or GitHub Copilot in the World Bank enterprise environment.) If you can tell from your own environment, state it instead of asking.
+
+Then apply the rule:
+
+| Data classification | Claude | GitHub Copilot (WB enterprise) |
+|---|---|---|
+| Public, or will be made public with the package | Full mode | Full mode |
+| Official Use Only | Code-only mode | Full mode |
+| Confidential, Strictly Confidential, or personal data | Code-only mode | Code-only mode |
+
+When in doubt about the classification, treat the data as the more restrictive category and use code-only mode. Do not proceed until the user has answered; if the answer is unclear, ask again rather than assuming the data is public.
+
+**Full mode.** Proceed to Phase 1 as written.
+
+**Code-only mode.** The skill can still build the package, working from the code alone. The data never enters the conversation. The instruction not to read data is not enough protection: a project-wide search, a lost instruction, or a slip can still print data if it sits in a folder the agent can reach. So in code-only mode the data must physically be out of reach. That separation is required, and the rules below are a second layer.
+
+1. **Separate the data (required).** Tell the author to give you a folder that contains no data. Either a fresh `git clone` of the project (if data is excluded from git), or a copy of the project with the data folder removed. The data stays where it normally lives, and you never get its location. The code-only folder may hold code, the manuscript, the README, and the output tables and figures that will be published. It must not hold:
+   - data files (`.dta`, `.csv`, `.tsv`, `.txt` data, `.xlsx`, `.xls`, `.sav`, `.rds`, `.RData`/`.rda`, `.parquet`, `.feather`, `.json` data, shapefiles, `.zip`/`.gz` archives of data);
+   - logs and saved console output (`.log`, `.smcl`, `.Rout`, `.Rhistory`), which can print data rows;
+   - Jupyter notebooks with saved cell outputs (clear outputs first).
+   Do not start Phase 1 in the original project folder. If the author declines to separate the data, explain why it is needed. Do not continue in code-only mode on the original folder.
+2. **Verify the folder is clean.** Before Phase 1, list the folder's file names only, without opening any file (e.g., `find . -type f` or a directory listing), and match extensions against the list above. If any match, stop, list the matching paths, and ask the author to remove them and confirm. Do not open them to check what they contain. Repeat until the listing is clean.
+3. **Search code files only.** Every search in Phases 1–3 (hardcoded paths, seeds, install commands, write operations, exhibit exports, the F8 read/write trace) is limited to code files, so a search can never print a line from a data file even if one slipped through. For example: `grep -rn --include='*.do' --include='*.ado' --include='*.R' --include='*.Rmd' --include='*.qmd' --include='*.py' --include='*.jl' --include='*.m' --include='*.sh' PATTERN .`. Never run an unfiltered `grep -r` over the folder. Read the manuscript and README by opening them directly.
+4. **Suggest a technical lock (optional).** For extra protection, tell the author about controls that block reads outside the rules: in Claude Code, `deny` permission rules in `.claude/settings.json` (e.g., `Read(./data/**)`). These do not stop shell commands, so they add to separation and do not replace it. In GitHub Copilot Enterprise, the organization's content exclusion settings.
+5. **Do not open or run data.** Never open, preview, `head`, `describe`, or load a data file, even one you come across by accident, and never run a script that loads data. Phase 4 step 3 is skipped; go straight to the author run-check protocol in Phase 4 step 5.
+6. **Get the data inventory.** Ask the author to run the data inventory script on their own machine: `assets/data_inventory.do` (Stata), `assets/data_inventory.R` (R), or `assets/data_inventory.py` (Python). Give them the script and tell them to set two lines at the top: the data folder, pointed at where the data really lives, and the folder where the report is saved, inside the code-only folder. It always writes a file named `data_inventory.csv` with one row per data file: filename, relative path, SHA256 hash, size, variable names and sheet names. It records no values, value labels, or summary statistics. Its last columns (source, url, access_date, license, availability, notes) are for the author to fill in for every dataset they did not create themselves. Ask them to review the file before sharing it. If variable names are themselves sensitive, they can set `include_varnames` to off.
+7. **Use `data_inventory.csv` in place of the data files:**
+   - Phase 1 inventory and F8 reverse check: every file the code reads must appear in the inventory, and every inventory file must be read or written by some script (otherwise it is an F11 candidate).
+   - Data classification: classify EXTERNAL INPUT vs INTERMEDIATE/OUTPUT from what the code reads and writes (`use`, `import`, `read_csv`, `merge`, `save`, `export`, etc.), matched against the inventory's paths.
+   - Dataset identification against `references/datasets.md`: match on filenames, sheet names, and variable names from the inventory and the code.
+   - DAS: draft each external-input entry from the author-filled columns. A blank or unclear column is still a question for the author. Never fill it in yourself.
+   - List the hashes in the README if the author wants them, and use them in Phase 4 so the author can confirm the raw data did not change during the run check (rerun the script and compare).
+   If the author cannot or will not run the script, fall back to the code alone: build the data list from the paths in the code and the author's answers.
+8. Everything else (checklist, flags, outline, README, main script, flag fixes) runs as normal, within rules 3 and 5. Tell the user explicitly that code-only mode is active and which steps it limits.
+9. **Phase 3 file moves.** Proposed moves in the target structure apply to the code-only folder. For moves involving data (e.g., into `data/raw/`), give the author the list of moves to make in the real data location themselves. Never ask for the data's location to do it for them.
+
+If at any point you encounter content that appears confidential or personal (including data values in `data_inventory.csv`, names, exact addresses, IDs, a data file you were told was not present, or a file marked Official Use Only / Confidential while running in Claude), stop, do not quote or summarize it, tell the user what you encountered, and switch to code-only mode starting from rule 1 (separate the data), even mid-session.
+
+Then stop. State which mode applies and ask the user to confirm before starting Phase 1.
+
 ## Phase 1: Audit
 
 Goal: report the current state against the standard. Change nothing.
 
 1. Read `references/checklist.md` and `references/flags.md`.
-2. Locate the project (ask for the path or repo if not provided) and locate the manuscript (tex/docx/pdf). If a manuscript exists, read it before inventorying anything else and use it to scope the audit: the set of exhibits it contains (tables, figures, in-text numbers) defines what is in scope. In a messy project folder with unrelated files, data, or outputs, do not inventory everything indiscriminately — inventory against the manuscript's exhibit list first, then trace backward from each exhibit to its generating script and that script's inputs. Files never touched by that trace (extra datasets, superseded output versions, unrelated sub-projects sharing the folder) are out of scope for this package; note them as excluded, do not fold them into the checklist or outline. If no manuscript exists yet, say so and fall back to inventorying everything, flagging that the exhibit scope cannot be pinned down until a manuscript is provided.
+2. Locate the project (ask for the path or repo if not provided; in code-only mode this is the verified code-only folder from Phase 0) and locate the manuscript (tex/docx/pdf). If a manuscript exists, read it before inventorying anything else and use it to scope the audit: the set of exhibits it contains (tables, figures, in-text numbers) defines what is in scope. In a messy project folder with unrelated files, data, or outputs, do not inventory everything indiscriminately — inventory against the manuscript's exhibit list first, then trace backward from each exhibit to its generating script and that script's inputs. Files never touched by that trace (extra datasets, superseded output versions, unrelated sub-projects sharing the folder) are out of scope for this package; note them as excluded, do not fold them into the checklist or outline. If no manuscript exists yet, say so and fall back to inventorying everything, flagging that the exhibit scope cannot be pinned down until a manuscript is provided.
 3. Inventory everything in scope: data files, code files, outputs, README, manuscript, license.
 4. Identify language(s) and run structure: is there a main script, what order do scripts run in, are paths hardcoded or set through a single top-level global? If a main script and/or README already exist — from an earlier partial attempt, a hand-written draft, or a previous run of this skill — do not take their presence as sufficient. They get the same scrutiny as a project with neither: run them through the full checklist and flag pass below, and apply the "pre-existing README or main script" procedure at the top of references/flags.md to cross-check the README's specific claims against what the code actually does, reporting each mismatch under the checklist item or flag it violates.
 5. Checklist pass. Check every item in `references/checklist.md`; record present / partial / missing with filename or line as evidence. "Present" means verified against its actual content, not merely that the file exists.
@@ -84,7 +131,7 @@ Goal: prove the package actually runs end to end and regenerates every exhibit. 
 0. Before starting the process give the user the option to run the check themselves on their own machine, and provide the checklist for them to follow. If they choose to do so, skip steps 1–7 and go straight to step 8.
 1. Snapshot expected outputs. From the List of Exhibits, build the list of every output file the code should produce (tables, figures, intermediate datasets the pipeline creates).
 2. Clear or set aside existing outputs. Rename the output folder (e.g., `output/` → `output_old/`) or move generated files aside — never delete without approval. Regenerating into an empty output tree is the only honest test; outputs left over from earlier runs mask failures.
-3. Run what the environment allows. If you have execution access (Claude Code, Cowork) and the language runtimes are available (R, Python, Julia), run the main script(s) in the documented order, exactly as the README tells a replicator to — fresh start, change only the designated path line(s). Capture errors verbatim. Stata and Matlab typically cannot run in these environments; say so plainly rather than pretending, and cover them via step 5.
+3. Run what the environment allows. In code-only mode (Phase 0), skip this step and go to step 5. Otherwise, if you have execution access (Claude Code, Cowork) and the language runtimes are available (R, Python, Julia), run the main script(s) in the documented order, exactly as the README tells a replicator to — fresh start, change only the designated path line(s). Capture errors verbatim. Stata and Matlab typically cannot run in these environments; say so plainly rather than pretending, and cover them via step 5.
 4. Verify outputs, not just exit codes. After each stage, check that every expected file from step 1 now exists with a fresh timestamp and is non-empty (non-zero size; figures open; tables contain rows). Record run time per stage and put it in the README. A script that finishes silently but writes nothing is a failure.
 5. Author run-check protocol for what could not be executed. Give the author the exact same procedure to run on their machine, as a checklist: (i) fresh copy of the package in a new location (this catches paths pointing at the old project), (ii) change only the designated line(s), (iii) run the main script(s) in README order, (iv) confirm every file on the expected-output list regenerates with a new timestamp, (v) record per-stage run times into the README, (vi) if any exhibit file does not regenerate, the package is not ready — fix and rerun. Recommend doing this on a machine or account that is not the author's usual setup where possible.
 6. Reconcile. Compare regenerated outputs against the previous ones (`output_old/`): same filenames, same dimensions, and — where the code is seeded — same numbers. A regenerated file with a different name than before is itself a failure (something renamed an output; see the no-new-names rule in Phase 3). Differences in stochastic results despite seeds are a flag (see F4). Report the reconciliation table: expected file, regenerated (yes/no), matches previous (yes/no/approx), run time.
@@ -105,3 +152,4 @@ See flag F11: code or data not needed for the paper's results, project notes, in
 - `assets/README_template.md`: the README structure to draft from.
 - `assets/README_example.md`: annotated gold-standard README showing the target level of specificity.
 - `assets/main.do`, `assets/main.R`, `assets/main.py`: master script templates.
+- `assets/data_inventory.do`, `assets/data_inventory.R`, `assets/data_inventory.py`: scripts the author runs locally in code-only mode, producing a values-free `data_inventory.csv` (files, hashes, variable names, author-filled source and license columns).
