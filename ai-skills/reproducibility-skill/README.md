@@ -8,8 +8,9 @@ Questions: reproducibility@worldbank.org
 
 ## What it does
 
-The skill runs in four phases, and it will not touch your files without approval:
+The skill runs in five phases, and it will not touch your files without approval:
 
+0. **Privacy gate.** Before opening anything, asks how your data is classified and which AI tool you are using. With **Claude**, only public data (or data that will be made public with the package) may be shared. **Official Use Only** data may be used only with **GitHub Copilot** in the World Bank enterprise environment. Confidential, Strictly Confidential, or personal data may not be shared with either tool. In those cases the skill switches to **code-only mode**: it still builds the package from your code, manuscript, and README, but never opens or runs the data, and you do the final run check on your own machine. In code-only mode you must give the agent a **folder with no data in it**: a fresh `git clone`, or a copy of the project with the data, logs, and notebook outputs removed. The agent checks the file listing before it starts and will not continue until the folder is clean. The skill's rules (never open data, search code files only) are a second layer. They are not enough on their own: if the data is somewhere the agent can reach, it could still end up in the conversation by accident. To tell the agent about your data, you run a small script on your machine (`assets/data_inventory.do`, `.R`, or `.py`), pointed at wherever the data really lives, and save its output into the code-only folder. It writes `data_inventory.csv`, which lists every data file with its hash, size, and variable names (never values). It also has blank columns for you to add each dataset's source, URL, access date and license. The agent uses this file instead of the data to check the data inputs and draft the Data Availability Statement.
 1. **Audit (read-only).** If a manuscript is available, reads it first and scopes the audit to the exhibits it actually contains — useful when the project folder has a lot of files unrelated to the paper. Checks your project against the official checklist and 14 common failure flags (hardcoded paths, missing seeds, uninstalled packages, no entry point, extraneous files, ...). Scans your data folder, determines which in-scope files your code *produces* vs. which are *external inputs*, and verifies every external input is documented with source, URL, and access year — including data you've collected but not yet published, which it marks as forthcoming rather than guessing an access pathway. Tries to identify common datasets (WDI, PWT, OECD, ILOSTAT, national surveys, ...) and proposes the correct citation and license status for you to confirm.
 2. **Outline (proposes, writes nothing).** A target folder structure (`data/`, `code/`, `output/`), an entry-point plan (one main script per language, path changed in exactly one place), and a concrete gap table — the build plan. You approve, edit, or reject each row.
 3. **Build (only after approval).** Drafts the README (only the sections required by the template — no invented "Troubleshooting"/"FAQ" sections), with Data Availability Statement and List of Exhibits, the main script(s), applies the approved fixes, and re-runs the audit as a final gate.
@@ -19,6 +20,7 @@ You do not need a final manuscript to start — the skill builds the exhibit map
 
 ## What it does not do
 
+- It never reads confidential data. If your data is not cleared for the tool you are using (see Phase 0), it requires a code-only copy of the project and stops if it finds data files in it.
 - It never moves, renames, or deletes files without your explicit approval of the specific action.
 - It never invents access dates, dataset versions, exhibit numbers, or data-access pathways (NDA, IRB, owning institution) — it asks, and marks unpublished data as forthcoming rather than guessing.
 - It can only execute code where the runtime is available (typically R/Python in Claude Code or Cowork or Visual studio; not Stata or Matlab). For anything it can't run, Phase 4 instructs **you** to run the package on a clean setup and gives you the exact protocol and checklist to confirm every exhibit regenerates.
@@ -35,7 +37,7 @@ You do not need a final manuscript to start — the skill builds the exhibit map
 
 Point Claude/AI Agent (terminal or Visual Studio Code) at your project and say something like:
 
-> "Prepare a reproducibility package for this project" — full three-phase run
+> "Prepare a reproducibility package for this project" — full run (privacy gate, then all phases)
 > "Audit this package / what's missing for replication?" — Phase 1 only
 > "Check this project for common reproducibility failures" — Phase 1 flag pass
 > "Write the README and data availability statement" — AI agent will still audit first, briefly, because the DAS depends on the data classification
@@ -56,6 +58,7 @@ reproducibility-skill/
     ├── README_template.md       # required README structure
     ├── README_example.md        # annotated gold-standard README
     ├── main.do / main.R / main.py  # master script templates
+    └── data_inventory.do / .R / .py  # values-free data inventory for code-only mode
 ```
 
 ## Maintaining
