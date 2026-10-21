@@ -14,6 +14,7 @@ These are instructions to make use of Stata's ado folders to create blank-slate 
    sysdir set PLUS "${path_to_code}/ado" // Replace with the correct global
 ```
 4. After the `sysdir` line, add the following block to install required packages into the `ado` folder. Replace `xxx` with the required commands. Once installed, you can comment this block out — the packages will persist in the `ado` folder and do not need to be reinstalled on subsequent runs.
+
 ```stata
    * Install once, then comment out
    local user_commands xxx xxx  // Replace with required user-written commands
@@ -27,6 +28,7 @@ These are instructions to make use of Stata's ado folders to create blank-slate 
    * For packages not available on SSC, use net install, e.g.:
    * net install xxx, from("https://raw.githubusercontent.com/org/repo/main/")
 ```
+
 5. Check the `ado` folder and verify that all packages have been installed there.
 
 ### If a main script is not present
