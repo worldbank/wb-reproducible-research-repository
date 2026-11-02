@@ -14,6 +14,9 @@ The empty columns at the end (source, url, access_date, license,
 availability, notes) are for you to fill in for each dataset you did not
 create yourself. They become the Data Availability Statement in the README.
 Leave them blank for files your own code produces.
+The contains_pii column is the exception: fill it in (yes / no) for EVERY
+file, including files your code produces. Files marked yes must not be
+shared with the reproducibility team (see the skill's PII lock).
 
 Hashing follows resources/generate_hash in this repository.
 
@@ -140,13 +143,16 @@ for p in files:
         "url": "",
         "access_date": "",
         "license": "",
-        "availability": "",   # public / restricted / forthcoming
+        "availability": "",   # public / verification-only / restricted / forthcoming
         "notes": "",
+        # --- to fill in by the author for EVERY file ---
+        "contains_pii": "",   # yes / no
     })
 
 fields = ["filename", "path", "sha256sum", "date", "modified", "extension", "size_bytes",
           "n_vars", "sheets", "variables",
-          "source", "url", "access_date", "license", "availability", "notes"]
+          "source", "url", "access_date", "license", "availability", "notes",
+          "contains_pii"]
 
 out_file = Path(OUT_DIR) / "data_inventory.csv"
 with open(out_file, "w", newline="", encoding="utf-8") as fh:

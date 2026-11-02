@@ -44,6 +44,17 @@ Supported formats:
 5. Install the required packages:
    - Run `renv::restore()` (if using `renv`) or manually install the packages listed in the `renv.lock` file.
 6. Run the `compare_datasets.R` script from RStudio.
+   - Or from a terminal, with other folders: `Rscript compare_datasets.R <package_folder> <public_folder> <output_folder>`
+
+### ⚙️ Options (top of `compare_datasets.R`)
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `sort_rows` | `TRUE` | Sort rows of both datasets before comparing, so that a different row order is not reported as a difference |
+| `sort_keys` | `c()` | Columns to sort by (names after `clean_names()`, e.g. `c("cncode", "year")`). If empty, rows are sorted by all identifier-like columns (text and whole-number columns), then by the remaining columns |
+| `tolerance` | `0.0005` | Relative tolerance (0.0005 = 0.05%). Numeric differences below it are still listed in the detailed file, but marked as below tolerance and reported separately in the summary |
+
+Files with the same name and extension are matched first (so `data.dta` and `data.xlsx` are both compared); remaining files are matched by name only (e.g. `data.csv` vs `data.dta`).
 
 ---
 
@@ -60,9 +71,12 @@ This file provides a side-by-side summary comparison of each matched dataset. It
 | `hash_pkg`, `hash_pub`     | SHA256 hashes to verify file integrity                                      |
 | `hash_status`              | Whether the hashes match                                                    |
 | `row_match_status`         | Whether the datasets have the same number of rows                          |
+| `sort_status`              | Columns used to sort the rows before comparing                             |
 | `vars_in_public_status`    | Whether all variables in the public file exist in the package file         |
 | `vars_in_package_status`   | Whether all variables in the package file exist in the public file         |
-| `value_diff_summary`       | Which variables contain differing values (if any)                          |
+| `value_diff_summary`       | Which variables contain values differing above the tolerance (if any)      |
+| `below_tolerance_summary`  | Which variables only contain differences below the tolerance               |
+| `type_diff_summary`        | Which variables have different data types                                   |
 
 
 #### ✅ Example Output
@@ -84,9 +98,12 @@ It lists every differing value **row by row**, including:
 |------------------|---------------------------------------------|
 | `file`          | Dataset name                                |
 | `variable`      | Name of the variable with differences       |
-| `row`           | Row number of the difference                |
+| `row`           | Row number of the difference (after sorting) |
+| `row_id`        | Identifier values of that row (e.g. `AUT \| 2018`), when sorted by up to 5 id columns |
 | `package_value` | Value in the author's version               |
 | `public_value`  | Value in the public version                 |
+| `abs_diff`, `rel_diff_pct` | Absolute and relative (%) difference, for numeric variables |
+| `note`          | Whether the difference is below or above the tolerance |
 
 #### ✅ Example Rows from `detailed_value_diffs.csv`
 

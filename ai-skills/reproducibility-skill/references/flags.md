@@ -77,7 +77,7 @@ This is the data↔README cross-check. Procedure:
    - Python: `.to_csv`, `.to_excel`, `.to_stata`, `.to_parquet`, `pickle.dump`, `np.save`, `savefig`
    - Julia/Matlab: `CSV.write`, `writedlm`, `save(` (MAT), `writematrix`, `writetable`
 3. Classify: a data file written by some script = INTERMEDIATE/OUTPUT (no DAS entry required). A data file never written by any script = EXTERNAL INPUT.
-4. Rule: every EXTERNAL INPUT must have a DAS entry with filename, source, URL, access year (and license where known). Any external input absent from the DAS is a flag. Any DAS entry with no corresponding file and no access instructions is also a flag.
+4. Rule: every EXTERNAL INPUT must have a DAS entry with filename, source, URL, access year, license, and whether it is redistributable or verification-only. Any external input absent from the DAS is a flag. Any DAS entry with no corresponding file and no access instructions is also a flag.
 5. Reverse check: every file the code READS (`use`, `import delimited`, `read.csv`, `read_dta`, `pd.read_*`, ...) must either exist in the package or be documented in the DAS with access instructions. A read of a file that is neither present nor documented is a flag (the package will crash for the reviewer).
 6. Forthcoming or unpublished data: survey or monitoring data the author collected that will be published later (e.g., in the Microdata Library) but is not yet public is common and is not the same as permanently restricted data. Do not describe it with invented pathways like NDA or IRB-approved access, and do not attribute it to an institution unless the author confirms that institution owns it. Instead ask the author to mark it explicitly (e.g., "forthcoming," "planned for release in MDL, not yet available") and record only what the author confirms: intended repository, expected timing if known, and who to contact. If the author hasn't said, leave those fields as an open question rather than inferring a rights or access story — this counts as a DAS entry (satisfies the rule in item 4) even though there is no URL/access year yet.
 
@@ -94,17 +94,23 @@ Rule: every table and figure appears in the mapping. If no manuscript exists yet
 ## F11. Extraneous files
 
 Detect: data or code not referenced by any script and not needed for any exhibit; project notes; internal communication; `.DS_Store`, `Thumbs.db`, editor backups (`*.bak`, `*~`), old versions (`analysis_v2_FINAL_old.do`).
-Rule: the package includes only what reproduction requires. List each flagged file by name in the audit and gap table — never as a batched "remove extraneous files" line item. Before acting in Phase 3, ask the author per file (or per clearly-related group, e.g. all `.DS_Store`): delete it, or move it outside the package instead (the author may want superseded analyses or notes kept, just not shipped)? Only delete files the author confirmed by name; anything not explicitly confirmed stays untouched.
+Rule: the package includes only what reproduction requires. Data that feeds an exhibit is never extraneous, whatever its license (see F13 for what is excluded and why). List each flagged file by name in the audit and gap table — never as a batched "remove extraneous files" line item. Before acting in Phase 3, ask the author per file (or per clearly-related group, e.g. all `.DS_Store`): delete it, or move it outside the package instead (the author may want superseded analyses or notes kept, just not shipped)? Only delete files the author confirmed by name; anything not explicitly confirmed stays untouched.
 
 ## F12. Absolute output paths / results overwriting inputs
 
 Detect: scripts writing outputs into the raw data folder, or writing outside the project tree.
 Rule: raw data is read-only in spirit; outputs go to the outputs tree. A script that overwrites its own input is a flag even if it "works".
 
-## F13. Restricted or sensitive data included by mistake
+## F13. PII or restricted data in the package
 
-Detect: files that the DAS or README describe as restricted/confidential but that are physically present in a package destined for publication; personally identifiable variables (names, exact addresses, IDs) in included microdata.
-Rule: restricted data is excluded from submissions and handled via NDA, virtual verification, or DDH archiving under restricted access. This flag outranks all others — raise it immediately and prominently.
+This flag outranks all others — raise it immediately and prominently. See "PII lock" and "Verification package and publication package" in SKILL.md.
+
+Detect:
+- PII (the lock). Any in-scope data file the author marked as containing PII, or has not confirmed. Variable names that suggest direct identifiers, matched case-insensitively: `name`, `fname`, `lname`, `surname`, `respondent_name`, `hh_head_name`, `address`, `street`, `phone`, `mobile`, `tel`, `email`, `national_id`, `nid`, `dni`, `curp`, `cpf`, `ssn`, `passport`, `tax_id`, `dob`, `birth_date`, `gps`, `lat`/`latitude`, `lon`/`long`/`longitude`, `coord`, `photo`, `signature`. A match is a question for the author, not a verdict (`name` may be a country name); never open values to check.
+- Restricted data. Files the author confirms the terms forbid sharing even with the reproducibility team, physically present in the package.
+- Not a flag: data whose license does not allow public redistribution but does allow sharing for verification. That is verification-only data; it stays in the package with its license and README note.
+
+Rule: a file with PII, or with no PII answer, is excluded from the package sent to the reproducibility team until the author de-identifies it or routes it to virtual verification. Restricted data is excluded and handled via NDA, virtual verification, or DDH archiving under restricted access, as the author confirms. In both cases the author moves the file out; never delete it.
 
 ## F14. Large-compute pathway not documented
 
