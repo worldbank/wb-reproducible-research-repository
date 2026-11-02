@@ -2,7 +2,9 @@
 
 Purpose: when the data↔README cross-check (flags.md, F8) finds an external input, try to identify it against this list using filename patterns, variable names, and country/year structure. If a match is likely, PROPOSE a full Data Availability Statement entry and citation from the entry below, and ask the author to CONFIRM (i) the identification, (ii) the access date, and (iii) the exact version/vintage downloaded. Never present a guessed identification as fact; access dates and vintages can never be guessed — always ask.
 
-Redistribution status here reflects general license terms; the specific extract may differ (e.g., data obtained under a special agreement). When in doubt, the author confirms, and genuinely restricted data follows the pathways in checklist.md (exclusion + access instructions, NDA, virtual verification, or DDH archiving under restricted access).
+Redistribution status here reflects general license terms; the specific extract may differ (e.g., data obtained under a special agreement). When in doubt, the author confirms.
+
+"Not redistributable" means the file cannot be in the published package. It does not mean it is removed from the package sent to the reproducibility team: such data is verification-only (see "Verification package and publication package" in SKILL.md). Keep the file, record its license, and mark it in the README for removal before publication. Only data whose terms forbid sharing even with reviewers, or data with PII, is excluded; it follows the pathways in checklist.md (access instructions, NDA, virtual verification, or DDH archiving under restricted access).
 
 Maintainers: update this file as licenses and URLs change. Last reviewed: July 2026.
 
@@ -47,7 +49,7 @@ Maintainers: update this file as licenses and URLs change. Last reviewed: July 2
 ## Enterprise Surveys
 - Typical clues: `es_`, firm-level microdata, `idstd`, stratification variables.
 - Source: World Bank. URL: https://www.enterprisesurveys.org/
-- License: registration required; microdata NOT freely redistributable — exclude from package, give access instructions (portal registration) in DAS.
+- License: registration required; microdata NOT freely redistributable — verification-only: keep in the package for the reproducibility team, mark for removal before publication, give access instructions (portal registration) in DAS. Ask the author to confirm their access terms allow sharing with reviewers.
 - Citation: World Bank. Enterprise Surveys. [dataset]. https://www.enterprisesurveys.org. Accessed <date>.
 
 ## Global Findex
@@ -59,13 +61,13 @@ Maintainers: update this file as licenses and URLs change. Last reviewed: July 2
 ## LSMS / national household surveys via Microdata Library
 - Typical clues: `lsms`, country-wave folders, household/individual roster files.
 - Source: World Bank Microdata Library. URL: https://microdata.worldbank.org/
-- License: varies by study — typically public-use files require registration and are NOT redistributable. Exclude; DAS gives catalog entry (survey ID), URL, and access procedure.
+- License: varies by study — typically public-use files require registration and are NOT redistributable. Verification-only: keep in the package for the reproducibility team, mark for removal before publication; DAS gives catalog entry (survey ID), license, URL, and access procedure. Check for PII (some licensed files include GPS or names); if present, the PII lock applies.
 - Citation: use the study-specific citation from the Microdata Library catalog page.
 
 ## DHS (Demographic and Health Surveys)
 - Typical clues: file stems like `KEHR72FL`, `*IR*`, `*PR*`, `*KR*` recode files.
 - Source: DHS Program / USAID. URL: https://dhsprogram.com/
-- License: registration + project approval; NOT redistributable. Exclude; DAS documents the request procedure.
+- License: registration + project approval; NOT redistributable. Ask the author whether their approved terms allow sharing with the reproducibility team for verification. If yes, verification-only; if no, excluded and the DAS documents the request procedure (the reproducibility team can request access themselves or use virtual verification). GPS files are restricted separately and fall under the PII lock.
 - Citation: per-survey citation, e.g., "<Country> Demographic and Health Survey <year> [dataset]. Rockville, MD: ICF."
 
 ## ILOSTAT
@@ -111,7 +113,7 @@ Maintainers: update this file as licenses and URLs change. Last reviewed: July 2
 
 ## Geospatial boundaries (GADM / geoBoundaries / WB Official Boundaries)
 - Typical clues: `.shp`/`.gpkg`/`.geojson`, `gadm41_*`, `ADM0/1/2`.
-- GADM: free for academic/non-commercial use, redistribution NOT permitted — exclude, link in DAS.
+- GADM: free for academic/non-commercial use, redistribution NOT permitted — verification-only: keep for the reproducibility team, mark for removal before publication, link in DAS.
 - geoBoundaries: CC BY 4.0 — redistributable. World Bank Official Boundaries: CC BY 4.0 — redistributable; required for WB publications' maps.
 - Citation (WB): World Bank. "World Bank Official Boundaries." [dataset]. https://datacatalog.worldbank.org/. Accessed <date>.
 
@@ -129,5 +131,5 @@ Maintainers: update this file as licenses and URLs change. Last reviewed: July 2
 1. For each external input, compute clues: filename, extension, variable names (read the header or `describe`), country/year coverage.
 2. Match against this list. Report confidence: LIKELY (name+variables match), POSSIBLE (name only), UNKNOWN.
 3. LIKELY/POSSIBLE → present the proposed DAS entry and citation, with blanks for access date and version, and ask the author to confirm or correct.
-4. UNKNOWN → ask the author directly: where does this file come from, who produced it, under what terms? An external input with unknown provenance cannot ship and cannot be verified; this is a blocking question, not a footnote. Cryptic names (`final_merged_v2.csv`, `data_new.dta`) with no write operation in the code are the classic case.
+4. UNKNOWN → ask the author directly: where does this file come from, who produced it, under what terms? An external input with unknown provenance cannot be verified; this is a blocking question, not a footnote. Keep the file in place while the question is open. Cryptic names (`final_merged_v2.csv`, `data_new.dta`) with no write operation in the code are the classic case.
 5. Never fill in an access date, version, or vintage the author has not confirmed.

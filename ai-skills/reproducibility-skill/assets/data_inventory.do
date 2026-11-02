@@ -13,6 +13,9 @@
 * availability, notes) are for you to fill in for each dataset you did not
 * create yourself. They become the Data Availability Statement in the README.
 * Leave them blank for files your own code produces.
+* The contains_pii column is the exception: fill it in (yes / no) for EVERY
+* file, including files your code produces. Files marked yes must not be
+* shared with the reproducibility team (see the skill's PII lock).
 *
 * Hashing follows resources/generate_hash in this repository.
 * Requires Stata 14 or later.
@@ -137,15 +140,16 @@ gen modified = ""   // Stata cannot read file modification times; see data_inven
 rename fsize size_bytes
 
 * to fill in by the author (external inputs only)
-foreach v in source url access_date license availability notes {
+foreach v in source url access_date license availability notes contains_pii {
     gen `v' = ""
 }
-* availability: public / restricted / forthcoming
+* availability: public / verification-only / restricted / forthcoming
+* contains_pii: yes / no -- fill in for EVERY file, not only external inputs
 
 keep  filename path sha256sum date modified extension size_bytes n_vars sheets variables ///
-      source url access_date license availability notes
+      source url access_date license availability notes contains_pii
 order filename path sha256sum date modified extension size_bytes n_vars sheets variables ///
-      source url access_date license availability notes
+      source url access_date license availability notes contains_pii
 
 local out_file "$out_dir/data_inventory.csv"
 export delimited using `"`out_file'"', replace

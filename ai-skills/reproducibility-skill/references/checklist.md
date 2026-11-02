@@ -8,6 +8,7 @@ The audit in Phase 1 checks the project against every item below. For each, reco
 - All data files required for verification are included.
 - The package starts from documented data. For traceability it should start from original (unprocessed) data.
 - If an input dataset has restricted access, it is not in the original submission; it can be shared after an NDA, or under the virtual verification protocol where data is never shared directly.
+- Skill note (not part of the official checklist): "restricted access" here means data that cannot be shared with the reproducibility team. Data that is licensed but not publicly redistributable is shared with the team for verification and removed from the published package; data with personally identifiable information is never shared with the team. See "Verification package and publication package" and "PII lock" in SKILL.md.
 - If raw input is very large, the package may start from a "usable data" intermediate that is fully documented and citable, provided the README gives (i) provenance and access instructions for the raw sources, and (ii) scripts or written protocols that reproduce the usable dataset when access is granted.
 
 ### 2. Code

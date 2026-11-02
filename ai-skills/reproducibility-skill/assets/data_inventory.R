@@ -14,6 +14,9 @@
 # availability, notes) are for you to fill in for each dataset you did not
 # create yourself. They become the Data Availability Statement in the README.
 # Leave them blank for files your own code produces.
+# The contains_pii column is the exception: fill it in (yes / no) for EVERY
+# file, including files your code produces. Files marked yes must not be
+# shared with the reproducibility team (see the skill's PII lock).
 #
 # Hashing follows resources/generate_hash in this repository.
 # ==============================================================================
@@ -104,8 +107,10 @@ inventory <- data.frame(
   url          = "",
   access_date  = "",
   license      = "",
-  availability = "",   # public / restricted / forthcoming
+  availability = "",   # public / verification-only / restricted / forthcoming
   notes        = "",
+  # --- to fill in by the author for EVERY file ---
+  contains_pii = "",   # yes / no
   stringsAsFactors = FALSE
 )
 

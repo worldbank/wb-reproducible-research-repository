@@ -32,6 +32,8 @@ This section will outline where and how the data supporting the findings of the 
 
 - [ ] No data can be made publicly available.
 
+If some data is shared with the reproducibility team for verification but cannot be published, list it under [Data shared for verification only](#data-shared-for-verification-only).
+
 ### Data Sources
 
 Provide the following fields for every data file used. Repeat the block below once per dataset, numbered in order.
@@ -45,6 +47,7 @@ Provide the following fields for every data file used. Repeat the block below on
 - Access Type: Open
 - License: CC BY 4.0
 - License URL: https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets
+- Redistribution: Included in published package
 - Citation: World Bank. 2025. "World Development Indicators" [dataset]. https://worldbank.github.io/wb-reproducible-research-repository/guidance/virtual_reproducibility_verification_protocol.html. Accessed September 2025.
 
 2. **[Next dataset name]**
@@ -56,12 +59,25 @@ Provide the following fields for every data file used. Repeat the block below on
 - Access Type: 
 - License: 
 - License URL: 
+- Redistribution: Included in published package / Verification only / Not included
 - Citation:
+
+For a dataset marked Verification only, add the license copy next to the file (`<datafile>_LICENSE.txt`) and this note to its entry: "Shared with the World Bank reproducibility team for verification only. This file will be removed from the published reproducibility package; replicators must obtain it from the source above."
+
+### Data shared for verification only
+
+List every file that is in the package sent to the reproducibility team but will be removed before publication, because its license does not allow public redistribution. Delete this section if there are none.
+
+| File | Dataset | License | License copy | Exhibits that need it |
+|------|---------|---------|--------------|-----------------------|
+| data/raw/es_2023.dta | Enterprise Surveys 2023 | World Bank Enterprise Surveys terms of use | data/raw/es_2023_LICENSE.txt | Table 2, Figure 3 |
 
 ### Statement about Rights
 
 - [ ] I certify that the author(s) of the manuscript have legitimate access to and permission to use the data used in this manuscript.
 - [ ] I certify that the author(s) of the manuscript have documented permission to redistribute/publish the data contained within this replication package. Appropriate permission are documented in the LICENSE.txt file.
+- [ ] I certify that the author(s) have permission to share the data listed under "Data shared for verification only" with the reproducibility team for verification, and that these files will be removed from the published package.
+- [ ] I certify that no data in this package contains personally identifiable information.
 
 ## Instructions for Replicators
 
