@@ -68,6 +68,7 @@ jobs:
               --notes "Zip of \`ai-skills/reproducibility-skill\` at commit ${GITHUB_SHA}.
 
           **Install:**
+          - **npx (Claude Code, Copilot, other agents):** \`npx skills add worldbank/wb-reproducible-research-repository --skill wb-reproducibility-package\`
           - **Claude.ai:** upload this zip under Settings → Capabilities → Skills.
           - **Claude Code:** unzip into your project's \`.claude/skills/\` folder.
           - **GitHub Copilot (VS Code):** unzip into your project's \`.agents/skills/\` folder.
