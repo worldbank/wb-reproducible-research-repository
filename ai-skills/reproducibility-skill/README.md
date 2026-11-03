@@ -29,6 +29,18 @@ You do not need a final manuscript to start — the skill builds the exhibit map
 
 ## Installation
 
+**With npx (Claude Code, GitHub Copilot, Cursor, Codex, and other agents):** from your project folder, run
+
+```bash
+npx skills add worldbank/wb-reproducible-research-repository --skill wb-reproducibility-package
+```
+
+This uses the open-source [`skills`](https://github.com/vercel-labs/skills) CLI (requires Node.js). It asks which agents to install for and copies the skill into the right folder, for example `.claude/skills/` for Claude Code or `.agents/skills/` for GitHub Copilot. Useful options:
+
+- `--agent claude-code` or `--agent github-copilot`: install for one agent without the prompt.
+- `-g`: install for your user account instead of a single project.
+- `npx skills update`: pull the latest version of the skill later.
+
 **Claude.ai (web/desktop):** download the `.zip` of this folder, go to Settings → Capabilities → Skills, and upload it. Then start a chat (or a Cowork session with your project folder) and describe what you want.
 
 **Claude Code:** copy the `reproducibility-skill/` folder into your project's `.claude/skills/` directory `.agents/skills/`. Claude/AI agent picks it up automatically.
