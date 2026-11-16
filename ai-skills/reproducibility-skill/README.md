@@ -60,9 +60,25 @@ The inventory lists each data file's hash, size, and variable names, never value
 
 ## Installation
 
-Download the skill from the [latest release](https://github.com/worldbank/wb-reproducible-research-repository/releases/latest). Alternatively, clone the repository and use the `ai-skills/reproducibility-skill/` folder.
+The quickest way to install is with npx (see below). You can also download the skill from the [latest release](https://github.com/worldbank/wb-reproducible-research-repository/releases/latest), or clone the repository and use the `ai-skills/reproducibility-skill/` folder.
 
 The folder you install must keep its name (`reproducibility-skill`) and have `SKILL.md` directly inside it.
+
+### With npx (Claude Code, GitHub Copilot, Cursor, Codex, and other agents)
+
+From your project folder, run:
+
+```bash
+npx skills add worldbank/wb-reproducible-research-repository --skill wb-reproducibility-package
+```
+
+This uses the open-source [`skills`](https://github.com/vercel-labs/skills) CLI (requires Node.js). It asks which agents to install for and copies the skill into the folder each agent reads. Useful options:
+
+- `--agent claude-code` or `--agent github-copilot`: install for one agent without the prompt.
+- `-g`: install for your user account instead of a single project.
+- `npx skills update`: pull the latest version of the skill later.
+
+npx installs the current version on `main`, which may be newer than the latest release.
 
 ### Claude (web or desktop app)
 
