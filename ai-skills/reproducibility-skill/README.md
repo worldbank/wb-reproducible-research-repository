@@ -1,72 +1,140 @@
 # Skill: WB Reproducibility Package (Author Edition)
 
-A skill that helps authors prepare a reproducibility package that meets the [World Bank reproducibility standard](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/reproducibility_package_checklist.md) — before submitting for verification.
+A skill that helps authors prepare a reproducibility package that meets the [World Bank reproducibility standard](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/reproducibility_package_checklist.md) before submitting it for verification.
 
 It is written for **authors**, but it embeds the exact checks the reproducibility team applies as **reviewers**. A package that passes this skill's audit should pass verification on first submission, saving the review round-trips where most calendar time is lost.
 
 Questions: reproducibility@worldbank.org
 
+## Quick start
+
+1. Check which AI tool your data allows (see [Before you start](#before-you-start)).
+2. Install the skill in that tool (see [Installation](#installation)).
+3. Open your project folder in the tool and say: "Prepare a reproducibility package for this project."
+
+The skill asks about your data first and will not change any file without your approval.
+
 ## What it does
 
-The skill runs in five phases, and it will not touch your files without approval:
+The skill runs in five phases (0 to 4) and will not touch your files without approval.
 
-0. **Privacy gate.** Before opening anything, asks how your data is classified and which AI tool you are using. With **Claude**, only public data (or data that will be made public with the package) may be shared. **Official Use Only** data may be used only with **GitHub Copilot** in the World Bank enterprise environment. Confidential, Strictly Confidential, or personal data may not be shared with either tool. In those cases the skill switches to **code-only mode**: it still builds the package from your code, manuscript, and README, but never opens or runs the data, and you do the final run check on your own machine. In code-only mode you must give the agent a **folder with no data in it**: a fresh `git clone`, or a copy of the project with the data, logs, and notebook outputs removed. The agent checks the file listing before it starts and will not continue until the folder is clean. The skill's rules (never open data, search code files only) are a second layer. They are not enough on their own: if the data is somewhere the agent can reach, it could still end up in the conversation by accident. To tell the agent about your data, you run a small script on your machine (`assets/data_inventory.do`, `.R`, or `.py`), pointed at wherever the data really lives, and save its output into the code-only folder. It writes `data_inventory.csv`, which lists every data file with its hash, size, and variable names (never values). It also has blank columns for you to add each dataset's source, URL, access date and license. The agent uses this file instead of the data to check the data inputs and draft the Data Availability Statement.
-1. **Audit (read-only).** If a manuscript is available, reads it first and scopes the audit to the exhibits it actually contains — useful when the project folder has a lot of files unrelated to the paper. Checks your project against the official checklist and 14 common failure flags (hardcoded paths, missing seeds, uninstalled packages, no entry point, extraneous files, ...). Scans your data folder, determines which in-scope files your code *produces* vs. which are *external inputs*, and verifies every external input is documented with source, URL, and access year — including data you've collected but not yet published, which it marks as forthcoming rather than guessing an access pathway. Tries to identify common datasets (WDI, PWT, OECD, ILOSTAT, national surveys, ...) and proposes the correct citation and license status for you to confirm. Classifies each dataset as published with the package, **verification-only** (shared with the reproducibility team but removed before publication because the license does not allow redistribution), or excluded. Checks every data file for PII (the **PII lock**).
-2. **Outline (proposes, writes nothing).** A target folder structure (`data/`, `code/`, `output/`), an entry-point plan (one main script per language, path changed in exactly one place), and a concrete gap table — the build plan. You approve, edit, or reject each row.
-3. **Build (only after approval).** Drafts the README (only the sections required by the template — no invented "Troubleshooting"/"FAQ" sections), with Data Availability Statement and List of Exhibits, the main script(s), applies the approved fixes, and re-runs the audit as a final gate.
-4. **Run check.** Sets existing outputs aside and reruns the package from scratch, verifying that every exhibit file regenerates. Where Claude/AI Agent can execute the code (R/Python in Claude Code or Cowork, Visual Studio, GitHub copilot), it runs it and records run times; where it can't (Stata, Matlab), it gives you the exact clean-run protocol to execute yourself and a reconciliation checklist. The package is ready only when every expected output regenerates.
+0. **Privacy gate.** Before opening anything, asks how your data is classified and which AI tool you are using. See [Before you start](#before-you-start) for the rules. If your data cannot be shared with the tool, the skill switches to **code-only mode**: it builds the package from your code, manuscript, and README, never opens or runs the data, and you do the final run check on your own machine.
+1. **Audit (read-only).** If a manuscript is available, reads it first and scopes the audit to the exhibits it contains. This helps when the project folder has many files unrelated to the paper. Checks the project against the official checklist and 14 common failure flags (hardcoded paths, missing seeds, uninstalled packages, no entry point, extraneous files, and more). Determines which data files your code *produces* and which are *external inputs*, and verifies every external input is documented with source, URL, and access year. Data you collected but have not yet published is marked as forthcoming rather than given a guessed access pathway. Tries to identify common datasets (WDI, PWT, OECD, ILOSTAT, national surveys, and others) and proposes the citation and license status for you to confirm. Classifies each dataset as published with the package, **verification-only** (shared with the reproducibility team but removed before publication because the license does not allow redistribution), or excluded. Checks every data file for PII (the **PII lock**).
+2. **Outline (proposes, writes nothing).** A target folder structure (`data/`, `code/`, `output/`), an entry-point plan (one main script per language, with the project path set in exactly one place), and a gap table that serves as the build plan. You approve, edit, or reject each row.
+3. **Build (only after approval).** Drafts the README using only the sections required by the template, including the Data Availability Statement and List of Exhibits. Writes the main script(s), applies the approved fixes, and re-runs the audit as a final gate.
+4. **Run check.** Sets existing outputs aside and reruns the package from scratch, verifying that every exhibit file regenerates. Where the agent can execute the code (for example R or Python), it runs it and records run times. Where it cannot (for example Stata or MATLAB), it gives you the exact clean-run protocol to run yourself and a reconciliation checklist. The package is ready only when every expected output regenerates.
 
-You do not need a final manuscript to start — the skill builds the exhibit map from your code and outputs, and marks what to confirm once the manuscript is final.
+You do not need a final manuscript to start. The skill builds the exhibit map from your code and outputs and marks what to confirm once the manuscript is final.
 
 ## What it does not do
 
-- It never reads confidential data. If your data is not cleared for the tool you are using (see Phase 0), it requires a code-only copy of the project and stops if it finds data files in it.
+- It never reads confidential data. If your data is not cleared for the tool you are using, it requires a code-only copy of the project and stops if it finds data files in it.
 - It never moves, renames, or deletes files without your explicit approval of the specific action.
-- It never removes data just because its license is not CC BY 4.0. Data you are licensed to use but not to redistribute stays in the package you send to the reproducibility team, with its license recorded and a README note that it will be removed from the published package.
-- It will not let data with personally identifiable information (PII) into the package sent to the reproducibility team. It asks you to confirm, for every data file, whether it contains PII; files that do (or that you have not confirmed) stay out until they are de-identified, or are routed to virtual verification.
-- It never invents access dates, dataset versions, exhibit numbers, or data-access pathways (NDA, IRB, owning institution) — it asks, and marks unpublished data as forthcoming rather than guessing.
-- It can only execute code where the runtime is available (typically R/Python in Claude Code or Cowork or Visual studio; not Stata or Matlab). For anything it can't run, Phase 4 instructs **you** to run the package on a clean setup and gives you the exact protocol and checklist to confirm every exhibit regenerates.
+- It never removes data just because its license is not CC BY 4.0. Data you are licensed to use but not redistribute stays in the package you send to the reproducibility team, with its license recorded and a README note that it will be removed from the published package.
+- It will not let data with personally identifiable information (PII) into the package sent to the reproducibility team. It asks you to confirm, for every data file, whether it contains PII. Files that do, or that you have not confirmed, stay out until they are de-identified or are routed to virtual verification.
+- It never invents access dates, dataset versions, exhibit numbers, or data-access pathways (NDA, IRB, owning institution). It asks, and marks unpublished data as forthcoming.
+- It can only execute code where the runtime is available. For anything it cannot run, Phase 4 gives you the protocol and checklist to run the package yourself.
+
+## Before you start
+
+### 1. Match your data to an allowed tool
+
+| Data classification | Claude | GitHub Copilot (WB enterprise) |
+|---|---|---|
+| Public, or will be made public with the package | Full mode | Full mode |
+| Official Use Only | Code-only mode | Full mode |
+| Confidential, Strictly Confidential, or personal data | Code-only mode | Code-only mode |
+
+"Full mode" means the agent may open and run the data. "Code-only mode" means it never sees the data.
+
+### 2. If you are in code-only mode, prepare a clean folder
+
+The skill's rules (never open data, search code files only) are a second layer of protection, not the first. If the data is anywhere the agent can reach, it could still end up in the conversation by accident. So:
+
+1. Make a copy of the project with no data in it. Either run a fresh `git clone`, or copy the project and delete the data, logs, and notebook outputs.
+2. On your own machine, run the inventory script from [assets/](https://github.com/worldbank/wb-reproducible-research-repository/tree/update-skill-readme/ai-skills/reproducibility-skill/assets) that matches your language (`data_inventory.do`, `data_inventory.R`, or `data_inventory.py`). Point it at the folder where the data actually lives.
+3. Open the resulting `data_inventory.csv` and fill in the blank columns for each dataset: source, URL, access date, and license.
+4. Save `data_inventory.csv` into the clean folder.
+
+The inventory lists each data file's hash, size, and variable names, never values. The agent uses it instead of the data to check inputs and draft the Data Availability Statement. It checks the file listing before starting and will not continue until the folder is clean.
 
 ## Installation
 
-**Claude.ai (web/desktop):** download the `.zip` of this folder, go to Settings → Capabilities → Skills, and upload it. Then start a chat (or a Cowork session with your project folder) and describe what you want.
+Download the skill from the [latest release](https://github.com/worldbank/wb-reproducible-research-repository/releases/latest). Alternatively, clone the repository and use the `ai-skills/reproducibility-skill/` folder.
 
-**Claude Code:** copy the `reproducibility-skill/` folder into your project's `.claude/skills/` directory `.agents/skills/`. Claude/AI agent picks it up automatically.
+The folder you install must keep its name (`reproducibility-skill`) and have `SKILL.md` directly inside it.
 
-**VS Code (GitHub Copilot):** copy the `reproducibility-skill/` folder into your project's `.github/skills/` directory or `.claude/skills/`. GitHub Copilot picks it up automatically once agent mode is enabled.
+### Claude (web or desktop app)
+
+1. Go to **Settings > Capabilities** and make sure Skills are turned on.
+2. Under Skills, upload the release `.zip` without unzipping it.
+3. Start a new chat. To work on a project folder directly, use the Claude desktop app and connect the folder.
+
+### Claude Code
+
+Copy the `reproducibility-skill/` folder into one of these locations:
+
+- `<your-project>/.claude/skills/` to use it in one project
+- `~/.claude/skills/` to use it in all your projects
+
+Claude Code picks it up the next time you start a session. To confirm, ask "What skills do you have available?"
+
+### VS Code with GitHub Copilot
+
+1. Copy the `reproducibility-skill/` folder into `<your-project>/.github/skills/` (Copilot also reads `.claude/skills/`).
+2. Open the Copilot Chat panel and switch to **Agent** mode.
+3. If the skill is not picked up, check that agent skills are enabled in your Copilot settings.
+
+### Other agents
+
+Agents that follow the open Agent Skills format usually read skills from `<your-project>/.agents/skills/`. Check your agent's documentation.
+
+### Updating
+
+Download the new release and replace the whole `reproducibility-skill/` folder. Do not merge old and new files.
 
 ## Usage
 
-Point Claude/AI Agent (terminal or Visual Studio Code) at your project and say something like:
+Open your project folder in the agent and type a request in plain language. You do not need to name the skill.
 
-> "Prepare a reproducibility package for this project" — full run (privacy gate, then all phases)
-> "Audit this package / what's missing for replication?" — Phase 1 only
-> "Check this project for common reproducibility failures" — Phase 1 flag pass
-> "Write the README and data availability statement" — AI agent will still audit first, briefly, because the DAS depends on the data classification
+| What you want | What to say |
+|---|---|
+| The full process (privacy gate, then all phases) | "Prepare a reproducibility package for this project." |
+| An audit only, no changes | "Audit this package. What's missing for replication?" |
+| A quick check for common failures | "Check this project for common reproducibility failures." |
+| The README and Data Availability Statement | "Write the README and data availability statement." |
+| A run check on a package that is already built | "Run the clean-run check on this package." |
 
-Best results in **Claude Code, Cowork, Visual Studio Code**, where Agent can read your actual project folder. In a regular chat, you can paste a file listing and key scripts, and the skill produces the deliverables for you to place.
+Every request starts with the privacy gate. Requests for the README still run a short audit first, because the Data Availability Statement depends on how each dataset is classified.
+
+### Tips
+
+- **Work where the agent can see your files.** Results are best in Claude Code, the Claude desktop app with a connected folder, or VS Code with Copilot. In a regular chat with no folder, paste a file listing and your key scripts, and the skill will produce the deliverables for you to place.
+- **Add the manuscript** (PDF or Word) to the folder if you have it. The skill uses it to scope the audit to the exhibits in the paper.
+- **Review each phase before approving the next.** The outline in Phase 2 is the plan for every change. Edit or reject rows you disagree with.
+- **Stata and MATLAB users:** The agent cannot run your code. Expect to run the Phase 4 protocol yourself and report back.
 
 ## Contents
 
 ```
 reproducibility-skill/
-├── SKILL.md                     # instructions Claude follows
+├── SKILL.md                         # instructions the agent follows
 ├── references/
-│   ├── checklist.md             # the official WB package checklist
-│   ├── flags.md                 # 14 common failure flags + detection patterns
-│   ├── datasets.md              # common datasets: licenses, redistribution, citations to generate the DAS in the README. 
-│   └── ai_use.md                # documenting AI-generated analytical outputs
+│   ├── checklist.md                 # the official WB package checklist
+│   ├── flags.md                     # 14 common failure flags + detection patterns
+│   ├── datasets.md                  # common datasets: licenses, redistribution, citations for the DAS
+│   └── ai_use.md                    # documenting AI-generated analytical outputs
 └── assets/
-    ├── README_template.md       # required README structure
-    ├── README_example.md        # annotated gold-standard README
-    ├── main.do / main.R / main.py  # master script templates
-    └── data_inventory.do / .R / .py  # values-free data inventory for code-only mode
+    ├── README_template.md           # required README structure
+    ├── README_example.md            # annotated gold-standard README
+    ├── main.do / main.R / main.py   # main script templates
+    └── data_inventory.do / .R / .py # values-free data inventory for code-only mode
 ```
 
 ## Maintaining
 
-`references/checklist.md` mirrors the [official checklist](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/reproducibility_package_checklist.md); update it when the standard changes. `references/datasets.md` records license and redistribution status for common datasets — review periodically (last reviewed: July 2026). Contributions via pull request are welcome.
+`references/checklist.md` mirrors the [official checklist](https://github.com/worldbank/wb-reproducible-research-repository/blob/main/reproducibility_package_checklist.md). Update it when the standard changes. `references/datasets.md` records license and redistribution status for common datasets. Review it periodically (last reviewed: July 2026). Contributions via pull request are welcome.
 
-## Contributors 
+## Contributors
 
-This skill was developed by Impact Analytics and [Ruggero Doino](https://github.com/rdoino-wb). 
+This skill was developed by Impact Analytics and [Ruggero Doino](https://github.com/rdoino-wb).
